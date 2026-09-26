@@ -18,7 +18,7 @@ model User {
 }
 
 model Champion {
-  id           Int             @id // Riot Numeric Key (e.g. 133, 103, 64)
+  id           String          @id // Riot Champion Key (e.g. "133", "103", "64")
   key          String          @unique // e.g. "Quinn", "Ahri", "LeeSin"
   name         String          // e.g. "Quinn", "Ahri", "Lee Sin"
   title        String          // e.g. "Demacia's Wings"
@@ -48,7 +48,7 @@ model Tag {
 
 model ChampionBuild {
   id               String   @id @default(uuid())
-  championId       Int
+  championId       String
   champion         Champion @relation(fields: [championId], references: [id], onDelete: Cascade)
   role             String   // "top" | "jungle" | "mid" | "adc" | "support"
   tier             String   // "EMERALD+" | "ALL" | "DIAMOND+" ...

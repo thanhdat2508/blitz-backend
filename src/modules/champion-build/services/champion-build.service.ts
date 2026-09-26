@@ -99,7 +99,7 @@ export class ChampionBuildService {
     // 1. Fetch live Riot Data Dragon metadata
     const riotData = await this.staticDataService.getChampion(championKey, patch);
     const resolvedKey = riotData?.id || championKey.charAt(0).toUpperCase() + championKey.slice(1);
-    const resolvedId = riotData ? Number(riotData.key) : 999;
+    const resolvedId = riotData?.key || "999";
     const resolvedName = riotData?.name || resolvedKey;
     const resolvedTitle = riotData?.title || "the Legend";
     const primaryTag = this.resolvePrimaryClass(riotData?.tags);
@@ -156,7 +156,7 @@ export class ChampionBuildService {
   }
 
   private buildOverview(
-    id: number,
+    id: string,
     key: string,
     name: string,
     title: string,

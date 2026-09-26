@@ -85,7 +85,11 @@ export class RiotStaticDataService {
   public async getAllChampions(patch = DDRAGON_VERSION): Promise<RiotChampionData[]> {
     const semverPatch = this.normalizePatch(patch);
     await this.ensureInitialized(semverPatch);
-    return Array.from(RiotStaticDataService.IN_MEMORY_CACHE.values());
+    const uniqueMap = new Map<string, RiotChampionData>();
+    for (const champ of RiotStaticDataService.IN_MEMORY_CACHE.values()) {
+      uniqueMap.set(champ.id, champ);
+    }
+    return Array.from(uniqueMap.values());
   }
 
   public async getChampionAbilities(

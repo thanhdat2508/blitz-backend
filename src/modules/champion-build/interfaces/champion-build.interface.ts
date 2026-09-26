@@ -21,7 +21,7 @@ export interface RolePlayRate {
 }
 
 export interface ChampionOverview {
-  id: number;
+  id: string;
   key: string;
   name: string;
   title: string;

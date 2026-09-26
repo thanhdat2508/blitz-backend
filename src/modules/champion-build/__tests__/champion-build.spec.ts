@@ -22,8 +22,8 @@ async function runTests() {
   const quinn = await service.getChampionBuild("Quinn", "mid", "EMERALD+", "WORLD", "14.24");
 
   // 2.1 Overview & Identification
-  if (quinn.overview.name !== "Quinn" || quinn.overview.id !== 133) {
-    throw new Error(`Expected Quinn ID 133, got ${quinn.overview.name} (${quinn.overview.id})`);
+  if (quinn.overview.name !== "Quinn" || quinn.overview.id !== "133") {
+    throw new Error(`Expected Quinn ID "133", got ${quinn.overview.name} (${quinn.overview.id})`);
   }
   if (quinn.overview.primaryClass !== "Marksman") {
     throw new Error(`Expected Quinn primaryClass 'Marksman', got ${quinn.overview.primaryClass}`);
