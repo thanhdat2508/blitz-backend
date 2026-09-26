@@ -2,6 +2,7 @@ import { Router } from "express";
 import authRoutes from "./auth.routes";
 import cacheRoutes from "./cache.routes";
 import cryptoRoutes from "./crypto.routes";
+import playerRoutes from "./player.routes";
 
 const router = Router();
 
@@ -16,5 +17,7 @@ router.get("/health", (_req, res) => {
 router.use("/auth", authRoutes);
 router.use("/cache", cacheRoutes);
 router.use("/crypto", cryptoRoutes);
+router.use("/player", playerRoutes);
 
 export default router;
+

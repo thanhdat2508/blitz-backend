@@ -34,6 +34,10 @@ export const createApp = (): Application => {
           encrypt: "POST /api/crypto/encrypt",
           decrypt: "POST /api/crypto/decrypt",
         },
+        player: {
+          getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
+          refreshProfile: "POST /api/player/refresh",
+        },
       },
     });
   });
