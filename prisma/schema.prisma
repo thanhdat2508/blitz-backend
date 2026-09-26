@@ -23,7 +23,7 @@ model Champion {
   name         String          // e.g. "Quinn", "Ahri", "Lee Sin"
   title        String          // e.g. "Demacia's Wings"
   primaryClass String          // e.g. "Marksman", "Mage", "Fighter", "Tank", "Assassin", "Support"
-  tags         String[]        // e.g. ["Marksman", "Assassin"]
+  tags         Tag[]
   partype      String          // e.g. "Mana", "Energy"
   avatarUrl    String
   splashUrl    String
@@ -34,6 +34,16 @@ model Champion {
 
   @@index([name])
   @@map("champions")
+}
+
+model Tag {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique // e.g. "Marksman", "Mage", "Assassin", "Fighter", "Tank", "Support"
+  champions Champion[]
+  createdAt DateTime   @default(now())
+
+  @@index([name])
+  @@map("tags")
 }
 
 model ChampionBuild {

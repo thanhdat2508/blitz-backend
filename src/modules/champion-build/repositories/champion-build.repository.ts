@@ -38,7 +38,11 @@ export class ChampionBuildRepository {
           patch,
         },
         include: {
-          champion: true,
+          champion: {
+            include: {
+              tags: true,
+            },
+          },
         },
       });
 
@@ -54,7 +58,7 @@ export class ChampionBuildRepository {
         name: champion.name,
         title: champion.title,
         primaryClass: champion.primaryClass,
-        tags: champion.tags,
+        tags: champion.tags?.map((t) => t.name) || [champion.primaryClass],
         avatarUrl: champion.avatarUrl,
         splashUrl: champion.splashUrl,
         role: record.role as Role,
@@ -108,14 +112,20 @@ export class ChampionBuildRepository {
       const championClass = overview.primaryClass || "Fighter";
       const championTags = overview.tags && overview.tags.length > 0 ? overview.tags : [championClass];
 
-      // 1. Upsert Champion root entity
+      // 1. Upsert Champion root entity with relational Tags
       await prisma.champion.upsert({
         where: { id: overview.id },
         update: {
           name: overview.name,
           title: overview.title,
           primaryClass: championClass,
-          tags: championTags,
+          tags: {
+            set: [],
+            connectOrCreate: championTags.map((name) => ({
+              where: { name },
+              create: { name },
+            })),
+          },
           avatarUrl: overview.avatarUrl,
           splashUrl: overview.splashUrl,
           abilities: payload.abilities as object,
@@ -126,7 +136,12 @@ export class ChampionBuildRepository {
           name: overview.name,
           title: overview.title,
           primaryClass: championClass,
-          tags: championTags,
+          tags: {
+            connectOrCreate: championTags.map((name) => ({
+              where: { name },
+              create: { name },
+            })),
+          },
           partype: "Mana",
           avatarUrl: overview.avatarUrl,
           splashUrl: overview.splashUrl,
@@ -188,6 +203,44 @@ export class ChampionBuildRepository {
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
       console.warn(`[ChampionBuildRepository] DB save skipped (${msg.split("\n")[0]}).`);
+    }
+  }
+
+  public async findChampionsByTag(tagName: string) {
+    try {
+      return await prisma.champion.findMany({
+        where: {
+          tags: {
+            some: {
+              name: { equals: tagName, mode: "insensitive" },
+            },
+          },
+        },
+        include: {
+          tags: true,
+        },
+      });
+    } catch (error) {
+      const msg = error instanceof Error ? error.message : String(error);
+      console.warn(`[ChampionBuildRepository] findChampionsByTag skipped (${msg.split("\n")[0]}).`);
+      return [];
+    }
+  }
+
+  public async getAllTags() {
+    try {
+      return await prisma.tag.findMany({
+        include: {
+          _count: {
+            select: { champions: true },
+          },
+        },
+        orderBy: { name: "asc" },
+      });
+    } catch (error) {
+      const msg = error instanceof Error ? error.message : String(error);
+      console.warn(`[ChampionBuildRepository] getAllTags skipped (${msg.split("\n")[0]}).`);
+      return [];
     }
   }
 }

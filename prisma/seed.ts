@@ -10,7 +10,22 @@ async function main() {
   const champions = await riotStaticDataService.getAllChampions();
   console.log(`📦 Loaded ${champions.length} champions from Riot Data Dragon.`);
 
-  // 2. Select priority roster for initial seeding
+  // 2. Pre-seed standard Tags into PostgreSQL
+  const standardTags = ["Mage", "Assassin", "Marksman", "Fighter", "Tank", "Support"];
+  for (const tagName of standardTags) {
+    try {
+      await prisma.tag.upsert({
+        where: { name: tagName },
+        update: {},
+        create: { name: tagName },
+      });
+    } catch (err) {
+      // Gracefully continue if DB offline
+    }
+  }
+  console.log(`🏷️ Standard Tags verified in database: [${standardTags.join(", ")}]`);
+
+  // 3. Select priority roster for initial seeding
   const priorityRoster: Array<{ key: string; roles: Role[] }> = [
     { key: "Quinn", roles: ["mid", "jungle", "top"] },
     { key: "Aatrox", roles: ["top"] },
