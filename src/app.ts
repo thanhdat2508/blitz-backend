@@ -5,12 +5,10 @@ import apiRoutes from "./routes";
 export const createApp = (): Application => {
   const app = express();
 
-  // Middleware
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // Root endpoint
   app.get("/", (_req: Request, res: Response) => {
     res.json({
       name: "group-backend API",
@@ -28,11 +26,8 @@ export const createApp = (): Application => {
           get: "GET /api/cache/get/:key",
           delete: "DELETE /api/cache/delete/:key",
         },
-        crypto: {
-          generate: "GET /api/crypto/generate",
-          hash: "POST /api/crypto/hash",
-          encrypt: "POST /api/crypto/encrypt",
-          decrypt: "POST /api/crypto/decrypt",
+        champions: {
+          build: "GET /api/champions/:champion/build/:role?tier=EMERALD+&region=WORLD&patch=14.24",
         },
         player: {
           getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
@@ -42,20 +37,22 @@ export const createApp = (): Application => {
     });
   });
 
-  // Mount API router
   app.use("/api", apiRoutes);
 
-  // 404 handler
   app.use((_req: Request, res: Response) => {
     res.status(404).json({ error: "Route not found" });
   });
 
-  // Global Error Handler
-  app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-    console.error("Unhandled error:", err);
-    res.status(500).json({
-      error: "Internal Server Error",
-      message: process.env.NODE_ENV === "development" ? err.message : undefined,
+  app.use((err: Error & { statusCode?: number }, _req: Request, res: Response, _next: NextFunction) => {
+    const statusCode = err.statusCode || 500;
+    if (statusCode >= 500) {
+      console.error("Unhandled error:", err);
+    }
+
+    res.status(statusCode).json({
+      success: false,
+      error: err.name || "Error",
+      message: err.message,
     });
   });
 

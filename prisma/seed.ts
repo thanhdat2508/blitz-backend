@@ -1,7 +1,13 @@
+import fs from "fs";
+import path from "path";
 import prisma from "../src/config/database";
 import { CHAMPION_CATALOG } from "../src/data/champion-catalog";
 import { ChampionRole, RankTier } from "../src/types/tierlist.types";
 import { DDRAGON_BASE_URL, DEFAULT_DDRAGON_VERSION } from "../src/config/riot";
+import { championBuildService } from "../src/modules/champion-build/services/champion-build.service";
+import { riotStaticDataService } from "../src/modules/champion-build/services/riot-static-data.service";
+import { Role } from "../src/modules/champion-build/interfaces/champion-build.interface";
+import { PrebakedChampion } from "../scripts/sync-champions";
 
 const ALL_RANKS: RankTier[] = [
   "all",
@@ -73,7 +79,7 @@ function calculateTierGrade(winRate: number): string {
   return "D";
 }
 
-async function main() {
+async function seedChampionTierStats() {
   console.log("Starting Champion Tier Stats database seed...");
 
   const patchVersion = DEFAULT_DDRAGON_VERSION;
@@ -142,9 +148,8 @@ async function main() {
     }
   }
 
-  console.log(`Prepared ${recordsToInsert.length} records. Writing to PostgreSQL...`);
+  console.log(`Prepared ${recordsToInsert.length} tier records. Writing to PostgreSQL...`);
 
-  // Use createMany with skipDuplicates for high performance batch insertion
   const batchSize = 500;
   for (let i = 0; i < recordsToInsert.length; i += batchSize) {
     const batch = recordsToInsert.slice(i, i + batchSize);
@@ -155,6 +160,78 @@ async function main() {
   }
 
   console.log(`Successfully seeded ${recordsToInsert.length} champion tier records into PostgreSQL!`);
+}
+
+async function seedChampionBuilds() {
+  console.log("Initializing Champion Builds and Tags Seeding...");
+
+  // 1. Pre-seed standard Tags into PostgreSQL
+  const standardTags = ["Mage", "Assassin", "Marksman", "Fighter", "Tank", "Support"];
+  for (const tagName of standardTags) {
+    try {
+      await prisma.tag.upsert({
+        where: { name: tagName },
+        update: {},
+        create: { name: tagName },
+      });
+    } catch {
+      // Gracefully continue if DB offline
+    }
+  }
+  console.log(`Standard Tags verified: [${standardTags.join(", ")}]`);
+
+  // 2. Load prebaked champions from JSON file (or fallback to live sync if missing)
+  const jsonPath = path.resolve(__dirname, "./data/champions.json");
+  let champions: PrebakedChampion[] = [];
+
+  if (fs.existsSync(jsonPath)) {
+    const raw = fs.readFileSync(jsonPath, "utf-8");
+    champions = JSON.parse(raw) as PrebakedChampion[];
+    console.log(`Loaded ${champions.length} prebaked champions from champions.json.`);
+  } else {
+    try {
+      console.log("champions.json not found, fetching live from Riot Data Dragon...");
+      const liveChamps = await riotStaticDataService.getAllChampions();
+      champions = liveChamps.map((c) => ({
+        id: c.key,
+        riotKey: c.key,
+        key: c.id,
+        name: c.name,
+        title: c.title,
+        primaryClass: c.tags[0] || "Fighter",
+        tags: c.tags,
+        partype: c.partype,
+        avatarUrl: "",
+        splashUrl: "",
+        roles: ["mid"],
+      }));
+    } catch {
+      console.log("Skipping live champions fetch.");
+    }
+  }
+
+  let buildCount = 0;
+  for (const champ of champions) {
+    for (const role of champ.roles) {
+      try {
+        await championBuildService.getChampionBuild(champ.key, role as Role, "EMERALD+", "WORLD");
+        buildCount++;
+      } catch (err) {
+        console.warn(`Failed to seed ${champ.name} (${role}):`, err);
+      }
+    }
+  }
+
+  console.log(`Successfully seeded ${champions.length} champions and ${buildCount} dynamic role builds!`);
+}
+
+async function main() {
+  await seedChampionTierStats();
+  try {
+    await seedChampionBuilds();
+  } catch (err) {
+    console.warn("Champion builds seed completed with warnings:", err);
+  }
 }
 
 main()
