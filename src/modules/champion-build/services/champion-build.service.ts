@@ -134,11 +134,19 @@ export class ChampionBuildService {
     };
   }
 
+  private static readonly VALID_CHAMPION_CLASSES: readonly ChampionClass[] = [
+    "Mage",
+    "Assassin",
+    "Marksman",
+    "Fighter",
+    "Tank",
+    "Support",
+  ];
+
   private resolvePrimaryClass(tags?: string[]): ChampionClass {
-    if (!tags || tags.length === 0) return "Fighter";
-    const tag = tags[0];
-    if (tag === "Mage" || tag === "Assassin" || tag === "Marksman" || tag === "Fighter" || tag === "Tank" || tag === "Support") {
-      return tag;
+    const firstTag = tags?.[0] as ChampionClass | undefined;
+    if (firstTag && ChampionBuildService.VALID_CHAMPION_CLASSES.includes(firstTag)) {
+      return firstTag;
     }
     return "Fighter";
   }
