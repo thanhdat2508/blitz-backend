@@ -16,3 +16,53 @@ model User {
 
   @@map("users")
 }
+
+model Champion {
+  id           Int             @id // Riot Numeric Key (e.g. 133, 103, 64)
+  key          String          @unique // e.g. "Quinn", "Ahri", "LeeSin"
+  name         String          // e.g. "Quinn", "Ahri", "Lee Sin"
+  title        String          // e.g. "Demacia's Wings"
+  primaryClass String          // e.g. "Marksman", "Mage", "Fighter", "Tank", "Assassin", "Support"
+  tags         String[]        // e.g. ["Marksman", "Assassin"]
+  partype      String          // e.g. "Mana", "Energy"
+  avatarUrl    String
+  splashUrl    String
+  abilities    Json            // { passive: {...}, q: {...}, w: {...}, e: {...}, r: {...} }
+  builds       ChampionBuild[]
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  @@index([name])
+  @@map("champions")
+}
+
+model ChampionBuild {
+  id               String   @id @default(uuid())
+  championId       Int
+  champion         Champion @relation(fields: [championId], references: [id], onDelete: Cascade)
+  role             String   // "top" | "jungle" | "mid" | "adc" | "support"
+  tier             String   // "EMERALD+" | "ALL" | "DIAMOND+" ...
+  region           String   // "WORLD" | "KR" | "NA" ...
+  patch            String   // "14.24" | "14.24.1"
+  tierRank         String   // "S+" | "S" | "A" | "B"
+  winRate          Float
+  pickRate         Float
+  banRate          Float
+  gamesPlayed      Int
+  damageBreakdown  Json     // { physical, magic, trueDamage }
+  previousPatch    Json     // { patch, winRate, winRateDiff, trend, gamesPlayed }
+  spells           Json     // SpellPair[]
+  runes            Json     // { mostPopular, highestWinRate }
+  skills           Json     // SkillPriority { maxOrder, progression, winRate, pickRate }
+  items            Json     // { starting, early, core, completed, buildOrder, boots, situational, trinkets }
+  matchups         Json     // { bestAgainst, worstAgainst, strongAgainst, weakAgainst }
+  similarChampions Json     // SimilarChampion[]
+  insights         Json     // ChampionInsights { general, strengths, weaknesses }
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([championId, role, tier, region, patch])
+  @@index([championId, role])
+  @@index([patch, role, tier])
+  @@map("champion_builds")
+}

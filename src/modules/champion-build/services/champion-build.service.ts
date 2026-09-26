@@ -21,12 +21,16 @@ import {
   ROLE_PRESETS,
 } from "../constants/champion-build.constants";
 import { riotStaticDataService, RiotStaticDataService } from "./riot-static-data.service";
+import { championBuildRepository, ChampionBuildRepository } from "../repositories/champion-build.repository";
 import { randomInt, randomRate, round2 } from "../../../utils/math";
 
 export class ChampionBuildService {
   private static readonly CACHE_TTL_SECONDS = 3600; // 1 hour
 
-  constructor(private readonly staticDataService: RiotStaticDataService = riotStaticDataService) {}
+  constructor(
+    private readonly staticDataService: RiotStaticDataService = riotStaticDataService,
+    private readonly repository: ChampionBuildRepository = championBuildRepository
+  ) {}
 
   public async getChampionBuild(
     championKey: string,
@@ -39,12 +43,22 @@ export class ChampionBuildService {
     const normalizedKey = championKey.toLowerCase();
     const cacheKey = `lol:build:${resolvedPatch}:${region}:${tier}:${normalizedKey}:${role}`;
 
+    // 1. Level 1: Redis Cache (< 2ms)
     const cached = await this.readFromCache(cacheKey);
     if (cached) {
       return cached;
     }
 
+    // 2. Level 2: PostgreSQL Database via Prisma (< 10ms)
+    const dbRecord = await this.repository.findBuild(championKey, role, tier, region, resolvedPatch);
+    if (dbRecord) {
+      await this.writeToCache(cacheKey, dbRecord);
+      return dbRecord;
+    }
+
+    // 3. Level 3: Dynamic Riot Engine + Auto-persist to DB & Redis
     const buildPayload = await this.generateBuildPayload(championKey, role, tier, region, resolvedPatch);
+    await this.repository.saveBuild(buildPayload);
     await this.writeToCache(cacheKey, buildPayload);
 
     return buildPayload;
