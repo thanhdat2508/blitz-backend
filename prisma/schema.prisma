@@ -59,3 +59,63 @@ model Session {
   @@unique([userId, deviceId])
   @@map("sessions")
 }
+model Champion {
+  id           String          @id // Riot Champion Key (e.g. "133", "103", "64")
+  key          String          @unique // e.g. "Quinn", "Ahri", "LeeSin"
+  name         String          // e.g. "Quinn", "Ahri", "Lee Sin"
+  title        String          // e.g. "Demacia's Wings"
+  primaryClass String          // e.g. "Marksman", "Mage", "Fighter", "Tank", "Assassin", "Support"
+  tags         Tag[]
+  partype      String          // e.g. "Mana", "Energy"
+  avatarUrl    String
+  splashUrl    String
+  abilities    Json            // { passive: {...}, q: {...}, w: {...}, e: {...}, r: {...} }
+  builds       ChampionBuild[]
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  @@index([name])
+  @@map("champions")
+}
+
+model Tag {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique // e.g. "Marksman", "Mage", "Assassin", "Fighter", "Tank", "Support"
+  champions Champion[]
+  createdAt DateTime   @default(now())
+
+  @@index([name])
+  @@map("tags")
+}
+
+model ChampionBuild {
+  id               String   @id @default(uuid())
+  championId       String
+  champion         Champion @relation(fields: [championId], references: [id], onDelete: Cascade)
+  role             String   // "top" | "jungle" | "mid" | "adc" | "support"
+  tier             String   // "EMERALD+" | "ALL" | "DIAMOND+" ...
+  region           String   // "WORLD" | "KR" | "NA" ...
+  patch            String   // "14.24" | "14.24.1"
+  tierRank         String   // "S+" | "S" | "A" | "B"
+  winRate          Float
+  pickRate         Float
+  banRate          Float
+  gamesPlayed      Int
+  availableRoles   Json?    // RolePlayRate[]
+  damageBreakdown  Json     // { physical, magic, trueDamage }
+  previousPatch    Json     // { patch, winRate, winRateDiff, trend, gamesPlayed }
+  spells           Json     // SpellPair[]
+  runes            Json     // { mostPopular, highestWinRate }
+  skills           Json     // SkillPriority { maxOrder, progression, winRate, pickRate }
+  items            Json     // { starting, early, core, completed, buildOrder, boots, situational, trinkets }
+  matchups         Json     // { bestAgainst, worstAgainst, strongAgainst, weakAgainst }
+  similarChampions Json     // SimilarChampion[]
+  insights         Json     // ChampionInsights { general, strengths, weaknesses }
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([championId, role, tier, region, patch])
+  @@index([championId, role])
+  @@index([patch, role, tier])
+  @@map("champion_builds")
+}

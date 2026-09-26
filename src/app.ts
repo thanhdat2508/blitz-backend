@@ -16,10 +16,10 @@ export const createApp = (): Application => {
   );
 
   app.use(cookieParser());
+  app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // Root endpoint
   app.get("/", (_req: Request, res: Response) => {
     res.json({
       name: "blitz-backend API",
@@ -42,6 +42,15 @@ export const createApp = (): Application => {
           refresh: "POST /api/auth/refresh",
           logout: "POST /api/auth/logout (supports isLogoutAll, sessionId)",
           me: "GET /api/auth/me",
+          users: "GET /api/auth/users",
+        },
+        cache: {
+          set: "POST /api/cache/set",
+          get: "GET /api/cache/get/:key",
+          delete: "DELETE /api/cache/delete/:key",
+        },
+        champions: {
+          build: "GET /api/champions/:champion/build/:role?tier=EMERALD+&region=WORLD&patch=14.24",
         },
         player: {
           getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
@@ -51,20 +60,22 @@ export const createApp = (): Application => {
     });
   });
 
-  // Mount API router
   app.use("/api", apiRoutes);
 
-  // 404 handler
   app.use((_req: Request, res: Response) => {
     res.status(404).json({ error: "Route not found" });
   });
 
-  // Global Error Handler
-  app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-    console.error("Unhandled error:", err);
-    res.status(500).json({
-      error: "Internal Server Error",
-      message: process.env.NODE_ENV === "development" ? err.message : undefined,
+  app.use((err: Error & { statusCode?: number }, _req: Request, res: Response, _next: NextFunction) => {
+    const statusCode = err.statusCode || 500;
+    if (statusCode >= 500) {
+      console.error("Unhandled error:", err);
+    }
+
+    res.status(statusCode).json({
+      success: false,
+      error: err.name || "Error",
+      message: err.message,
     });
   });
 
