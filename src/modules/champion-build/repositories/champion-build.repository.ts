@@ -2,14 +2,15 @@ import prisma from "../../../config/database";
 import {
   ChampionAbilities,
   ChampionBuildPayload,
+  ChampionInsights,
+  ChampionItems,
+  ChampionMatchups,
   ChampionOverview,
+  ChampionRunes,
   DamageBreakdown,
-  ItemSet,
-  MatchupEntry,
   PreviousPatchStats,
   Role,
   RolePlayRate,
-  RuneSetup,
   SimilarChampion,
   SkillPriority,
   SpellPair,
@@ -52,10 +53,12 @@ export class ChampionBuildRepository {
         key: champion.key,
         name: champion.name,
         title: champion.title,
+        primaryClass: champion.primaryClass,
+        tags: champion.tags,
         avatarUrl: champion.avatarUrl,
         splashUrl: champion.splashUrl,
         role: record.role as Role,
-        availableRoles: [
+        availableRoles: (record.availableRoles as unknown as RolePlayRate[]) || [
           { role: record.role as Role, pickRate: record.pickRate, isPrimary: true },
         ],
         tier: record.tier as Tier,
@@ -72,33 +75,12 @@ export class ChampionBuildRepository {
       const damageBreakdown = record.damageBreakdown as unknown as DamageBreakdown;
       const previousPatch = record.previousPatch as unknown as PreviousPatchStats;
       const spells = record.spells as unknown as SpellPair[];
-      const runes = record.runes as unknown as {
-        mostPopular: RuneSetup;
-        highestWinRate: RuneSetup;
-      };
+      const runes = record.runes as unknown as ChampionRunes;
       const skills = record.skills as unknown as SkillPriority;
-      const items = record.items as unknown as {
-        starting: ItemSet[];
-        early: ItemSet[];
-        core: ItemSet[];
-        completed: ItemSet[];
-        buildOrder: number[];
-        boots: ItemSet[];
-        situational: ItemSet[];
-        trinkets: ItemSet[];
-      };
-      const matchups = record.matchups as unknown as {
-        bestAgainst: MatchupEntry[];
-        worstAgainst: MatchupEntry[];
-        strongAgainst?: MatchupEntry[];
-        weakAgainst?: MatchupEntry[];
-      };
+      const items = record.items as unknown as ChampionItems;
+      const matchups = record.matchups as unknown as ChampionMatchups;
       const similarChampions = record.similarChampions as unknown as SimilarChampion[];
-      const insights = record.insights as unknown as {
-        general: string[];
-        strengths: string[];
-        weaknesses: string[];
-      };
+      const insights = record.insights as unknown as ChampionInsights;
 
       return {
         overview,
@@ -114,7 +96,8 @@ export class ChampionBuildRepository {
         insights,
       };
     } catch (error) {
-      console.warn(`[ChampionBuildRepository] DB lookup failed for ${championKey}/${role}:`, error);
+      const msg = error instanceof Error ? error.message : String(error);
+      console.warn(`[ChampionBuildRepository] DB lookup skipped (${msg.split("\n")[0]}).`);
       return null;
     }
   }
@@ -122,6 +105,8 @@ export class ChampionBuildRepository {
   public async saveBuild(payload: ChampionBuildPayload): Promise<void> {
     try {
       const { overview } = payload;
+      const championClass = overview.primaryClass || "Fighter";
+      const championTags = overview.tags && overview.tags.length > 0 ? overview.tags : [championClass];
 
       // 1. Upsert Champion root entity
       await prisma.champion.upsert({
@@ -129,6 +114,8 @@ export class ChampionBuildRepository {
         update: {
           name: overview.name,
           title: overview.title,
+          primaryClass: championClass,
+          tags: championTags,
           avatarUrl: overview.avatarUrl,
           splashUrl: overview.splashUrl,
           abilities: payload.abilities as object,
@@ -138,8 +125,8 @@ export class ChampionBuildRepository {
           key: overview.key,
           name: overview.name,
           title: overview.title,
-          primaryClass: "Fighter",
-          tags: ["Fighter"],
+          primaryClass: championClass,
+          tags: championTags,
           partype: "Mana",
           avatarUrl: overview.avatarUrl,
           splashUrl: overview.splashUrl,
@@ -164,6 +151,7 @@ export class ChampionBuildRepository {
           pickRate: overview.pickRate,
           banRate: overview.banRate,
           gamesPlayed: overview.gamesPlayed,
+          availableRoles: overview.availableRoles as unknown as object[],
           damageBreakdown: payload.damageBreakdown as object,
           previousPatch: payload.previousPatch as object,
           spells: payload.spells as unknown as object[],
@@ -185,6 +173,7 @@ export class ChampionBuildRepository {
           pickRate: overview.pickRate,
           banRate: overview.banRate,
           gamesPlayed: overview.gamesPlayed,
+          availableRoles: overview.availableRoles as unknown as object[],
           damageBreakdown: payload.damageBreakdown as object,
           previousPatch: payload.previousPatch as object,
           spells: payload.spells as unknown as object[],
@@ -197,7 +186,8 @@ export class ChampionBuildRepository {
         },
       });
     } catch (error) {
-      console.warn(`[ChampionBuildRepository] DB save failed for ${payload.overview.name}:`, error);
+      const msg = error instanceof Error ? error.message : String(error);
+      console.warn(`[ChampionBuildRepository] DB save skipped (${msg.split("\n")[0]}).`);
     }
   }
 }

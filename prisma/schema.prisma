@@ -49,6 +49,7 @@ model ChampionBuild {
   pickRate         Float
   banRate          Float
   gamesPlayed      Int
+  availableRoles   Json?    // RolePlayRate[]
   damageBreakdown  Json     // { physical, magic, trueDamage }
   previousPatch    Json     // { patch, winRate, winRateDiff, trend, gamesPlayed }
   spells           Json     // SpellPair[]

@@ -25,6 +25,8 @@ export interface ChampionOverview {
   key: string;
   name: string;
   title: string;
+  primaryClass?: string;
+  tags?: string[];
   avatarUrl: string;
   splashUrl: string;
   role: Role;
@@ -124,6 +126,29 @@ export interface SimilarChampion {
   avatarUrl: string;
 }
 
+export interface ChampionRunes {
+  mostPopular: RuneSetup;
+  highestWinRate: RuneSetup;
+}
+
+export interface ChampionItems {
+  starting: ItemSet[];
+  early: ItemSet[];
+  core: ItemSet[];
+  completed: ItemSet[];
+  buildOrder: number[];
+  boots: ItemSet[];
+  situational: ItemSet[];
+  trinkets: ItemSet[];
+}
+
+export interface ChampionMatchups {
+  bestAgainst: MatchupEntry[];
+  worstAgainst: MatchupEntry[];
+  strongAgainst?: MatchupEntry[];
+  weakAgainst?: MatchupEntry[];
+}
+
 export interface ChampionInsights {
   general: string[];
   strengths: string[];
@@ -135,28 +160,11 @@ export interface ChampionBuildPayload {
   previousPatch: PreviousPatchStats;
   damageBreakdown: DamageBreakdown;
   spells: SpellPair[];
-  runes: {
-    mostPopular: RuneSetup;
-    highestWinRate: RuneSetup;
-  };
+  runes: ChampionRunes;
   skills: SkillPriority;
   abilities: ChampionAbilities;
-  items: {
-    starting: ItemSet[];
-    early: ItemSet[];
-    core: ItemSet[];
-    completed: ItemSet[];
-    buildOrder: number[];
-    boots: ItemSet[];
-    situational: ItemSet[];
-    trinkets: ItemSet[];
-  };
-  matchups: {
-    bestAgainst: MatchupEntry[];
-    worstAgainst: MatchupEntry[];
-    strongAgainst?: MatchupEntry[];
-    weakAgainst?: MatchupEntry[];
-  };
+  items: ChampionItems;
+  matchups: ChampionMatchups;
   similarChampions: SimilarChampion[];
   insights: ChampionInsights;
 }

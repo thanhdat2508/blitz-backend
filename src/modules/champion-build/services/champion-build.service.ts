@@ -1,7 +1,10 @@
 import redisClient from "../../../config/redis";
 import {
   ChampionBuildPayload,
+  ChampionItems,
+  ChampionMatchups,
   ChampionOverview,
+  ChampionRunes,
   ItemSet,
   MatchupEntry,
   PreviousPatchStats,
@@ -119,7 +122,8 @@ export class ChampionBuildService {
         tier,
         region,
         patch,
-        baseWinRate
+        baseWinRate,
+        riotData?.tags
       ),
       previousPatch: this.buildPreviousPatch(patch, baseWinRate),
       damageBreakdown: classPreset.damageBreakdown,
@@ -161,7 +165,8 @@ export class ChampionBuildService {
     tier: Tier,
     region: string,
     patch: string,
-    winRate: number
+    winRate: number,
+    tags?: string[]
   ): ChampionOverview {
     const tierRank: TierRank = winRate >= 52.5 ? "S+" : winRate >= 51.5 ? "S" : winRate >= 50.5 ? "A" : "B";
     const availableRoles = this.buildAvailableRoles(championClass, role);
@@ -171,6 +176,8 @@ export class ChampionBuildService {
       key,
       name,
       title,
+      primaryClass: championClass,
+      tags: tags && tags.length > 0 ? tags : [championClass],
       avatarUrl: `${DDRAGON_CDN}/img/champion/${key}.png`,
       splashUrl: `${DDRAGON_SPLASH_CDN}/${key}_0.jpg`,
       role,
@@ -268,7 +275,7 @@ export class ChampionBuildService {
   private buildRunes(
     classPreset: typeof CLASS_PRESETS[ChampionClass],
     baseWinRate: number
-  ): { mostPopular: RuneSetup; highestWinRate: RuneSetup } {
+  ): ChampionRunes {
     const mostPopular: RuneSetup = {
       ...classPreset.mostPopularRunes,
       winRate: round2(baseWinRate + 0.3),
@@ -313,16 +320,7 @@ export class ChampionBuildService {
     classPreset: typeof CLASS_PRESETS[ChampionClass],
     rolePreset: typeof ROLE_PRESETS[Role],
     baseWinRate: number
-  ): {
-    starting: ItemSet[];
-    early: ItemSet[];
-    core: ItemSet[];
-    completed: ItemSet[];
-    buildOrder: number[];
-    boots: ItemSet[];
-    situational: ItemSet[];
-    trinkets: ItemSet[];
-  } {
+  ): ChampionItems {
     const startingItemIds =
       role === "jungle" || role === "support"
         ? rolePreset.startingItems
@@ -421,12 +419,7 @@ export class ChampionBuildService {
     currentChampKey: string,
     role: Role,
     baseWinRate: number
-  ): {
-    bestAgainst: MatchupEntry[];
-    worstAgainst: MatchupEntry[];
-    strongAgainst: MatchupEntry[];
-    weakAgainst: MatchupEntry[];
-  } {
+  ): ChampionMatchups {
     const roleOpponents: Record<Role, Array<{ id: number; key: string; name: string }>> = {
       mid: [
         { id: 157, key: "Yasuo", name: "Yasuo" },

@@ -25,7 +25,16 @@ async function runTests() {
   if (quinn.overview.name !== "Quinn" || quinn.overview.id !== 133) {
     throw new Error(`Expected Quinn ID 133, got ${quinn.overview.name} (${quinn.overview.id})`);
   }
-  console.log(`✅ PASSED: Quinn identified with ID 133 and title '${quinn.overview.title}'`);
+  if (quinn.overview.primaryClass !== "Marksman") {
+    throw new Error(`Expected Quinn primaryClass 'Marksman', got ${quinn.overview.primaryClass}`);
+  }
+  if (!quinn.overview.tags || !quinn.overview.tags.includes("Marksman")) {
+    throw new Error(`Expected Quinn tags to include 'Marksman', got ${quinn.overview.tags}`);
+  }
+  if (!quinn.overview.availableRoles || quinn.overview.availableRoles.length < 3) {
+    throw new Error(`Expected Quinn availableRoles to have >= 3 roles, got ${quinn.overview.availableRoles?.length}`);
+  }
+  console.log(`✅ PASSED: Quinn identified with ID 133, title '${quinn.overview.title}', class '${quinn.overview.primaryClass}', tags [${quinn.overview.tags.join(", ")}]`);
 
   // 2.2 Damage Breakdown
   if (quinn.damageBreakdown.physical < 80) {
@@ -89,10 +98,16 @@ async function runTests() {
   if (ahri.damageBreakdown.magic < 80) {
     throw new Error(`Expected Ahri magic damage > 80%, got ${ahri.damageBreakdown.magic}%`);
   }
+  if (ahri.overview.primaryClass !== "Mage") {
+    throw new Error(`Expected Ahri primaryClass 'Mage', got ${ahri.overview.primaryClass}`);
+  }
+  if (!ahri.overview.tags?.includes("Mage")) {
+    throw new Error(`Expected Ahri tags to include 'Mage', got ${ahri.overview.tags}`);
+  }
   if (!ahri.items.completed[0].itemIds.includes(3089)) {
     throw new Error("Expected Ahri completed items to include Rabadon's Deathcap (3089)");
   }
-  console.log(`✅ PASSED: Ahri Magic Damage: ${ahri.damageBreakdown.magic}% AP, Completed AP items verified`);
+  console.log(`✅ PASSED: Ahri Magic Damage: ${ahri.damageBreakdown.magic}% AP, Class: ${ahri.overview.primaryClass}, Completed AP items verified`);
 
   // Test 4: Decimal Precision Check across all numbers
   console.log("\n[TEST 4] Precision Audit (strictly <= 2 decimals)");
