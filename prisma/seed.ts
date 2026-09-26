@@ -82,11 +82,33 @@ function calculateTierGrade(winRate: number): string {
 async function seedChampionTierStats() {
   console.log("Starting Champion Tier Stats database seed...");
 
+  // 1. Seed master roles into Role table (N-N lookup table)
+  const ROLES_DATA = [
+    { id: "top", name: "TOP", displayName: "Top" },
+    { id: "jungle", name: "JUNGLE", displayName: "Jungle" },
+    { id: "mid", name: "MID", displayName: "Mid" },
+    { id: "ad", name: "AD", displayName: "ADC" },
+    { id: "sp", name: "SP", displayName: "Support" },
+  ];
+
+  for (const r of ROLES_DATA) {
+    try {
+      await (prisma as any).role.upsert({
+        where: { id: r.id },
+        update: { displayName: r.displayName },
+        create: r,
+      });
+    } catch (roleErr) {
+      console.warn(`Role upsert warning (${r.id}):`, roleErr);
+    }
+  }
+  console.log("Master roles verified in database: [top, jungle, mid, ad, sp]");
+
   const patchVersion = DEFAULT_DDRAGON_VERSION;
   const recordsToInsert: Array<{
     championId: string;
     name: string;
-    role: string;
+    roleId: string;
     rank: string;
     tier: string;
     winRate: number;
@@ -133,7 +155,7 @@ async function seedChampionTierStats() {
         recordsToInsert.push({
           championId: champ.id,
           name: champ.name,
-          role,
+          roleId: role,
           rank,
           tier,
           winRate,

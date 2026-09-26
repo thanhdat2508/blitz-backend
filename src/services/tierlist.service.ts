@@ -184,11 +184,12 @@ export class TierListService {
     try {
       const whereClause: Record<string, string> = { rank };
       if (role !== "all") {
-        whereClause.role = role;
+        whereClause.roleId = role;
       }
 
       const dbRecords = await (this.db as any).championTierStat.findMany({
         where: whereClause,
+        include: { role: true },
         orderBy: { winRate: "desc" },
       });
 
@@ -196,7 +197,7 @@ export class TierListService {
         items = dbRecords.map((r: any) => ({
           championId: r.championId,
           name: r.name,
-          role: r.role as ChampionRole,
+          role: (r.roleId || r.role?.id) as ChampionRole,
           tier: r.tier as TierGrade,
           winRate: r.winRate,
           patchWrChange: r.patchWrChange,
@@ -207,15 +208,30 @@ export class TierListService {
         }));
         fetchedFromDb = true;
       } else {
-        // Self-Healing Auto-Seed: If database table is empty for this rank/role, populate it
+        // Self-Healing Auto-Seed: Ensure master roles exist in Role table first
+        const ROLES_DATA = [
+          { id: "top", name: "TOP", displayName: "Top" },
+          { id: "jungle", name: "JUNGLE", displayName: "Jungle" },
+          { id: "mid", name: "MID", displayName: "Mid" },
+          { id: "ad", name: "AD", displayName: "ADC" },
+          { id: "sp", name: "SP", displayName: "Support" },
+        ];
+        for (const r of ROLES_DATA) {
+          await (this.db as any).role.upsert({
+            where: { id: r.id },
+            update: { displayName: r.displayName },
+            create: r,
+          }).catch(() => {});
+        }
+
         const generated = this.generateCatalogDataset(rank, role, patchVersion);
         items = generated;
 
-        // Persist to PostgreSQL asynchronously in background
+        // Persist to PostgreSQL with roleId foreign key
         const toInsert = generated.map((item) => ({
           championId: item.championId,
           name: item.name,
-          role: item.role,
+          roleId: item.role,
           rank,
           tier: item.tier,
           winRate: item.winRate,
