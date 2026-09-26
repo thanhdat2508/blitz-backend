@@ -1,38 +1,47 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import apiRoutes from "./routes";
 
 export const createApp = (): Application => {
   const app = express();
 
   // Middleware
-  app.use(cors());
+  const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+  app.use(
+    cors({
+      origin: [frontendUrl, "http://localhost:3000", "http://localhost:5173"],
+      credentials: true,
+    })
+  );
+
+  app.use(cookieParser());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
   // Root endpoint
   app.get("/", (_req: Request, res: Response) => {
     res.json({
-      name: "group-backend API",
+      name: "blitz-backend API",
       version: "1.0.0",
-      description: "Express.js 5 + PostgreSQL + Prisma + Redis + bcrypt + crypto",
+      description: "Express.js 5 + PostgreSQL + Prisma + Redis + JWT + OAuth (Google & Riot)",
       endpoints: {
         health: "GET /api/health",
         auth: {
           register: "POST /api/auth/register",
+          verify: "POST /api/auth/verify",
+          resendOtp: "POST /api/auth/resend-otp (or /resend/otp-register)",
           login: "POST /api/auth/login",
-          users: "GET /api/auth/users",
-        },
-        cache: {
-          set: "POST /api/cache/set",
-          get: "GET /api/cache/get/:key",
-          delete: "DELETE /api/cache/delete/:key",
-        },
-        crypto: {
-          generate: "GET /api/crypto/generate",
-          hash: "POST /api/crypto/hash",
-          encrypt: "POST /api/crypto/encrypt",
-          decrypt: "POST /api/crypto/decrypt",
+          validate: "POST /api/auth/validate",
+          resetPassword: "POST /api/auth/reset-password",
+          resetPasswordVerify: "POST /api/auth/reset-password/verify",
+          resendResetOtp: "POST /api/auth/resend/otp-reset-password",
+          updatePassword: "POST /api/auth/update-password",
+          google: "GET /api/auth/google",
+          riot: "GET /api/auth/riot",
+          refresh: "POST /api/auth/refresh",
+          logout: "POST /api/auth/logout (supports isLogoutAll, sessionId)",
+          me: "GET /api/auth/me",
         },
         player: {
           getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",

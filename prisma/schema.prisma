@@ -6,13 +6,56 @@ datasource db {
   provider = "postgresql"
 }
 
+enum LoginMethod {
+  LOCAL
+  GOOGLE
+  RIOT
+}
+
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id              String       @id @default(uuid())
+  email           String?      @unique
+  name            String?
+  password        String?
+  username        String?      @unique
+  avatarUrl       String?      @map("avatar_url")
+
+  googleId        String?      @unique @map("google_id")
+  riotPuuid       String?      @unique @map("riot_puuid")
+  riotGameName    String?      @map("riot_game_name")
+  riotTagLine     String?      @map("riot_tag_line")
+
+  isEmailVerified Boolean      @default(false) @map("is_email_verified")
+  lastLoginMethod LoginMethod  @default(LOCAL) @map("last_login_method")
+
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+
+  sessions        Session[]
 
   @@map("users")
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  refreshToken String   @unique @map("refresh_token")
+  deviceId     String   @map("device_id")
+  userAgent    String   @map("user_agent")
+  ipAddress    String   @map("ip_address")
+  country      String   @default("Unknown")
+  city         String   @default("Unknown")
+  deviceType   String   @default("Unknown") @map("device_type")
+  os           String   @default("Unknown")
+  browserName  String   @default("Unknown") @map("browser_name")
+  isRevoked    Boolean  @default(false) @map("is_revoked")
+  lastUsedAt   DateTime @default(now()) @map("last_used_at")
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@unique([userId, deviceId])
+  @@map("sessions")
 }
