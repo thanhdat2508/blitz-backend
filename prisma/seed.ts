@@ -1,7 +1,10 @@
+import fs from "fs";
+import path from "path";
 import prisma from "../src/config/database";
 import { championBuildService } from "../src/modules/champion-build/services/champion-build.service";
 import { riotStaticDataService } from "../src/modules/champion-build/services/riot-static-data.service";
 import { Role } from "../src/modules/champion-build/interfaces/champion-build.interface";
+import { PrebakedChampion } from "../scripts/sync-champions";
 
 async function main() {
   console.log("🌱 [Prisma Seed] Initializing League of Legends Database Seeding...");
@@ -21,49 +24,39 @@ async function main() {
   }
   console.log(`🏷️ Standard Tags verified in database: [${standardTags.join(", ")}]`);
 
-  // 2. Fetch live Riot Champions dynamically (All 168+ champions)
-  const champions = await riotStaticDataService.getAllChampions();
-  console.log(`📦 Loaded ${champions.length} champions dynamically from Riot Data Dragon.`);
+  // 2. Load prebaked champions from JSON file (or fallback to live sync if missing)
+  const jsonPath = path.resolve(__dirname, "./data/champions.json");
+  let champions: PrebakedChampion[] = [];
 
-  // 3. Dynamically determine primary roles for each champion based on Riot tags & class archetype
-  const resolveRolesForChampion = (tags: string[], champId: string): Role[] => {
-    // Specific jungle specialists
-    const jungleChampions = new Set([
-      "LeeSin", "Viego", "Kayn", "Khazix", "Elise", "Nocturne", "JarvanIV",
-      "XinZhao", "Kindred", "Graves", "Evelynn", "Hecarim", "Nidalee", "Rengar",
-      "Shaco", "Fiddlesticks", "Udyr", "Warwick", "Zac", "Amumu", "Rammus",
-      "Sejuani", "Skarner", "Ivern", "MasterYi", "Belveth", "Briar"
-    ]);
-    if (jungleChampions.has(champId)) {
-      return ["jungle"];
-    }
+  if (fs.existsSync(jsonPath)) {
+    const raw = fs.readFileSync(jsonPath, "utf-8");
+    champions = JSON.parse(raw) as PrebakedChampion[];
+    console.log(`📦 Loaded ${champions.length} prebaked champions with deterministic UUIDs from champions.json.`);
+  } else {
+    console.log("⚠️ champions.json not found, fetching live from Riot Data Dragon...");
+    const liveChamps = await riotStaticDataService.getAllChampions();
+    champions = liveChamps.map((c) => ({
+      id: c.key,
+      riotKey: c.key,
+      key: c.id,
+      name: c.name,
+      title: c.title,
+      primaryClass: c.tags[0] || "Fighter",
+      tags: c.tags,
+      partype: c.partype,
+      avatarUrl: "",
+      splashUrl: "",
+      roles: ["mid"],
+    }));
+  }
 
-    const primaryTag = tags[0] || "Fighter";
-    switch (primaryTag) {
-      case "Marksman":
-        return ["adc"];
-      case "Mage":
-        return tags.includes("Support") ? ["support", "mid"] : ["mid"];
-      case "Assassin":
-        return tags.includes("Fighter") ? ["jungle", "mid"] : ["mid"];
-      case "Tank":
-        return tags.includes("Support") ? ["support", "top"] : ["top"];
-      case "Support":
-        return ["support"];
-      case "Fighter":
-      default:
-        return ["top"];
-    }
-  };
-
-  console.log(`⚡ Dynamically seeding builds for all ${champions.length} champions into PostgreSQL...`);
+  console.log(`⚡ Seeding champions and builds into PostgreSQL...`);
 
   let buildCount = 0;
   for (const champ of champions) {
-    const roles = resolveRolesForChampion(champ.tags, champ.id);
-    for (const role of roles) {
+    for (const role of champ.roles) {
       try {
-        await championBuildService.getChampionBuild(champ.id, role, "EMERALD+", "WORLD");
+        await championBuildService.getChampionBuild(champ.key, role as Role, "EMERALD+", "WORLD");
         buildCount++;
         process.stdout.write(".");
       } catch (err) {
@@ -83,3 +76,4 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
+

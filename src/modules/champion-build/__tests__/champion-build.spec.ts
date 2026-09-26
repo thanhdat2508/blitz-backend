@@ -22,8 +22,12 @@ async function runTests() {
   const quinn = await service.getChampionBuild("Quinn", "mid", "EMERALD+", "WORLD", "14.24");
 
   // 2.1 Overview & Identification
-  if (quinn.overview.name !== "Quinn" || quinn.overview.id !== "133") {
-    throw new Error(`Expected Quinn ID "133", got ${quinn.overview.name} (${quinn.overview.id})`);
+  if (quinn.overview.name !== "Quinn" || !quinn.overview.id) {
+    throw new Error(`Expected Quinn name Quinn and valid UUID, got ${quinn.overview.name} (${quinn.overview.id})`);
+  }
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  if (!uuidRegex.test(quinn.overview.id)) {
+    throw new Error(`Expected Quinn ID to be valid UUID v5, got ${quinn.overview.id}`);
   }
   if (quinn.overview.primaryClass !== "Marksman") {
     throw new Error(`Expected Quinn primaryClass 'Marksman', got ${quinn.overview.primaryClass}`);

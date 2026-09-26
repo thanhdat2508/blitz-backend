@@ -26,6 +26,7 @@ import {
 import { riotStaticDataService, RiotStaticDataService } from "./riot-static-data.service";
 import { championBuildRepository, ChampionBuildRepository } from "../repositories/champion-build.repository";
 import { randomInt, randomRate, round2 } from "../../../utils/math";
+import { generateChampionUUID } from "../../../utils/crypto";
 
 export class ChampionBuildService {
   private static readonly CACHE_TTL_SECONDS = 3600; // 1 hour
@@ -99,7 +100,7 @@ export class ChampionBuildService {
     // 1. Fetch live Riot Data Dragon metadata
     const riotData = await this.staticDataService.getChampion(championKey, patch);
     const resolvedKey = riotData?.id || championKey.charAt(0).toUpperCase() + championKey.slice(1);
-    const resolvedId = riotData?.key || "999";
+    const resolvedId = riotData ? generateChampionUUID(riotData.key) : generateChampionUUID(resolvedKey);
     const resolvedName = riotData?.name || resolvedKey;
     const resolvedTitle = riotData?.title || "the Legend";
     const primaryTag = this.resolvePrimaryClass(riotData?.tags);

@@ -21,6 +21,27 @@ export const generateUUID = (): string => {
   return crypto.randomUUID();
 };
 
+/**
+ * Generate a deterministic UUID v5 from a namespace and key
+ */
+export const generateDeterministicUUID = (namespace: string, key: string): string => {
+  const hash = crypto.createHash("sha1").update(`${namespace}:${key}`).digest("hex");
+  return [
+    hash.substring(0, 8),
+    hash.substring(8, 12),
+    `5${hash.substring(13, 16)}`,
+    `a${hash.substring(17, 20)}`,
+    hash.substring(20, 32),
+  ].join("-");
+};
+
+/**
+ * Generate a deterministic RFC 4122 UUID v5 for a League of Legends champion
+ */
+export const generateChampionUUID = (keyOrId: string): string => {
+  return generateDeterministicUUID("lol:champion", keyOrId);
+};
+
 const ALGORITHM = "aes-256-cbc";
 
 /**

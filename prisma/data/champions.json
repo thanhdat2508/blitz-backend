@@ -1,0 +1,3027 @@
+[
+  {
+    "id": "8fbc64ae-385d-5fcd-a919-ebe074088e94",
+    "riotKey": "266",
+    "key": "Aatrox",
+    "name": "Aatrox",
+    "title": "the Darkin Blade",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Blood Well",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Aatrox.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "eb43e95a-d0a4-5b12-a84d-99513e527eac",
+    "riotKey": "103",
+    "key": "Ahri",
+    "name": "Ahri",
+    "title": "the Nine-Tailed Fox",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ahri.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "f8470a9c-b7ca-577f-a200-375e1386bc1d",
+    "riotKey": "84",
+    "key": "Akali",
+    "name": "Akali",
+    "title": "the Rogue Assassin",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin"
+    ],
+    "partype": "Energy",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Akali.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "267dcaee-839d-51bf-ac7d-255637b59410",
+    "riotKey": "166",
+    "key": "Akshan",
+    "name": "Akshan",
+    "title": "the Rogue Sentinel",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Akshan.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akshan_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "b23d1333-b4fc-5d67-aafe-d92a5d6a3a54",
+    "riotKey": "12",
+    "key": "Alistar",
+    "name": "Alistar",
+    "title": "the Minotaur",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Alistar.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "051fde9a-e55f-5c89-a5b2-1c8f01fb1c5d",
+    "riotKey": "799",
+    "key": "Ambessa",
+    "name": "Ambessa",
+    "title": "Matriarch of War",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Energy",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ambessa.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ambessa_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "7d9c0187-d85e-58d3-a3ae-ca18faf2fca7",
+    "riotKey": "32",
+    "key": "Amumu",
+    "name": "Amumu",
+    "title": "the Sad Mummy",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Amumu.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "e8725c34-df73-564c-a8c9-1515fd19c692",
+    "riotKey": "34",
+    "key": "Anivia",
+    "name": "Anivia",
+    "title": "the Cryophoenix",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Anivia.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "f9c1ebcb-2577-5c77-a340-5169db302446",
+    "riotKey": "1",
+    "key": "Annie",
+    "name": "Annie",
+    "title": "the Dark Child",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Annie.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "8a8c8d7a-53fa-5800-ab89-19367d95e170",
+    "riotKey": "523",
+    "key": "Aphelios",
+    "name": "Aphelios",
+    "title": "the Weapon of the Faithful",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Aphelios.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "1f292f62-5a41-52bc-af93-c349b2e79550",
+    "riotKey": "22",
+    "key": "Ashe",
+    "name": "Ashe",
+    "title": "the Frost Archer",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ashe.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "08bc408d-001f-5949-a8d9-4ffe2cd46f14",
+    "riotKey": "136",
+    "key": "AurelionSol",
+    "name": "Aurelion Sol",
+    "title": "The Star Forger",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/AurelionSol.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "5aaab1ee-4452-536e-ad73-242e848f093f",
+    "riotKey": "893",
+    "key": "Aurora",
+    "name": "Aurora",
+    "title": "the Witch Between Worlds",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Aurora.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aurora_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "008557ec-b2a5-5c99-a5b8-9d297aab1943",
+    "riotKey": "268",
+    "key": "Azir",
+    "name": "Azir",
+    "title": "the Emperor of the Sands",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Azir.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Azir_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "2c638360-3acd-54d9-a9a0-f6ac56034d81",
+    "riotKey": "432",
+    "key": "Bard",
+    "name": "Bard",
+    "title": "the Wandering Caretaker",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Bard.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Bard_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "b3a4be18-6957-50e7-ac83-30860f68df7f",
+    "riotKey": "200",
+    "key": "Belveth",
+    "name": "Bel'Veth",
+    "title": "the Empress of the Void",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Belveth.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Belveth_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "baf0e2b7-30ee-57da-aeb0-ff9c6cf48bf4",
+    "riotKey": "53",
+    "key": "Blitzcrank",
+    "name": "Blitzcrank",
+    "title": "the Great Steam Golem",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Blitzcrank.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "636e4162-ac32-5305-a337-0a5621ce69e2",
+    "riotKey": "63",
+    "key": "Brand",
+    "name": "Brand",
+    "title": "the Burning Vengeance",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Brand.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "6487da83-1cdb-5ac8-a157-0dd9c99edaa0",
+    "riotKey": "201",
+    "key": "Braum",
+    "name": "Braum",
+    "title": "the Heart of the Freljord",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Braum.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "5a8668de-2e4c-5c9a-a0cd-6a214b30dfd3",
+    "riotKey": "233",
+    "key": "Briar",
+    "name": "Briar",
+    "title": "the Restrained Hunger",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Fury",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Briar.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "0d906c40-2920-51cd-af77-839391a1473c",
+    "riotKey": "51",
+    "key": "Caitlyn",
+    "name": "Caitlyn",
+    "title": "the Sheriff of Piltover",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Caitlyn.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "7a4b16b2-b993-562d-a050-87be38190a8b",
+    "riotKey": "164",
+    "key": "Camille",
+    "name": "Camille",
+    "title": "the Steel Shadow",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Camille.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "cde8c043-164b-5371-a509-d856efaa04d3",
+    "riotKey": "69",
+    "key": "Cassiopeia",
+    "name": "Cassiopeia",
+    "title": "the Serpent's Embrace",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Cassiopeia.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "7dfdb64d-2ca1-5ad9-a7c5-87d039b8d9ec",
+    "riotKey": "31",
+    "key": "Chogath",
+    "name": "Cho'Gath",
+    "title": "the Terror of the Void",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Chogath.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "886c1902-afae-561f-a732-54a0185cf565",
+    "riotKey": "42",
+    "key": "Corki",
+    "name": "Corki",
+    "title": "the Daring Bombardier",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Corki.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Corki_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "669d56a2-59cd-5ff5-a9cc-f1f5dbd03505",
+    "riotKey": "122",
+    "key": "Darius",
+    "name": "Darius",
+    "title": "the Hand of Noxus",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Darius.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "0015357f-22c0-5da3-a2a2-d79a42275e6e",
+    "riotKey": "131",
+    "key": "Diana",
+    "name": "Diana",
+    "title": "Scorn of the Moon",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Diana.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "9c01d31e-9011-5844-a6f5-27bb22126dea",
+    "riotKey": "36",
+    "key": "DrMundo",
+    "name": "Dr. Mundo",
+    "title": "the Madman of Zaun",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "partype": "None",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/DrMundo.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "b723f7c7-fb87-5851-add0-4ab4b591b5c9",
+    "riotKey": "119",
+    "key": "Draven",
+    "name": "Draven",
+    "title": "the Glorious Executioner",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Draven.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "9e216046-e9b2-56af-a685-11f98adf8a90",
+    "riotKey": "245",
+    "key": "Ekko",
+    "name": "Ekko",
+    "title": "the Boy Who Shattered Time",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ekko.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "4ad507ee-2dd3-5e92-aa3e-8c293350b126",
+    "riotKey": "60",
+    "key": "Elise",
+    "name": "Elise",
+    "title": "the Spider Queen",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Elise.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Elise_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "000c5334-e2fd-5cd5-a551-37fa64d814a6",
+    "riotKey": "28",
+    "key": "Evelynn",
+    "name": "Evelynn",
+    "title": "Agony's Embrace",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Evelynn.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "52938011-ae49-5561-a791-d7da3175d474",
+    "riotKey": "81",
+    "key": "Ezreal",
+    "name": "Ezreal",
+    "title": "the Prodigal Explorer",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ezreal.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "2f6d4317-89ea-5dba-ada4-fb95d159616b",
+    "riotKey": "9",
+    "key": "Fiddlesticks",
+    "name": "Fiddlesticks",
+    "title": "the Ancient Fear",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Fiddlesticks.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiddlesticks_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "5b8e4087-2917-5373-a722-8ee3c67902a2",
+    "riotKey": "114",
+    "key": "Fiora",
+    "name": "Fiora",
+    "title": "the Grand Duelist",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Fiora.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "e5ddcb57-19b4-547d-a304-b1f50ee1404f",
+    "riotKey": "105",
+    "key": "Fizz",
+    "name": "Fizz",
+    "title": "the Tidal Trickster",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Fizz.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fizz_0.jpg",
+    "roles": [
+      "mid",
+      "jungle"
+    ]
+  },
+  {
+    "id": "592558d2-a4e0-5a78-aa3d-14f4388b9829",
+    "riotKey": "3",
+    "key": "Galio",
+    "name": "Galio",
+    "title": "the Colossus",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Galio.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Galio_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "6a349bd5-9ff2-5839-a504-8f1a5c9da4fb",
+    "riotKey": "41",
+    "key": "Gangplank",
+    "name": "Gangplank",
+    "title": "the Saltwater Scourge",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gangplank.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gangplank_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "cb88d251-0d32-5f6a-a761-fa9f1f32ad45",
+    "riotKey": "86",
+    "key": "Garen",
+    "name": "Garen",
+    "title": "The Might of Demacia",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "None",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Garen.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "15e5d887-d030-5a83-a68c-9db0ebd460bc",
+    "riotKey": "150",
+    "key": "Gnar",
+    "name": "Gnar",
+    "title": "the Missing Link",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Rage",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gnar.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gnar_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "72e1aa05-e943-50c7-ab39-55cfe7e92364",
+    "riotKey": "79",
+    "key": "Gragas",
+    "name": "Gragas",
+    "title": "the Rabble Rouser",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gragas.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "4b62dd7d-f203-534e-a31d-43a1637661cd",
+    "riotKey": "104",
+    "key": "Graves",
+    "name": "Graves",
+    "title": "the Outlaw",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Graves.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "330bf5c2-0215-5983-a31c-4a5827f48fc8",
+    "riotKey": "887",
+    "key": "Gwen",
+    "name": "Gwen",
+    "title": "The Hallowed Seamstress",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gwen.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "f090a563-595c-51aa-a462-dd6fdf21885e",
+    "riotKey": "120",
+    "key": "Hecarim",
+    "name": "Hecarim",
+    "title": "the Shadow of War",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Hecarim.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "0cceb2b1-4085-5b91-af6b-49e566cabbe8",
+    "riotKey": "74",
+    "key": "Heimerdinger",
+    "name": "Heimerdinger",
+    "title": "the Revered Inventor",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Heimerdinger.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "92f29465-49dd-5039-a8cf-8e4c6256ee03",
+    "riotKey": "910",
+    "key": "Hwei",
+    "name": "Hwei",
+    "title": "the Visionary",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Hwei.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hwei_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "0706d0e3-5105-5867-a900-c67dd968225e",
+    "riotKey": "420",
+    "key": "Illaoi",
+    "name": "Illaoi",
+    "title": "the Kraken Priestess",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Illaoi.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Illaoi_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "65bc35a4-a0c1-562a-a3ff-385196a4f273",
+    "riotKey": "39",
+    "key": "Irelia",
+    "name": "Irelia",
+    "title": "the Blade Dancer",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Irelia.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "73360252-4728-5acd-a031-35bf3a2fbb6a",
+    "riotKey": "427",
+    "key": "Ivern",
+    "name": "Ivern",
+    "title": "the Green Father",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ivern.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "ab5695b8-144b-51c1-a615-74d490d01f98",
+    "riotKey": "40",
+    "key": "Janna",
+    "name": "Janna",
+    "title": "the Storm's Fury",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Janna.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "25122db9-0fdf-53fb-acd9-b41b2c565349",
+    "riotKey": "59",
+    "key": "JarvanIV",
+    "name": "Jarvan IV",
+    "title": "the Exemplar of Demacia",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/JarvanIV.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "c50803d4-4528-5cdf-a99b-28d3f6c3b2ee",
+    "riotKey": "24",
+    "key": "Jax",
+    "name": "Jax",
+    "title": "Grandmaster at Arms",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jax.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "c456cb87-5d4d-54c0-ac51-75550a8b98ca",
+    "riotKey": "126",
+    "key": "Jayce",
+    "name": "Jayce",
+    "title": "the Defender of Tomorrow",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jayce.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "a4795329-d678-58e9-a7e1-0bb220874ed1",
+    "riotKey": "202",
+    "key": "Jhin",
+    "name": "Jhin",
+    "title": "the Virtuoso",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jhin.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "e48376dc-e66c-5a9f-ac90-16f47ccf6d61",
+    "riotKey": "222",
+    "key": "Jinx",
+    "name": "Jinx",
+    "title": "the Loose Cannon",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jinx.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "1841c72e-78f7-5865-a925-6f171198e0fa",
+    "riotKey": "897",
+    "key": "KSante",
+    "name": "K'Sante",
+    "title": "the Pride of Nazumah",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/KSante.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KSante_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "f0c04d66-729f-58bb-a5cb-e7e0a9074487",
+    "riotKey": "145",
+    "key": "Kaisa",
+    "name": "Kai'Sa",
+    "title": "Daughter of the Void",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kaisa.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "7ba33038-a668-5487-a9ae-34edd6877cbb",
+    "riotKey": "429",
+    "key": "Kalista",
+    "name": "Kalista",
+    "title": "the Spear of Vengeance",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kalista.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "99dda7d6-77f0-57d4-a259-7456cdbaf468",
+    "riotKey": "43",
+    "key": "Karma",
+    "name": "Karma",
+    "title": "the Enlightened One",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Karma.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "38188aeb-d24d-59c5-a9d1-d0ca97d7ad8d",
+    "riotKey": "30",
+    "key": "Karthus",
+    "name": "Karthus",
+    "title": "the Deathsinger",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Karthus.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "fa802add-6589-5c47-adcb-5e6941c4add2",
+    "riotKey": "38",
+    "key": "Kassadin",
+    "name": "Kassadin",
+    "title": "the Void Walker",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kassadin.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "b295d9b9-c4ea-5c2b-ae03-b1afcbf72818",
+    "riotKey": "55",
+    "key": "Katarina",
+    "name": "Katarina",
+    "title": "the Sinister Blade",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "None",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Katarina.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "ae4cc93e-4b6f-59c7-aba4-570b6c206083",
+    "riotKey": "10",
+    "key": "Kayle",
+    "name": "Kayle",
+    "title": "the Righteous",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kayle.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "2b690f82-6384-577d-a4c8-57ff2ea2376e",
+    "riotKey": "141",
+    "key": "Kayn",
+    "name": "Kayn",
+    "title": "the Shadow Reaper",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kayn.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayn_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "2e3d3323-bfb3-550b-a485-bf49aea1f920",
+    "riotKey": "85",
+    "key": "Kennen",
+    "name": "Kennen",
+    "title": "the Heart of the Tempest",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Energy",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kennen.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "918e6d33-dcd9-5929-a63c-61f67587e5dc",
+    "riotKey": "121",
+    "key": "Khazix",
+    "name": "Kha'Zix",
+    "title": "the Voidreaver",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Khazix.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "26985286-2238-5d49-abed-ec04104e63c0",
+    "riotKey": "203",
+    "key": "Kindred",
+    "name": "Kindred",
+    "title": "The Eternal Hunters",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kindred.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "194964dd-d7a8-58ca-a71f-d661bfde95e6",
+    "riotKey": "240",
+    "key": "Kled",
+    "name": "Kled",
+    "title": "the Cantankerous Cavalier",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Courage",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kled.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "a18d3e5e-91c4-563f-a272-d09974c43d60",
+    "riotKey": "96",
+    "key": "KogMaw",
+    "name": "Kog'Maw",
+    "title": "the Mouth of the Abyss",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/KogMaw.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "d83aedd6-7300-5257-ab22-d2fc37f77b1b",
+    "riotKey": "7",
+    "key": "Leblanc",
+    "name": "LeBlanc",
+    "title": "the Deceiver",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Leblanc.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "84262e4b-8b3c-5ccf-a4ca-6386b079118c",
+    "riotKey": "64",
+    "key": "LeeSin",
+    "name": "Lee Sin",
+    "title": "the Blind Monk",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Energy",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/LeeSin.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "c6fa1dac-fbf9-565f-a007-ceb5db0fa42c",
+    "riotKey": "89",
+    "key": "Leona",
+    "name": "Leona",
+    "title": "the Radiant Dawn",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Leona.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "39b3c504-797a-5656-a41f-0245bd63f1b4",
+    "riotKey": "876",
+    "key": "Lillia",
+    "name": "Lillia",
+    "title": "the Bashful Bloom",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lillia.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "86220633-ec75-5110-a027-628fe4b629f8",
+    "riotKey": "127",
+    "key": "Lissandra",
+    "name": "Lissandra",
+    "title": "the Ice Witch",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lissandra.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "ad9cbc6e-6ec8-541a-a429-aa35076daf4e",
+    "riotKey": "236",
+    "key": "Lucian",
+    "name": "Lucian",
+    "title": "the Purifier",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lucian.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "0670bc3b-3b7d-56ec-aa33-4791232849e8",
+    "riotKey": "117",
+    "key": "Lulu",
+    "name": "Lulu",
+    "title": "the Fae Sorceress",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lulu.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "9c60a682-d2b6-5e62-a226-37d1c45889ef",
+    "riotKey": "99",
+    "key": "Lux",
+    "name": "Lux",
+    "title": "the Lady of Luminosity",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lux.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "f81cc2e1-860d-5632-a762-0018fe943173",
+    "riotKey": "54",
+    "key": "Malphite",
+    "name": "Malphite",
+    "title": "Shard of the Monolith",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Malphite.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "d9520530-1054-5d2d-a78f-fe9372a7e7e7",
+    "riotKey": "90",
+    "key": "Malzahar",
+    "name": "Malzahar",
+    "title": "the Prophet of the Void",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Malzahar.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "ed4b22a1-1623-5cd7-a037-8ef5a1d11435",
+    "riotKey": "57",
+    "key": "Maokai",
+    "name": "Maokai",
+    "title": "the Twisted Treant",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Maokai.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "61acdca5-9203-5fda-a9c5-78e02c5c00d7",
+    "riotKey": "11",
+    "key": "MasterYi",
+    "name": "Master Yi",
+    "title": "the Wuju Bladesman",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/MasterYi.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "1aafb770-b3b7-5da8-a006-ef8774394f80",
+    "riotKey": "902",
+    "key": "Milio",
+    "name": "Milio",
+    "title": "The Gentle Flame",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Milio.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Milio_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "db0329fe-02fb-5b5e-aec2-593e2617c6d7",
+    "riotKey": "21",
+    "key": "MissFortune",
+    "name": "Miss Fortune",
+    "title": "the Bounty Hunter",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/MissFortune.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "60b7c57e-5c30-500e-a8ff-da7b86f68b67",
+    "riotKey": "82",
+    "key": "Mordekaiser",
+    "name": "Mordekaiser",
+    "title": "the Iron Revenant",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "partype": "Shield",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Mordekaiser.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "b63dfe91-4f31-5c08-a513-a80db8d61f8d",
+    "riotKey": "25",
+    "key": "Morgana",
+    "name": "Morgana",
+    "title": "the Fallen",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Morgana.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Morgana_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "38cab093-873e-5e6b-a639-c540d56bb853",
+    "riotKey": "950",
+    "key": "Naafiri",
+    "name": "Naafiri",
+    "title": "the Hound of a Hundred Bites",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Naafiri.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Naafiri_0.jpg",
+    "roles": [
+      "mid",
+      "jungle"
+    ]
+  },
+  {
+    "id": "6e552b05-6774-50a6-a6df-2c01efff15f9",
+    "riotKey": "267",
+    "key": "Nami",
+    "name": "Nami",
+    "title": "the Tidecaller",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nami.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "c12ec267-70f1-5f84-a63c-2b5f1f55e516",
+    "riotKey": "75",
+    "key": "Nasus",
+    "name": "Nasus",
+    "title": "the Curator of the Sands",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nasus.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "5234aa56-5a02-5b24-a494-c6d536312be7",
+    "riotKey": "111",
+    "key": "Nautilus",
+    "name": "Nautilus",
+    "title": "the Titan of the Depths",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nautilus.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "7548b1bd-3d33-50c3-a1ab-8f1d201447da",
+    "riotKey": "518",
+    "key": "Neeko",
+    "name": "Neeko",
+    "title": "the Curious Chameleon",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Neeko.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "aa5f8b9c-2e86-5e8e-acc2-a351b6ce5e59",
+    "riotKey": "76",
+    "key": "Nidalee",
+    "name": "Nidalee",
+    "title": "the Bestial Huntress",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nidalee.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "d2c83cf4-b125-5d6c-abd5-2f355ced5d9c",
+    "riotKey": "895",
+    "key": "Nilah",
+    "name": "Nilah",
+    "title": "the Joy Unbound",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nilah.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nilah_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "6bf44f69-633d-5084-a312-4066cf2bbd46",
+    "riotKey": "56",
+    "key": "Nocturne",
+    "name": "Nocturne",
+    "title": "the Eternal Nightmare",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nocturne.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "9e072901-e79c-591b-aca8-44d8cf82afc0",
+    "riotKey": "20",
+    "key": "Nunu",
+    "name": "Nunu & Willump",
+    "title": "the Boy and His Yeti",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nunu.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "3571110c-f0bb-5ef9-aca8-7cec7f99afc2",
+    "riotKey": "2",
+    "key": "Olaf",
+    "name": "Olaf",
+    "title": "the Berserker",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Olaf.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "c431033e-3aa2-54d6-ae1f-22e17f5a32a3",
+    "riotKey": "61",
+    "key": "Orianna",
+    "name": "Orianna",
+    "title": "the Lady of Clockwork",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Orianna.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "3c5dea03-fd80-50f2-a4aa-532d7f7f316c",
+    "riotKey": "516",
+    "key": "Ornn",
+    "name": "Ornn",
+    "title": "The Fire below the Mountain",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ornn.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "69195f42-d033-51e6-ac08-fcbbef4d6957",
+    "riotKey": "80",
+    "key": "Pantheon",
+    "name": "Pantheon",
+    "title": "the Unbreakable Spear",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Pantheon.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "4edaa067-19cf-59a7-ae27-d8fcc2f544f4",
+    "riotKey": "78",
+    "key": "Poppy",
+    "name": "Poppy",
+    "title": "Keeper of the Hammer",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Poppy.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "b69c54eb-d39e-50db-aa6a-80b00bd14014",
+    "riotKey": "555",
+    "key": "Pyke",
+    "name": "Pyke",
+    "title": "the Bloodharbor Ripper",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Pyke.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "4ac3dae3-2ee9-5e0e-a119-b1159eee3858",
+    "riotKey": "246",
+    "key": "Qiyana",
+    "name": "Qiyana",
+    "title": "Empress of the Elements",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Qiyana.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "bc5f82b1-3b26-5ea4-a814-8c990b53ec18",
+    "riotKey": "133",
+    "key": "Quinn",
+    "name": "Quinn",
+    "title": "Demacia's Wings",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Quinn.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "b0f79ae0-e51a-5b03-adb7-a6bdd37144ad",
+    "riotKey": "497",
+    "key": "Rakan",
+    "name": "Rakan",
+    "title": "The Charmer",
+    "primaryClass": "Support",
+    "tags": [
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rakan.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "ff17872e-bb31-50ae-ad32-8359775ec520",
+    "riotKey": "33",
+    "key": "Rammus",
+    "name": "Rammus",
+    "title": "the Armordillo",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rammus.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "e5eb6e3c-bbca-528b-a696-36f98625fcf7",
+    "riotKey": "421",
+    "key": "RekSai",
+    "name": "Rek'Sai",
+    "title": "the Void Burrower",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Rage",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/RekSai.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "13b05445-7219-554c-a382-063b8ccfda89",
+    "riotKey": "526",
+    "key": "Rell",
+    "name": "Rell",
+    "title": "the Iron Maiden",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rell.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "da6c8506-8c9a-55fc-a4f3-ca059585e201",
+    "riotKey": "888",
+    "key": "Renata",
+    "name": "Renata Glasc",
+    "title": "the Chem-Baroness",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Renata.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renata_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "48dead82-b004-5d3d-ac8e-6faeeb278bfd",
+    "riotKey": "58",
+    "key": "Renekton",
+    "name": "Renekton",
+    "title": "the Butcher of the Sands",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Fury",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Renekton.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "159987aa-d436-58ec-ac17-e1d95385c3ab",
+    "riotKey": "107",
+    "key": "Rengar",
+    "name": "Rengar",
+    "title": "the Pridestalker",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "partype": "Ferocity",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rengar.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "e0aa006f-f509-5e5e-a1dd-0cb6aae2c513",
+    "riotKey": "92",
+    "key": "Riven",
+    "name": "Riven",
+    "title": "the Exile",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "None",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Riven.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "e8de70f8-187a-5480-a5fc-4977b7034648",
+    "riotKey": "68",
+    "key": "Rumble",
+    "name": "Rumble",
+    "title": "the Mechanized Menace",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "partype": "Heat",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rumble.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "dfdb9a0f-f0c9-57ee-a0f4-887ac5cc418b",
+    "riotKey": "13",
+    "key": "Ryze",
+    "name": "Ryze",
+    "title": "the Rune Mage",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ryze.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "aaf89f53-37be-564e-a57e-88eac0d3e200",
+    "riotKey": "360",
+    "key": "Samira",
+    "name": "Samira",
+    "title": "the Desert Rose",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Samira.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "881388ca-24e0-5cb5-a8ac-3acb00109014",
+    "riotKey": "113",
+    "key": "Sejuani",
+    "name": "Sejuani",
+    "title": "Fury of the North",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sejuani.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "096cbef2-2a00-5429-a540-b0829ed6c436",
+    "riotKey": "235",
+    "key": "Senna",
+    "name": "Senna",
+    "title": "the Redeemer",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Senna.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "cae5835b-7ff0-51f4-a96e-70fb100474c4",
+    "riotKey": "147",
+    "key": "Seraphine",
+    "name": "Seraphine",
+    "title": "the Starry-Eyed Songstress",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Seraphine.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "83797cdf-4112-5e3a-a5ad-aeec0fe130ed",
+    "riotKey": "875",
+    "key": "Sett",
+    "name": "Sett",
+    "title": "the Boss",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Grit",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sett.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "0609353f-68a3-5c38-a0b2-d3c7ee2dcaea",
+    "riotKey": "35",
+    "key": "Shaco",
+    "name": "Shaco",
+    "title": "the Demon Jester",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Shaco.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "60591811-5b9a-557a-ac48-c97a4941c517",
+    "riotKey": "98",
+    "key": "Shen",
+    "name": "Shen",
+    "title": "the Eye of Twilight",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank"
+    ],
+    "partype": "Energy",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Shen.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shen_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "ca9a9db1-4c4a-508c-a0ec-9d19c7af009d",
+    "riotKey": "102",
+    "key": "Shyvana",
+    "name": "Shyvana",
+    "title": "the Half-Dragon",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "partype": "Fury",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Shyvana.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "a8f2026e-8c39-5a49-ac95-b51a45d40100",
+    "riotKey": "27",
+    "key": "Singed",
+    "name": "Singed",
+    "title": "the Mad Chemist",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Singed.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Singed_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "a0a6a0be-e25e-57f9-a378-da5eed3ce969",
+    "riotKey": "14",
+    "key": "Sion",
+    "name": "Sion",
+    "title": "The Undead Juggernaut",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sion.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "5535beae-b68c-5795-a559-f2e9bad2494b",
+    "riotKey": "15",
+    "key": "Sivir",
+    "name": "Sivir",
+    "title": "the Battle Mistress",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sivir.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "324abd3e-9721-58ec-a2ee-58ac4dcd6578",
+    "riotKey": "72",
+    "key": "Skarner",
+    "name": "Skarner",
+    "title": "the Primordial Sovereign",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Skarner.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "5555aaf1-008c-5b29-a90f-9fddd5f16dfc",
+    "riotKey": "901",
+    "key": "Smolder",
+    "name": "Smolder",
+    "title": "the Fiery Fledgling",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Smolder.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Smolder_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "adf8c8bc-c367-55b4-adfc-7d2e82bd4ff4",
+    "riotKey": "37",
+    "key": "Sona",
+    "name": "Sona",
+    "title": "Maven of the Strings",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sona.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "3c9436b1-0516-5867-ae3c-9f0e8fc613b4",
+    "riotKey": "16",
+    "key": "Soraka",
+    "name": "Soraka",
+    "title": "the Starchild",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Soraka.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "2925bd7a-32a9-54fc-afc8-969692f281e6",
+    "riotKey": "50",
+    "key": "Swain",
+    "name": "Swain",
+    "title": "the Noxian Grand General",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Swain.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Swain_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "16f0c6a7-4f42-5864-ac7d-89aa1a6d7b9b",
+    "riotKey": "517",
+    "key": "Sylas",
+    "name": "Sylas",
+    "title": "the Unshackled",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sylas.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "3edef064-1333-51ce-aba1-deb9d4a467b1",
+    "riotKey": "134",
+    "key": "Syndra",
+    "name": "Syndra",
+    "title": "the Dark Sovereign",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Syndra.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "570c9b38-21c1-5e73-aafb-d6f8a766d460",
+    "riotKey": "223",
+    "key": "TahmKench",
+    "name": "Tahm Kench",
+    "title": "The River King",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/TahmKench.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TahmKench_0.jpg",
+    "roles": [
+      "top",
+      "support"
+    ]
+  },
+  {
+    "id": "b46bc001-d790-52f4-a41a-2f97a965d2da",
+    "riotKey": "163",
+    "key": "Taliyah",
+    "name": "Taliyah",
+    "title": "the Stoneweaver",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Taliyah.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "237f888b-f67e-5260-a7ed-0a189e6f11ff",
+    "riotKey": "91",
+    "key": "Talon",
+    "name": "Talon",
+    "title": "the Blade's Shadow",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Talon.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Talon_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "e5dbfbe4-d6ae-552f-af93-4e230a0b03fb",
+    "riotKey": "44",
+    "key": "Taric",
+    "name": "Taric",
+    "title": "the Shield of Valoran",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Taric.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "78690e18-fba3-5ba4-a3d4-c63b2bea21f3",
+    "riotKey": "17",
+    "key": "Teemo",
+    "name": "Teemo",
+    "title": "the Swift Scout",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Teemo.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "aec3fee4-7156-5928-a9f2-0a1ddeec6b69",
+    "riotKey": "412",
+    "key": "Thresh",
+    "name": "Thresh",
+    "title": "the Chain Warden",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Thresh.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "837fc15c-b733-5b09-ab3e-e9143b5b03f6",
+    "riotKey": "18",
+    "key": "Tristana",
+    "name": "Tristana",
+    "title": "the Yordle Gunner",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Tristana.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "82fa0b93-2f26-5859-a7d8-4f9002725075",
+    "riotKey": "48",
+    "key": "Trundle",
+    "name": "Trundle",
+    "title": "the Troll King",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Trundle.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Trundle_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "b0ddabd6-9b52-5ec4-a970-9930705fd4fa",
+    "riotKey": "23",
+    "key": "Tryndamere",
+    "name": "Tryndamere",
+    "title": "the Barbarian King",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Fury",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Tryndamere.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "79bfaf96-0d98-5e8b-ae30-9c2781046a02",
+    "riotKey": "4",
+    "key": "TwistedFate",
+    "name": "Twisted Fate",
+    "title": "the Card Master",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/TwistedFate.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "03330ad0-5fc8-5e5d-a798-9b650eb799c0",
+    "riotKey": "29",
+    "key": "Twitch",
+    "name": "Twitch",
+    "title": "the Plague Rat",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Twitch.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "03f94258-e64c-5966-a1a4-1d87f338016d",
+    "riotKey": "77",
+    "key": "Udyr",
+    "name": "Udyr",
+    "title": "the Spirit Walker",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Udyr.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Udyr_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "a433f50b-5276-53db-a018-83aa1068f1f7",
+    "riotKey": "6",
+    "key": "Urgot",
+    "name": "Urgot",
+    "title": "the Dreadnought",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Urgot.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Urgot_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "6f1a991b-5b74-57eb-ad3e-00652f90fbdc",
+    "riotKey": "110",
+    "key": "Varus",
+    "name": "Varus",
+    "title": "the Arrow of Retribution",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Varus.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "c9e99c9b-0360-5c47-acb7-67dd3d5bced4",
+    "riotKey": "67",
+    "key": "Vayne",
+    "name": "Vayne",
+    "title": "the Night Hunter",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vayne.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "b9117624-1692-5ffa-a4f6-cb6fb5d5482c",
+    "riotKey": "45",
+    "key": "Veigar",
+    "name": "Veigar",
+    "title": "the Tiny Master of Evil",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Veigar.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "b59dc0c7-2549-52f6-a731-213baab64ed8",
+    "riotKey": "161",
+    "key": "Velkoz",
+    "name": "Vel'Koz",
+    "title": "the Eye of the Void",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Velkoz.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Velkoz_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "4bdeaace-dd4a-5f9c-a98d-cc761a65b4c0",
+    "riotKey": "711",
+    "key": "Vex",
+    "name": "Vex",
+    "title": "the Gloomist",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vex.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vex_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "0ed72f37-a85e-57ee-adaf-0e42f2f3e8ad",
+    "riotKey": "254",
+    "key": "Vi",
+    "name": "Vi",
+    "title": "the Piltover Enforcer",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vi.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "2a3fa482-dd3c-5898-a242-799d9b2bcc57",
+    "riotKey": "234",
+    "key": "Viego",
+    "name": "Viego",
+    "title": "The Ruined King",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "None",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Viego.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viego_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "7fab56cc-8114-5e18-ad03-e3ccb9766ee6",
+    "riotKey": "112",
+    "key": "Viktor",
+    "name": "Viktor",
+    "title": "the Herald of the Arcane",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Viktor.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viktor_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "dd3abd8c-a438-5c05-a180-07ea91797611",
+    "riotKey": "8",
+    "key": "Vladimir",
+    "name": "Vladimir",
+    "title": "the Crimson Reaper",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Fighter"
+    ],
+    "partype": "Crimson Rush",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vladimir.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vladimir_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "ed88b498-c640-5134-a1bb-966059339471",
+    "riotKey": "106",
+    "key": "Volibear",
+    "name": "Volibear",
+    "title": "the Relentless Storm",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Volibear.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "798e6fa9-bf15-5e0c-a3c2-63c2a149faf8",
+    "riotKey": "19",
+    "key": "Warwick",
+    "name": "Warwick",
+    "title": "the Uncaged Wrath of Zaun",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Warwick.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "39b777ce-5d22-554b-a805-18068b2cd421",
+    "riotKey": "62",
+    "key": "MonkeyKing",
+    "name": "Wukong",
+    "title": "the Monkey King",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/MonkeyKing.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "0fca9a7c-80c5-55f5-a1f0-f80e07ad4e9d",
+    "riotKey": "498",
+    "key": "Xayah",
+    "name": "Xayah",
+    "title": "the Rebel",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Xayah.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "c449f94f-caff-5373-a237-ed5dececb7b9",
+    "riotKey": "101",
+    "key": "Xerath",
+    "name": "Xerath",
+    "title": "the Magus Ascendant",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Xerath.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  },
+  {
+    "id": "04eaeb16-213f-57ad-a1fc-de074f68a3f9",
+    "riotKey": "5",
+    "key": "XinZhao",
+    "name": "Xin Zhao",
+    "title": "the Seneschal of Demacia",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/XinZhao.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "4c6a84bb-b0c1-5ac8-a8c4-9ac6cb9c233f",
+    "riotKey": "157",
+    "key": "Yasuo",
+    "name": "Yasuo",
+    "title": "the Unforgiven",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Flow",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yasuo.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "a19ba392-c5b8-5617-aa99-916efb900690",
+    "riotKey": "777",
+    "key": "Yone",
+    "name": "Yone",
+    "title": "the Unforgotten",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "partype": "Flow",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yone.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "20503cd6-631f-5885-a0ce-3062a36ddcc3",
+    "riotKey": "83",
+    "key": "Yorick",
+    "name": "Yorick",
+    "title": "Shepherd of Souls",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yorick.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg",
+    "roles": [
+      "top"
+    ]
+  },
+  {
+    "id": "33297855-ab9f-5be5-a9ae-993a6b78f9fe",
+    "riotKey": "350",
+    "key": "Yuumi",
+    "name": "Yuumi",
+    "title": "the Magical Cat",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yuumi.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "5c4f3e92-e88c-5b7c-af03-b8deaea40cff",
+    "riotKey": "154",
+    "key": "Zac",
+    "name": "Zac",
+    "title": "the Secret Weapon",
+    "primaryClass": "Tank",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "partype": "None",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zac.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg",
+    "roles": [
+      "jungle"
+    ]
+  },
+  {
+    "id": "f8e4e6f7-3375-549b-a003-213f7aa58aa7",
+    "riotKey": "238",
+    "key": "Zed",
+    "name": "Zed",
+    "title": "the Master of Shadows",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin"
+    ],
+    "partype": "Energy",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zed.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "7f7370e9-7357-53f4-adbc-db88f1699151",
+    "riotKey": "221",
+    "key": "Zeri",
+    "name": "Zeri",
+    "title": "The Spark of Zaun",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zeri.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zeri_0.jpg",
+    "roles": [
+      "adc"
+    ]
+  },
+  {
+    "id": "90cad2bd-c7e1-5338-a77e-1933bdbe0c22",
+    "riotKey": "115",
+    "key": "Ziggs",
+    "name": "Ziggs",
+    "title": "the Hexplosives Expert",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ziggs.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "db266909-e7da-5d6d-a6f0-70b4811036ce",
+    "riotKey": "26",
+    "key": "Zilean",
+    "name": "Zilean",
+    "title": "the Chronokeeper",
+    "primaryClass": "Support",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zilean.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg",
+    "roles": [
+      "support"
+    ]
+  },
+  {
+    "id": "26dbe691-552a-5c59-ae50-e3ab07886f7d",
+    "riotKey": "142",
+    "key": "Zoe",
+    "name": "Zoe",
+    "title": "the Aspect of Twilight",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zoe.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "ca0db370-20bd-56a0-a34d-681ccf253c6f",
+    "riotKey": "143",
+    "key": "Zyra",
+    "name": "Zyra",
+    "title": "Rise of the Thorns",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zyra.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg",
+    "roles": [
+      "mid",
+      "support"
+    ]
+  }
+]
