@@ -154,3 +154,5 @@ model ChampionTierStat {
   @@index([winRate(sort: Desc)])
   @@map("champion_tier_stats")
 }
+
+
