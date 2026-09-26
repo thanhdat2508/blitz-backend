@@ -29,6 +29,10 @@ export const createApp = (): Application => {
         champions: {
           build: "GET /api/champions/:champion/build/:role?tier=EMERALD+&region=WORLD&patch=14.24",
         },
+        player: {
+          getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
+          refreshProfile: "POST /api/player/refresh",
+        },
       },
     });
   });
