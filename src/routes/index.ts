@@ -4,6 +4,7 @@ import cacheRoutes from "./cache.routes";
 import cryptoRoutes from "./crypto.routes";
 import championBuildRoutes from "../modules/champion-build/routes/champion-build.routes";
 import playerRoutes from "./player.routes";
+import tierListRoutes from "./tierlist.routes";
 
 const router = Router();
 
@@ -20,6 +21,7 @@ router.use("/cache", cacheRoutes);
 router.use("/crypto", cryptoRoutes);
 router.use("/champions", championBuildRoutes);
 router.use("/player", playerRoutes);
+router.use("/champions", tierListRoutes);
 
 export default router;
 

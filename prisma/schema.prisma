@@ -119,3 +119,38 @@ model ChampionBuild {
   @@index([patch, role, tier])
   @@map("champion_builds")
 }
+
+model Role {
+  id          String             @id // "top", "jungle", "mid", "ad", "sp"
+  name        String             @unique // "TOP", "JUNGLE", "MID", "AD", "SP"
+  displayName String             @map("display_name") // "Top", "Jungle", "Mid", "ADC", "Support"
+  iconUrl     String?            @map("icon_url")
+  tierStats   ChampionTierStat[]
+  createdAt   DateTime           @default(now()) @map("created_at")
+
+  @@map("roles")
+}
+
+model ChampionTierStat {
+  id            String   @id @default(uuid())
+  championId    String   @map("champion_id")
+  name          String
+  roleId        String   @map("role_id")
+  role          Role     @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  rank          String   // "all", "iron", "bronze", "silver", "gold", "platinum", "emerald", "diamond", "master", "grandmaster", "challenger"
+  tier          String   // "S", "A", "B", "C", "D"
+  winRate       Float    @map("win_rate")
+  patchWrChange Float    @map("patch_wr_change")
+  banRate       Float    @map("ban_rate")
+  pickRate      Float    @map("pick_rate")
+  matches       Int
+  avatarUrl     String   @map("avatar_url")
+  patch         String   @default("14.24.1")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@unique([championId, roleId, rank])
+  @@index([rank, roleId])
+  @@index([winRate(sort: Desc)])
+  @@map("champion_tier_stats")
+}
