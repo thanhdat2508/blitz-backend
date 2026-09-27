@@ -18,11 +18,20 @@ interface RiotDDragonListResponse {
   data: Record<string, RiotChampionData>;
 }
 
+export interface ChampionGameplayTips {
+  allytips: string[];
+  enemytips: string[];
+  spellsCooldowns: Record<"Q" | "W" | "E" | "R", string>;
+}
+
 interface RiotSpellDetail {
   id: string;
   name: string;
   description: string;
   image: { full: string };
+  cooldownBurn?: string;
+  costBurn?: string;
+  tooltip?: string;
 }
 
 interface RiotPassiveDetail {
@@ -38,6 +47,8 @@ interface RiotChampionDetailResponse {
       id: string;
       name: string;
       title: string;
+      allytips?: string[];
+      enemytips?: string[];
       spells: RiotSpellDetail[];
       passive: RiotPassiveDetail;
     }
@@ -48,6 +59,7 @@ export class RiotStaticDataService {
   private static readonly CACHE_TTL_SECONDS = 86400; // 24 hours
   private static readonly IN_MEMORY_CACHE = new Map<string, RiotChampionData>();
   private static readonly IN_MEMORY_ABILITIES_CACHE = new Map<string, ChampionAbilities>();
+  private static readonly IN_MEMORY_TIPS_CACHE = new Map<string, ChampionGameplayTips>();
   private static isInitialized = false;
   private static initPromise: Promise<void> | null = null;
 
@@ -164,7 +176,19 @@ export class RiotStaticDataService {
             },
           };
 
+          const gameplayTips: ChampionGameplayTips = {
+            allytips: champDetail.allytips || [],
+            enemytips: champDetail.enemytips || [],
+            spellsCooldowns: {
+              Q: champDetail.spells[0]?.cooldownBurn || "0",
+              W: champDetail.spells[1]?.cooldownBurn || "0",
+              E: champDetail.spells[2]?.cooldownBurn || "0",
+              R: champDetail.spells[3]?.cooldownBurn || "0",
+            },
+          };
+
           RiotStaticDataService.IN_MEMORY_ABILITIES_CACHE.set(normalized, abilities);
+          RiotStaticDataService.IN_MEMORY_TIPS_CACHE.set(normalized, gameplayTips);
 
           if (redisClient.isOpen) {
             await redisClient.set(cacheKey, JSON.stringify(abilities), {
@@ -183,6 +207,25 @@ export class RiotStaticDataService {
     const fallback = this.generateFallbackAbilities(championId);
     RiotStaticDataService.IN_MEMORY_ABILITIES_CACHE.set(normalized, fallback);
     return fallback;
+  }
+
+  public async getChampionGameplayTips(
+    championId: string,
+    patch?: string
+  ): Promise<ChampionGameplayTips> {
+    const normalized = championId.toLowerCase();
+    const cached = RiotStaticDataService.IN_MEMORY_TIPS_CACHE.get(normalized);
+    if (cached) return cached;
+
+    // Trigger abilities fetch to populate tips cache
+    await this.getChampionAbilities(championId, patch);
+    return (
+      RiotStaticDataService.IN_MEMORY_TIPS_CACHE.get(normalized) || {
+        allytips: [],
+        enemytips: [],
+        spellsCooldowns: { Q: "0", W: "0", E: "0", R: "0" },
+      }
+    );
   }
 
   private generateFallbackAbilities(championId: string): ChampionAbilities {

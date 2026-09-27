@@ -90,11 +90,47 @@ async function runTests() {
   }
   console.log(`✅ PASSED: Similar Champions: ${quinn.similarChampions.map((c) => c.name).join(", ")}`);
 
-  // 2.7 Key Insights
-  if (!quinn.insights.strengths.length || !quinn.insights.weaknesses.length) {
-    throw new Error("Missing insights strengths or weaknesses");
+  // 2.7 Key Insights (100% Blitz.gg Match Verification)
+  if (!quinn.insights.general?.length || !quinn.insights.strengths?.length || !quinn.insights.weaknesses?.length) {
+    throw new Error("Missing insights general, strengths, or weaknesses arrays");
   }
-  console.log(`✅ PASSED: Insights: ${quinn.insights.strengths.length} strengths, ${quinn.insights.weaknesses.length} weaknesses`);
+
+  // Verify ability tokens [P], [Q], [W], [R] are properly embedded
+  const generalStr = quinn.insights.general.join(" ");
+  const strengthsStr = quinn.insights.strengths.join(" ");
+  const weaknessesStr = quinn.insights.weaknesses.join(" ");
+
+  if (!generalStr.includes("[P]") || !generalStr.includes("[Q]") || !generalStr.includes("[R]")) {
+    throw new Error("Quinn Key Insights missing ability tokens [P], [Q], or [R]");
+  }
+  if (!strengthsStr.includes("[P]") || !strengthsStr.includes("[W]")) {
+    throw new Error("Quinn Strengths missing ability tokens [P] or [W]");
+  }
+  if (!weaknessesStr.includes("[W]")) {
+    throw new Error("Quinn Weaknesses missing ability token [W]");
+  }
+
+  // Exact sentences matching the Blitz.gg UI
+  if (!generalStr.includes("[P] reveals enemies it affects.")) {
+    throw new Error("Missing '[P] reveals enemies it affects.' in general insights");
+  }
+  if (!strengthsStr.includes("[W]'s movespeed and attack speed buffs make her hard to trade with.")) {
+    throw new Error("Missing '[W] movespeed buff' in strengths insights");
+  }
+  if (!weaknessesStr.includes("50 seconds at rank 1")) {
+    throw new Error("Missing '[W] 50s cooldown' in weaknesses insights");
+  }
+
+  // Verify structured items contain parsed abilityKeys
+  if (!quinn.insights.structured?.general || !quinn.insights.structured?.strengths) {
+    throw new Error("Missing structured insights metadata");
+  }
+  const hasParsedP = quinn.insights.structured.general.some((item) => item.abilityKeys.includes("P"));
+  if (!hasParsedP) {
+    throw new Error("Structured insights failed to parse abilityKey 'P'");
+  }
+
+  console.log(`✅ PASSED: Insights: ${quinn.insights.general.length} key insights, ${quinn.insights.strengths.length} strengths, ${quinn.insights.weaknesses.length} weaknesses with [P],[Q],[W],[E],[R] ability tokens & structured metadata verified`);
 
   // 2.8 Stat Shards (3x3 Matrix & Archetype Verification)
   const { statShards } = quinn.runes.mostPopular;

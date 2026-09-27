@@ -169,10 +169,21 @@ export interface ChampionMatchups {
   weakAgainst?: MatchupEntry[];
 }
 
+export interface InsightItem {
+  text: string;
+  abilityKeys: ("P" | "Q" | "W" | "E" | "R")[];
+  targetChampionKey?: string;
+}
+
 export interface ChampionInsights {
   general: string[];
   strengths: string[];
   weaknesses: string[];
+  structured?: {
+    general: InsightItem[];
+    strengths: InsightItem[];
+    weaknesses: InsightItem[];
+  };
 }
 
 export interface ChampionBuildPayload {

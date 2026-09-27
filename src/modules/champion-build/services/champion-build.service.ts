@@ -25,6 +25,7 @@ import {
 } from "../constants/champion-build.constants";
 import { riotStaticDataService, RiotStaticDataService } from "./riot-static-data.service";
 import { championBuildRepository, ChampionBuildRepository } from "../repositories/champion-build.repository";
+import { championInsightsService, ChampionInsightsService } from "./champion-insights.service";
 import { randomInt, randomRate, round2 } from "../../../utils/math";
 import { generateChampionUUID } from "../../../utils/crypto";
 
@@ -33,7 +34,8 @@ export class ChampionBuildService {
 
   constructor(
     private readonly staticDataService: RiotStaticDataService = riotStaticDataService,
-    private readonly repository: ChampionBuildRepository = championBuildRepository
+    private readonly repository: ChampionBuildRepository = championBuildRepository,
+    private readonly insightsService: ChampionInsightsService = championInsightsService
   ) {}
 
   public async getChampionBuild(
@@ -109,8 +111,21 @@ export class ChampionBuildService {
     const classPreset = CLASS_PRESETS[primaryTag];
     const rolePreset = ROLE_PRESETS[role];
 
-    // 2. Fetch abilities details
+    // 2. Fetch abilities & gameplay tips
     const abilities = await this.staticDataService.getChampionAbilities(resolvedKey, patch);
+    const gameplayTips = await this.staticDataService.getChampionGameplayTips(resolvedKey, patch);
+
+    const matchups = this.buildMatchups(resolvedKey, role, baseWinRate);
+    const topOpponent = matchups.worstAgainst[0]?.key || matchups.bestAgainst[0]?.key;
+    const insights = this.insightsService.generateInsights(
+      resolvedKey,
+      resolvedName,
+      primaryTag,
+      abilities,
+      riotData?.partype,
+      topOpponent,
+      gameplayTips
+    );
 
     return {
       overview: this.buildOverview(
@@ -133,9 +148,9 @@ export class ChampionBuildService {
       skills: this.buildSkills(classPreset.skillsMaxOrder, role, baseWinRate),
       abilities,
       items: this.buildItems(role, classPreset, rolePreset, baseWinRate),
-      matchups: this.buildMatchups(resolvedKey, role, baseWinRate),
+      matchups,
       similarChampions: classPreset.similarChampions,
-      insights: classPreset.insights,
+      insights,
     };
   }
 
@@ -437,6 +452,7 @@ export class ChampionBuildService {
       top: [
         { id: 266, key: "Aatrox", name: "Aatrox" },
         { id: 86, key: "Garen", name: "Garen" },
+        { id: 85, key: "Kennen", name: "Kennen" },
         { id: 24, key: "Jax", name: "Jax" },
         { id: 122, key: "Darius", name: "Darius" },
         { id: 114, key: "Fiora", name: "Fiora" },
