@@ -81,13 +81,22 @@ export interface StatShards {
   rows: StatShardRow[];
 }
 
+export interface RuneStyleOption {
+  id: number;
+  name: string;
+  iconUrl: string;
+  isSelected: boolean;
+}
+
 export interface RuneSetup {
   primaryStyleId: number;
   primaryStyleName: string;
+  primaryStyles: RuneStyleOption[];
   keystoneId: number;
   selectedPerkIds: number[];
   subStyleId: number;
   subStyleName: string;
+  subStyles: RuneStyleOption[];
   subPerkIds: number[];
   statShards: StatShards;
   winRate: number;

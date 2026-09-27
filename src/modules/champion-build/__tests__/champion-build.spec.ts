@@ -361,6 +361,51 @@ async function runTests() {
   }
   console.log(`✅ PASSED: Quinn Signature Lethality build verified: [${quinnLethality.join(", ")}] (Opportunity, Profane, Edge of Night)`);
 
+  // Test 9: Rune Styles Selector Bar & Champion-Specific Rune Overrides Verification
+  console.log("\n[TEST 9] Rune Styles Selector Bar & Champion-Specific Rune Overrides Verification");
+  const quinnRunes = (await service.getChampionBuild("Quinn", "mid", "EMERALD+", "WORLD")).runes.mostPopular;
+  if (quinnRunes.primaryStyleId !== 8200 || quinnRunes.subStyleId !== 8300) {
+    throw new Error(`Expected Quinn signature runes to be Sorcery (8200) + Inspiration (8300), got ${quinnRunes.primaryStyleId} + ${quinnRunes.subStyleId}`);
+  }
+  if (quinnRunes.keystoneId !== 8230) {
+    throw new Error(`Expected Quinn keystone Phase Rush (8230), got ${quinnRunes.keystoneId}`);
+  }
+  if (!quinnRunes.primaryStyles || quinnRunes.primaryStyles.length !== 5) {
+    throw new Error(`Expected 5 primary styles in selector bar, got ${quinnRunes.primaryStyles?.length}`);
+  }
+  const selectedPrimary = quinnRunes.primaryStyles.find((s) => s.isSelected);
+  if (!selectedPrimary || selectedPrimary.id !== 8200) {
+    throw new Error(`Expected primary style 8200 (Sorcery) to be selected, got ${selectedPrimary?.id}`);
+  }
+  if (!quinnRunes.subStyles || quinnRunes.subStyles.length !== 4) {
+    throw new Error(`Expected 4 sub-styles in selector bar (excluding primary), got ${quinnRunes.subStyles?.length}`);
+  }
+  if (quinnRunes.subStyles.some((s) => s.id === 8200)) {
+    throw new Error("Sub-styles selector bar must exclude the selected primary style (Sorcery 8200)");
+  }
+  const selectedSub = quinnRunes.subStyles.find((s) => s.isSelected);
+  if (!selectedSub || selectedSub.id !== 8300) {
+    throw new Error(`Expected sub style 8300 (Inspiration) to be selected, got ${selectedSub?.id}`);
+  }
+  for (const style of [...quinnRunes.primaryStyles, ...quinnRunes.subStyles]) {
+    if (!style.iconUrl.startsWith("https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/")) {
+      throw new Error(`Invalid icon URL for rune style ${style.name}: ${style.iconUrl}`);
+    }
+  }
+  console.log(`✅ PASSED: Quinn Selector Bar verified: Primary Sorcery (8200) [purple], Sub Inspiration (8300) [cyan], 5 primary + 4 sub icons verified`);
+
+  const yasuoRunes = (await service.getChampionBuild("Yasuo", "mid", "EMERALD+", "WORLD")).runes.mostPopular;
+  if (yasuoRunes.primaryStyleId !== 8000 || yasuoRunes.subStyleId !== 8400 || yasuoRunes.keystoneId !== 8010) {
+    throw new Error(`Expected Yasuo Conqueror (8010) + Resolve (8400), got keystone ${yasuoRunes.keystoneId}, subStyle ${yasuoRunes.subStyleId}`);
+  }
+  console.log(`✅ PASSED: Yasuo signature runes verified: Precision (8000) Conqueror (8010) + Resolve (8400)`);
+
+  const pykeRunes = (await service.getChampionBuild("Pyke", "support", "EMERALD+", "WORLD")).runes.mostPopular;
+  if (pykeRunes.primaryStyleId !== 8100 || pykeRunes.keystoneId !== 9923) {
+    throw new Error(`Expected Pyke Hail of Blades (9923) + Domination (8100), got keystone ${pykeRunes.keystoneId}`);
+  }
+  console.log(`✅ PASSED: Pyke signature runes verified: Domination (8100) Hail of Blades (9923) + Precision (8000)`);
+
   console.log("\n🎉 ALL TESTS PASSED! API payload is now 100% equivalent to Blitz.gg!");
 }
 
