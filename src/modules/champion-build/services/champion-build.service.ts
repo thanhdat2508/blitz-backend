@@ -27,6 +27,7 @@ import { riotStaticDataService, RiotStaticDataService } from "./riot-static-data
 import { championBuildRepository, ChampionBuildRepository } from "../repositories/champion-build.repository";
 import { championInsightsService, ChampionInsightsService } from "./champion-insights.service";
 import { championItemsService, ChampionItemsService } from "./champion-items.service";
+import { championRunesService, ChampionRunesService } from "./champion-runes.service";
 import { randomInt, randomRate, round2 } from "../../../utils/math";
 import { generateChampionUUID } from "../../../utils/crypto";
 
@@ -37,7 +38,8 @@ export class ChampionBuildService {
     private readonly staticDataService: RiotStaticDataService = riotStaticDataService,
     private readonly repository: ChampionBuildRepository = championBuildRepository,
     private readonly insightsService: ChampionInsightsService = championInsightsService,
-    private readonly itemsService: ChampionItemsService = championItemsService
+    private readonly itemsService: ChampionItemsService = championItemsService,
+    private readonly runesService: ChampionRunesService = championRunesService
   ) {}
 
   public async getChampionBuild(
@@ -146,7 +148,13 @@ export class ChampionBuildService {
       previousPatch: this.buildPreviousPatch(patch, baseWinRate),
       damageBreakdown: classPreset.damageBreakdown,
       spells: this.buildSpells(rolePreset.spells, baseWinRate),
-      runes: this.buildRunes(classPreset, baseWinRate),
+      runes: this.runesService.resolveChampionRunes({
+        championKey: resolvedKey,
+        role,
+        primaryClass: primaryTag,
+        classPreset,
+        baseWinRate,
+      }),
       skills: this.buildSkills(classPreset.skillsMaxOrder, role, baseWinRate),
       abilities,
       items: this.itemsService.resolveChampionItems({
@@ -300,21 +308,16 @@ export class ChampionBuildService {
 
   private buildRunes(
     classPreset: typeof CLASS_PRESETS[ChampionClass],
-    baseWinRate: number
+    baseWinRate: number,
+    championKey: string = "",
+    primaryClass: ChampionClass = "Marksman"
   ): ChampionRunes {
-    const mostPopular: RuneSetup = {
-      ...classPreset.mostPopularRunes,
-      winRate: round2(baseWinRate + 0.3),
-      pickRate: round2(67.4),
-    };
-
-    const highestWinRate: RuneSetup = {
-      ...classPreset.highestWinRateRunes,
-      winRate: round2(baseWinRate + 1.8),
-      pickRate: round2(16.5),
-    };
-
-    return { mostPopular, highestWinRate };
+    return this.runesService.resolveChampionRunes({
+      championKey,
+      primaryClass,
+      classPreset,
+      baseWinRate,
+    });
   }
 
   private buildSkills(skillsMaxOrder: string[], role: Role, baseWinRate: number): SkillPriority {

@@ -76,6 +76,8 @@ export const ROLE_PRESETS: Record<Role, RolePreset> = {
   },
 };
 
+export type RawRunePreset = Omit<RuneSetup, "winRate" | "pickRate" | "primaryStyles" | "subStyles">;
+
 export interface ClassArchetypePreset {
   coreItems: number[];
   completedItems: number[];
@@ -84,8 +86,8 @@ export interface ClassArchetypePreset {
   boots: number[];
   damageBreakdown: DamageBreakdown;
   skillsMaxOrder: string[];
-  mostPopularRunes: Omit<RuneSetup, "winRate" | "pickRate">;
-  highestWinRateRunes: Omit<RuneSetup, "winRate" | "pickRate">;
+  mostPopularRunes: RawRunePreset;
+  highestWinRateRunes: RawRunePreset;
   similarChampions: SimilarChampion[];
   insights: {
     general: string[];
