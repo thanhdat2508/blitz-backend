@@ -12,6 +12,7 @@
     "prisma:push": "prisma db push",
     "prisma:seed": "tsx prisma/seed.ts",
     "prisma:studio": "prisma studio",
+    "seed:posts": "tsx scripts/seed-posts.ts",
     "sync:champions": "tsx scripts/sync-champions.ts",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
