@@ -61,9 +61,26 @@ function resolveRoles(tags: string[], champId: string): string[] {
   }
 }
 
+import { DEFAULT_DDRAGON_VERSION } from "../src/config/riot";
+
 async function syncChampions() {
   console.log("🚀 [Sync Champions] Fetching live metadata from Riot Games Data Dragon...");
-  const patch = "14.24.1";
+  let patch = DEFAULT_DDRAGON_VERSION;
+  try {
+    const versionsRes = await fetch("https://ddragon.leagueoflegends.com/api/versions.json", {
+      signal: AbortSignal.timeout(5000),
+    });
+    if (versionsRes.ok) {
+      const versions = (await versionsRes.json()) as string[];
+      if (versions.length > 0) {
+        patch = versions[0];
+      }
+    }
+  } catch {
+    console.log(`Using fallback patch: ${patch}`);
+  }
+
+  console.log(`Using Data Dragon patch: ${patch}`);
   const url = `https://ddragon.leagueoflegends.com/cdn/${patch}/data/en_US/champion.json`;
 
   const response = await fetch(url, {
