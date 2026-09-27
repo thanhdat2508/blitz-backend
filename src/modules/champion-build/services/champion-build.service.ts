@@ -26,6 +26,7 @@ import {
 import { riotStaticDataService, RiotStaticDataService } from "./riot-static-data.service";
 import { championBuildRepository, ChampionBuildRepository } from "../repositories/champion-build.repository";
 import { championInsightsService, ChampionInsightsService } from "./champion-insights.service";
+import { championItemsService, ChampionItemsService } from "./champion-items.service";
 import { randomInt, randomRate, round2 } from "../../../utils/math";
 import { generateChampionUUID } from "../../../utils/crypto";
 
@@ -35,7 +36,8 @@ export class ChampionBuildService {
   constructor(
     private readonly staticDataService: RiotStaticDataService = riotStaticDataService,
     private readonly repository: ChampionBuildRepository = championBuildRepository,
-    private readonly insightsService: ChampionInsightsService = championInsightsService
+    private readonly insightsService: ChampionInsightsService = championInsightsService,
+    private readonly itemsService: ChampionItemsService = championItemsService
   ) {}
 
   public async getChampionBuild(
@@ -147,7 +149,15 @@ export class ChampionBuildService {
       runes: this.buildRunes(classPreset, baseWinRate),
       skills: this.buildSkills(classPreset.skillsMaxOrder, role, baseWinRate),
       abilities,
-      items: this.buildItems(role, classPreset, rolePreset, baseWinRate),
+      items: this.itemsService.resolveChampionItems({
+        championKey: resolvedKey,
+        role,
+        primaryClass: primaryTag,
+        partype: riotData?.partype,
+        classPreset,
+        rolePreset,
+        baseWinRate,
+      }),
       matchups,
       similarChampions: classPreset.similarChampions,
       insights,
@@ -335,100 +345,20 @@ export class ChampionBuildService {
     role: Role,
     classPreset: typeof CLASS_PRESETS[ChampionClass],
     rolePreset: typeof ROLE_PRESETS[Role],
-    baseWinRate: number
+    baseWinRate: number,
+    championKey: string = "",
+    primaryClass: ChampionClass = "Marksman",
+    partype?: string
   ): ChampionItems {
-    const startingItemIds =
-      role === "jungle" || role === "support"
-        ? rolePreset.startingItems
-        : classPreset.startingItemsLaner;
-
-    const starting: ItemSet[] = [
-      {
-        itemIds: startingItemIds,
-        winRate: round2(baseWinRate + 0.4),
-        pickRate: round2(74.6),
-        gamesPlayed: randomInt(11000, 19000),
-      },
-    ];
-
-    if (role === "jungle") {
-      starting.push({
-        itemIds: [1101, 2003],
-        winRate: round2(baseWinRate - 0.2),
-        pickRate: round2(25.4),
-        gamesPlayed: randomInt(3200, 6500),
-      });
-    } else if (role !== "support") {
-      starting.push({
-        itemIds: classPreset.completedItems[0] === 3089 ? [1056, 2003] : [1054, 2003],
-        winRate: round2(baseWinRate - 0.3),
-        pickRate: round2(23.8),
-        gamesPlayed: randomInt(2800, 5200),
-      });
-    }
-
-    const early: ItemSet[] = [
-      {
-        itemIds: rolePreset.earlyItems,
-        winRate: round2(baseWinRate + 1.1),
-        pickRate: round2(72.5),
-        gamesPlayed: randomInt(9000, 15000),
-      },
-    ];
-
-    const coreItemIds = role === "support" ? [3869, 3190, 3107] : classPreset.coreItems;
-    const core: ItemSet[] = [
-      {
-        itemIds: coreItemIds,
-        winRate: round2(baseWinRate + 3.8),
-        pickRate: round2(48.2),
-        gamesPlayed: randomInt(5000, 9000),
-      },
-    ];
-
-    // 6 Completed Items
-    const completedItemIds = role === "support" ? [3869, 3158, 3190, 3107, 3222, 3110] : classPreset.completedItems;
-    const completed: ItemSet[] = [
-      {
-        itemIds: completedItemIds,
-        winRate: round2(baseWinRate + 6.2),
-        pickRate: round2(35.4),
-        gamesPlayed: randomInt(3500, 7000),
-      },
-    ];
-
-    const buildOrder = classPreset.buildOrder;
-
-    const boots: ItemSet[] = classPreset.boots.map((bootId, index) => ({
-      itemIds: [bootId],
-      winRate: round2(baseWinRate + (index === 0 ? 1.4 : 0.6)),
-      pickRate: round2(index === 0 ? 63.5 : 24.1),
-      gamesPlayed: randomInt(3000, 8000),
-    }));
-
-    const situational: ItemSet[] = [
-      {
-        itemIds: [3026], // Guardian Angel / Zhonya's
-        winRate: round2(baseWinRate + 4.2),
-        pickRate: round2(19.4),
-        gamesPlayed: randomInt(2000, 4500),
-      },
-      {
-        itemIds: [3814], // Situational
-        winRate: round2(baseWinRate + 3.1),
-        pickRate: round2(14.8),
-        gamesPlayed: randomInt(1500, 3200),
-      },
-    ];
-
-    const trinkets: ItemSet[] = rolePreset.trinkets.map((trinketId) => ({
-      itemIds: [trinketId],
-      winRate: round2(baseWinRate + 0.5),
-      pickRate: round2(88.0),
-      gamesPlayed: randomInt(12000, 22000),
-    }));
-
-    return { starting, early, core, completed, buildOrder, boots, situational, trinkets };
+    return this.itemsService.resolveChampionItems({
+      championKey,
+      role,
+      primaryClass,
+      partype,
+      classPreset,
+      rolePreset,
+      baseWinRate,
+    });
   }
 
   private buildMatchups(

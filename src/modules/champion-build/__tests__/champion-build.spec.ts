@@ -295,7 +295,71 @@ async function runTests() {
   }
   console.log("✅ PASSED: Obsolete Season 13 Armor shard (5002) 100% eliminated");
   console.log("✅ PASSED: All 9 Stat Shard options have valid Riot CDN icon URLs, codes, and descriptions");
-  console.log("✅ PASSED: Tank archetype correctly receives Ability Haste + Scaling Health shards");
+  // Test 8: Champion-Specific Itemization & Sub-Archetypes Verification
+  console.log("\n[TEST 8] Champion-Specific Itemization & Sub-Archetypes Verification");
+  const jinx = await service.getChampionBuild("Jinx", "adc", "EMERALD+", "WORLD");
+  const jinxItems = jinx.items.completed[0].itemIds;
+  if (!jinxItems.includes(6672) || !jinxItems.includes(3031) || !jinxItems.includes(3006)) {
+    throw new Error(`Expected Jinx to have Crit ADC items (6672, 3031, 3006), got [${jinxItems.join(", ")}]`);
+  }
+  if (jinxItems.includes(6698) || jinxItems.includes(6676)) {
+    throw new Error("Jinx should not receive Quinn's Lethality items (Opportunity / Profane Hydra)");
+  }
+  console.log(`✅ PASSED: Jinx Crit ADC items verified: [${jinxItems.join(", ")}] (Kraken, IE, Berserker's, LDR)`);
+
+  const vladimir = await service.getChampionBuild("Vladimir", "mid", "EMERALD+", "WORLD");
+  const vladItems = vladimir.items.completed[0].itemIds;
+  if (!vladItems.includes(4637) || !vladItems.includes(4629) || !vladItems.includes(3089)) {
+    throw new Error(`Expected Vladimir Manaless AP items (4637, 4629, 3089), got [${vladItems.join(", ")}]`);
+  }
+  if (vladItems.includes(3285) || vladimir.items.buildOrder.includes(3802)) {
+    throw new Error("Vladimir is manaless and must not receive mana items (Luden's / Lost Chapter)");
+  }
+  console.log(`✅ PASSED: Vladimir Manaless AP items verified: [${vladItems.join(", ")}] (Riftmaker, Cosmic, Rabadon)`);
+
+  const yasuo = await service.getChampionBuild("Yasuo", "mid", "EMERALD+", "WORLD");
+  const yasuoItems = yasuo.items.completed[0].itemIds;
+  if (!yasuoItems.includes(3006) || !yasuoItems.includes(3031) || !yasuoItems.includes(3042)) {
+    throw new Error(`Expected Yasuo Melee Crit items (3006, 3031, 3042), got [${yasuoItems.join(", ")}]`);
+  }
+  console.log(`✅ PASSED: Yasuo Melee Crit items verified: [${yasuoItems.join(", ")}] (Berserker's, BoRK, IE, Shieldbow)`);
+
+  const ezreal = await service.getChampionBuild("Ezreal", "adc", "EMERALD+", "WORLD");
+  const ezrealItems = ezreal.items.completed[0].itemIds;
+  if (!ezrealItems.includes(3078) || !ezrealItems.includes(3004) || !ezrealItems.includes(6695)) {
+    throw new Error(`Expected Ezreal Spellblade/Muramana items (3078, 3004, 6695), got [${ezrealItems.join(", ")}]`);
+  }
+  console.log(`✅ PASSED: Ezreal Spellblade/Manamune items verified: [${ezrealItems.join(", ")}] (Triforce, Muramana, Serylda)`);
+
+  const lulu = await service.getChampionBuild("Lulu", "support", "EMERALD+", "WORLD");
+  const luluItems = lulu.items.completed[0].itemIds;
+  if (!luluItems.includes(3870) || !luluItems.includes(6617) || !luluItems.includes(3504)) {
+    throw new Error(`Expected Lulu Enchanter items (3870, 6617, 3504), got [${luluItems.join(", ")}]`);
+  }
+  console.log(`✅ PASSED: Lulu Enchanter Support items verified: [${luluItems.join(", ")}] (Dream Maker, Moonstone, Ardent)`);
+
+  const teemo = await service.getChampionBuild("Teemo", "top", "EMERALD+", "WORLD");
+  const teemoItems = teemo.items.completed[0].itemIds;
+  if (!teemoItems.includes(3115) || !teemoItems.includes(6653) || !teemoItems.includes(3118)) {
+    throw new Error(`Expected Teemo AP burn items (3115, 6653, 3118), got [${teemoItems.join(", ")}]`);
+  }
+  if (teemoItems.includes(6672) || teemoItems.includes(3031)) {
+    throw new Error("Teemo has Marksman tag but must NOT receive AD crit items (Kraken / IE)!");
+  }
+  console.log(`✅ PASSED: Teemo correctly resolved to AP Burn/On-Hit: [${teemoItems.join(", ")}] (Nashor's, Liandry's, Malignance)`);
+
+  const kayle = await service.getChampionBuild("Kayle", "top", "EMERALD+", "WORLD");
+  const kayleItems = kayle.items.completed[0].itemIds;
+  if (!kayleItems.includes(3115) || !kayleItems.includes(4637) || !kayleItems.includes(3089)) {
+    throw new Error(`Expected Kayle AP on-hit items (3115, 4637, 3089), got [${kayleItems.join(", ")}]`);
+  }
+  console.log(`✅ PASSED: Kayle correctly resolved to AP On-Hit: [${kayleItems.join(", ")}] (Nashor's, Riftmaker, Rabadon's)`);
+
+  const quinnLethality = quinn.items.completed[0].itemIds;
+  if (!quinnLethality.includes(6698) || !quinnLethality.includes(6676) || !quinnLethality.includes(3814)) {
+    throw new Error(`Expected Quinn signature Lethality items (6698, 6676, 3814), got [${quinnLethality.join(", ")}]`);
+  }
+  console.log(`✅ PASSED: Quinn Signature Lethality build verified: [${quinnLethality.join(", ")}] (Opportunity, Profane, Edge of Night)`);
 
   console.log("\n🎉 ALL TESTS PASSED! API payload is now 100% equivalent to Blitz.gg!");
 }
