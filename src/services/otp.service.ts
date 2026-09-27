@@ -1,5 +1,6 @@
 import redisClient from "../config/redis";
 import { generateOtp, hashOtp, verifyOtp } from "../utils/otp";
+import { MailService } from "./mail.service";
 
 export type OtpType = "REGISTER" | "FORGOT_PASSWORD";
 
@@ -55,14 +56,21 @@ export class OtpService {
       }
     }
 
-    console.log(
-      `[AUTH-OTP] [${options.type}] OTP code for ${normalizedEmail}: ${code} ` +
-      `${options.recoveryCode ? `(RecoveryCode: ${options.recoveryCode}) ` : ""}(Expires in 5m)`
-    );
+    // Send email via Resend with configured template
+    if (options.type === "REGISTER") {
+      await MailService.sendVerificationEmail({
+        email: normalizedEmail,
+        otpCode: code,
+      });
+    } else if (options.type === "FORGOT_PASSWORD") {
+      await MailService.sendPasswordResetEmail({
+        email: normalizedEmail,
+        otpCode: code,
+      });
+    }
 
     return {
       success: true,
-      code: process.env.NODE_ENV !== "production" ? code : undefined,
       recoveryCode: options.recoveryCode,
     };
   }

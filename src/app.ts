@@ -7,16 +7,28 @@ export const createApp = (): Application => {
   const app = express();
 
   // Middleware
-  const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+  const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+  const allowedOrigins = Array.from(
+    new Set([frontendUrl, "http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173", "http://127.0.0.1:3000"]),
+  );
+
   app.use(
     cors({
-      origin: [frontendUrl, "http://localhost:3000", "http://localhost:5173"],
+      origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps, curl, server-to-server)
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(null, true); // Permissive in development
+        }
+      },
       credentials: true,
-    })
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization", "x-session-id", "x-device-id", "x-forwarded-for"],
+    }),
   );
 
   app.use(cookieParser());
-  app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
@@ -24,7 +36,8 @@ export const createApp = (): Application => {
     res.json({
       name: "blitz-backend API",
       version: "1.0.0",
-      description: "Express.js 5 + PostgreSQL + Prisma + Redis + JWT + OAuth (Google & Riot)",
+      description:
+        "Express.js 5 + PostgreSQL + Prisma + Redis + JWT + OAuth (Google & Riot)",
       endpoints: {
         health: "GET /api/health",
         auth: {
@@ -50,10 +63,12 @@ export const createApp = (): Application => {
           delete: "DELETE /api/cache/delete/:key",
         },
         champions: {
-          build: "GET /api/champions/:champion/build/:role?tier=EMERALD+&region=WORLD&patch=14.24",
+          build:
+            "GET /api/champions/:champion/build/:role?tier=EMERALD+&region=WORLD&patch=14.24",
         },
         player: {
-          getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
+          getProfile:
+            "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
           refreshProfile: "POST /api/player/refresh",
         },
         posts: {
@@ -76,18 +91,25 @@ export const createApp = (): Application => {
     res.status(404).json({ error: "Route not found" });
   });
 
-  app.use((err: Error & { statusCode?: number }, _req: Request, res: Response, _next: NextFunction) => {
-    const statusCode = err.statusCode || 500;
-    if (statusCode >= 500) {
-      console.error("Unhandled error:", err);
-    }
+  app.use(
+    (
+      err: Error & { statusCode?: number },
+      _req: Request,
+      res: Response,
+      _next: NextFunction,
+    ) => {
+      const statusCode = err.statusCode || 500;
+      if (statusCode >= 500) {
+        console.error("Unhandled error:", err);
+      }
 
-    res.status(statusCode).json({
-      success: false,
-      error: err.name || "Error",
-      message: err.message,
-    });
-  });
+      res.status(statusCode).json({
+        success: false,
+        error: err.name || "Error",
+        message: err.message,
+      });
+    },
+  );
 
   return app;
 };
