@@ -1,4 +1,13 @@
-import { DamageBreakdown, Role, RuneSetup, SimilarChampion } from "../interfaces/champion-build.interface";
+import {
+  DamageBreakdown,
+  Role,
+  RuneSetup,
+  SimilarChampion,
+  StatShardOption,
+  StatShardRow,
+  StatShardRowType,
+  StatShards,
+} from "../interfaces/champion-build.interface";
 
 export const DDRAGON_VERSION = "14.24.1";
 export const DDRAGON_CDN = `https://ddragon.leagueoflegends.com/cdn/${DDRAGON_VERSION}`;
@@ -85,7 +94,117 @@ export interface ClassArchetypePreset {
   };
 }
 
-const STAT_SHARDS = { offense: 5008, flex: 5008, defense: 5002 };
+export const STAT_MOD_ICONS = {
+  ADAPTIVE_FORCE: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsAdaptiveForceIcon.png",
+  ATTACK_SPEED: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsAttackSpeedIcon.png",
+  ABILITY_HASTE: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsCDRScalingIcon.png",
+  MOVEMENT_SPEED: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsMovementSpeedIcon.png",
+  SCALING_HEALTH: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsHealthScalingIcon.png",
+  FLAT_HEALTH: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsHealthPlusIcon.png",
+  TENACITY: "https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsTenacityIcon.png",
+} as const;
+
+export type StatShardDefinition = Omit<StatShardOption, "isSelected">;
+
+export const STAT_SHARD_ROW_DEFINITIONS: Record<StatShardRowType, readonly StatShardDefinition[]> = {
+  offense: [
+    {
+      id: 5008,
+      code: "adaptive_force",
+      name: "Adaptive Force",
+      description: "+9 Adaptive Force",
+      iconUrl: STAT_MOD_ICONS.ADAPTIVE_FORCE,
+    },
+    {
+      id: 5005,
+      code: "attack_speed",
+      name: "Attack Speed",
+      description: "+10% Attack Speed",
+      iconUrl: STAT_MOD_ICONS.ATTACK_SPEED,
+    },
+    {
+      id: 5007,
+      code: "ability_haste",
+      name: "Ability Haste",
+      description: "+8 Ability Haste",
+      iconUrl: STAT_MOD_ICONS.ABILITY_HASTE,
+    },
+  ],
+  flex: [
+    {
+      id: 5008,
+      code: "adaptive_force",
+      name: "Adaptive Force",
+      description: "+9 Adaptive Force",
+      iconUrl: STAT_MOD_ICONS.ADAPTIVE_FORCE,
+    },
+    {
+      id: 5010,
+      code: "movement_speed",
+      name: "Movement Speed",
+      description: "+2% Movement Speed",
+      iconUrl: STAT_MOD_ICONS.MOVEMENT_SPEED,
+    },
+    {
+      id: 5001,
+      code: "health_scaling",
+      name: "Scaling Health",
+      description: "+10-180 Health (based on level)",
+      iconUrl: STAT_MOD_ICONS.SCALING_HEALTH,
+    },
+  ],
+  defense: [
+    {
+      id: 5011,
+      code: "health_flat",
+      name: "Health",
+      description: "+65 Health",
+      iconUrl: STAT_MOD_ICONS.FLAT_HEALTH,
+    },
+    {
+      id: 5013,
+      code: "tenacity",
+      name: "Tenacity and Slow Resist",
+      description: "+10% Tenacity and Slow Resist",
+      iconUrl: STAT_MOD_ICONS.TENACITY,
+    },
+    {
+      id: 5001,
+      code: "health_scaling",
+      name: "Scaling Health",
+      description: "+10-180 Health (based on level)",
+      iconUrl: STAT_MOD_ICONS.SCALING_HEALTH,
+    },
+  ],
+};
+
+export function buildStatShards(offenseId: number, flexId: number, defenseId: number): StatShards {
+  const buildRow = (
+    rowNumber: number,
+    type: StatShardRowType,
+    selectedId: number
+  ): StatShardRow => ({
+    row: rowNumber,
+    type,
+    selectedId,
+    options: STAT_SHARD_ROW_DEFINITIONS[type].map((def) => ({
+      ...def,
+      isSelected: def.id === selectedId,
+    })),
+  });
+
+  return {
+    offense: offenseId,
+    flex: flexId,
+    defense: defenseId,
+    slots: [offenseId, flexId, defenseId],
+    rows: [
+      buildRow(1, "offense", offenseId),
+      buildRow(2, "flex", flexId),
+      buildRow(3, "defense", defenseId),
+    ],
+  };
+}
 
 export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
   Mage: {
@@ -104,7 +223,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8300,
       subStyleName: "Inspiration",
       subPerkIds: [8345, 8347],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5008, 5008, 5011),
     },
     highestWinRateRunes: {
       primaryStyleId: 8100,
@@ -114,7 +233,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8200,
       subStyleName: "Sorcery",
       subPerkIds: [8226, 8236],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5007, 5008, 5001),
     },
     similarChampions: [
       { championId: 103, name: "Ahri", key: "Ahri", avatarUrl: `${DDRAGON_CDN}/img/champion/Ahri.png` },
@@ -155,7 +274,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8000,
       subStyleName: "Precision",
       subPerkIds: [9111, 8014],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5008, 5008, 5011),
     },
     highestWinRateRunes: {
       primaryStyleId: 8100,
@@ -165,7 +284,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8200,
       subStyleName: "Sorcery",
       subPerkIds: [8233, 8236],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5008, 5010, 5001),
     },
     similarChampions: [
       { championId: 238, name: "Zed", key: "Zed", avatarUrl: `${DDRAGON_CDN}/img/champion/Zed.png` },
@@ -206,7 +325,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8200,
       subStyleName: "Sorcery",
       subPerkIds: [8233, 8236],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5005, 5008, 5001),
     },
     highestWinRateRunes: {
       primaryStyleId: 8000,
@@ -216,7 +335,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8100,
       subStyleName: "Domination",
       subPerkIds: [8138, 8105],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5005, 5008, 5011),
     },
     similarChampions: [
       { championId: 10, name: "Kayle", key: "Kayle", avatarUrl: `${DDRAGON_CDN}/img/champion/Kayle.png` },
@@ -258,7 +377,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8400,
       subStyleName: "Resolve",
       subPerkIds: [8429, 8451],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5005, 5008, 5001),
     },
     highestWinRateRunes: {
       primaryStyleId: 8400,
@@ -268,7 +387,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8000,
       subStyleName: "Precision",
       subPerkIds: [9111, 8299],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5008, 5008, 5013),
     },
     similarChampions: [
       { championId: 266, name: "Aatrox", key: "Aatrox", avatarUrl: `${DDRAGON_CDN}/img/champion/Aatrox.png` },
@@ -309,7 +428,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8300,
       subStyleName: "Inspiration",
       subPerkIds: [8345, 8347],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5007, 5001, 5001),
     },
     highestWinRateRunes: {
       primaryStyleId: 8400,
@@ -319,7 +438,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8000,
       subStyleName: "Precision",
       subPerkIds: [9111, 8014],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5005, 5001, 5013),
     },
     similarChampions: [
       { championId: 54, name: "Malphite", key: "Malphite", avatarUrl: `${DDRAGON_CDN}/img/champion/Malphite.png` },
@@ -360,7 +479,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8300,
       subStyleName: "Inspiration",
       subPerkIds: [8345, 8347],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5007, 5008, 5011),
     },
     highestWinRateRunes: {
       primaryStyleId: 8200,
@@ -370,7 +489,7 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
       subStyleId: 8400,
       subStyleName: "Resolve",
       subPerkIds: [8444, 8453],
-      statShards: STAT_SHARDS,
+      statShards: buildStatShards(5007, 5010, 5011),
     },
     similarChampions: [
       { championId: 412, name: "Thresh", key: "Thresh", avatarUrl: `${DDRAGON_CDN}/img/champion/Thresh.png` },
