@@ -32,6 +32,7 @@ model User {
   updatedAt       DateTime     @updatedAt @map("updated_at")
 
   sessions        Session[]
+  posts           Post[]
 
   @@map("users")
 }
@@ -155,4 +156,71 @@ model ChampionTierStat {
   @@map("champion_tier_stats")
 }
 
+enum POST_STATUS {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Post {
+  id                 String       @id @default(uuid())
+  title              String
+  slug               String       @unique
+  content            String       @db.Text
+  status             POST_STATUS  @default(DRAFT)
+  isEdited           Boolean      @default(false) @map("is_edited")
+  isArchived         Boolean      @default(false) @map("is_archived")
+  archivedAt         DateTime?    @map("archived_at")
+  cancelArchiveToken String?      @map("cancel_archive_token")
+  coverImageUrl      String?      @map("cover_image_url")
+  blurHash           String?      @map("blur_hash")
+
+  authorId           String       @map("author_id")
+  author             User         @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  tags               PostTag[]
+
+  createdAt          DateTime     @default(now()) @map("created_at")
+  updatedAt          DateTime     @updatedAt @map("updated_at")
+
+  @@index([authorId, status])
+  @@map("posts")
+}
+
+model PostTag {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  postsCount  Int       @default(0) @map("posts_count")
+
+  posts       Post[]
+
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@index([postsCount])
+  @@map("post_tags")
+}
+
+model ProPlayer {
+  id             String   @id @default(uuid())
+  slug           String   @unique
+  gameId         String   @map("game_id")
+  name           String
+  nickname       String
+  description    String?  @db.Text
+  avatar         String
+  playerImageUrl String?  @map("player_image_url")
+  role           String
+  team           String
+  themeColor     String   @default("blue") @map("theme_color")
+  displayOrder   Int      @default(0) @map("display_order")
+  lastMatch      Json     @map("last_match")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@index([displayOrder])
+  @@map("pro_players")
+}
 

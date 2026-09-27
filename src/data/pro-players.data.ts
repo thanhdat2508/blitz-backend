@@ -40,14 +40,17 @@ export interface ProPlayerMatch {
 export interface ProPlayerData {
   id: string;
   slug: string;
+  gameId: string;
   name: string;
   nickname: string;
-  role: "MID" | "TOP" | "JUNGLE" | "ADC" | "SUPPORT";
-  team: string;
-  themeColor: "blue" | "gold" | "red";
+  description?: string;
+  avatar: string;
   playerImageUrl: string;
   riotGameName: string;
   riotTagLine: string;
+  role: "MID" | "TOP" | "JUNGLE" | "ADC" | "SUPPORT";
+  team: string;
+  themeColor: "blue" | "gold" | "red";
   displayOrder: number;
   lastMatch: ProPlayerMatch;
 }
@@ -57,14 +60,17 @@ export const PRO_PLAYERS_DATA: ProPlayerData[] = [
   {
     id: "player-1",
     slug: "whale-member",
+    gameId: "Only Prime#duybt",
     name: "Duy",
     nickname: "Whale Storm",
+    description: "Standout Mid Laner for Team Whales known for elusive mechanics, tempo control, and supreme mastery over high-impact control mages.",
+    avatar: "https://res.cloudinary.com/vptfaug1/image/upload/player3.png",
+    playerImageUrl: "https://res.cloudinary.com/vptfaug1/image/upload/player3.png",
+    riotGameName: "Only Prime",
+    riotTagLine: "duybt",
     role: "MID",
     team: "Team Whales",
     themeColor: "blue",
-    playerImageUrl: "/players/player1.png",
-    riotGameName: "Only Prime",
-    riotTagLine: "duybt",
     displayOrder: 1,
     lastMatch: {
       championName: "Ahri",
@@ -117,14 +123,17 @@ export const PRO_PLAYERS_DATA: ProPlayerData[] = [
   {
     id: "player-2",
     slug: "geng-member",
+    gameId: "melting in mouth#236",
     name: "BigH",
     nickname: "Chovy Jr.",
+    description: "Prodigious Mid Laner for Gen.G Esports renowned for surgical lane pressure, perfect CS efficiency, and dominant Yone mechanics.",
+    avatar: "https://res.cloudinary.com/vptfaug1/image/upload/player2.png",
+    playerImageUrl: "https://res.cloudinary.com/vptfaug1/image/upload/player2.png",
+    riotGameName: "melting in mouth",
+    riotTagLine: "236",
     role: "MID",
     team: "Gen.G Esports",
     themeColor: "gold",
-    playerImageUrl: "/players/player2.png",
-    riotGameName: "melting in mouth",
-    riotTagLine: "236",
     displayOrder: 2,
     lastMatch: {
       championName: "Yone",
@@ -177,14 +186,17 @@ export const PRO_PLAYERS_DATA: ProPlayerData[] = [
   {
     id: "player-3",
     slug: "t1-member",
+    gameId: "Uzumacchiato#ngohi",
     name: "Hiep",
     nickname: "Knight",
+    description: "Franchise Bot Laner for T1 recognized for razor-sharp reflexes, immaculate teamfight positioning, and explosive hypercarry damage.",
+    avatar: "https://res.cloudinary.com/vptfaug1/image/upload/player1.png",
+    playerImageUrl: "https://res.cloudinary.com/vptfaug1/image/upload/player1.png",
+    riotGameName: "Uzumacchiato",
+    riotTagLine: "ngohi",
     role: "ADC",
     team: "T1",
     themeColor: "red",
-    playerImageUrl: "/players/player3.png",
-    riotGameName: "Uzumacchiato",
-    riotTagLine: "ngohi",
     displayOrder: 3,
     lastMatch: {
       championName: "Jinx",

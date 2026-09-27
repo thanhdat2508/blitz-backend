@@ -88,4 +88,32 @@ export const authenticateJwt = async (
   }
 };
 
+export const optionalAuthenticateJwt = async (
+  req: Request,
+  _res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const token =
+      req.cookies?._at ||
+      req.headers.authorization?.replace(/^Bearer\s+/i, "");
+
+    if (token) {
+      const payload = SessionService.verifyAccessToken(token);
+      if (payload?.id && payload?.sessionId) {
+        req.user = {
+          id: payload.id,
+          sessionId: payload.sessionId,
+          email: payload.email || null,
+          username: payload.username || null,
+          name: null,
+        };
+      }
+    }
+  } catch {
+    // Ignore invalid tokens for optional auth
+  }
+  next();
+};
+
 export default authenticateJwt;
