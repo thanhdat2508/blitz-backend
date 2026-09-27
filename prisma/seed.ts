@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import prisma from "../src/config/database";
 import { CHAMPION_CATALOG } from "../src/data/champion-catalog";
+import { PRO_PLAYERS_DATA } from "../src/data/pro-players.data";
 import { ChampionRole, RankTier } from "../src/types/tierlist.types";
 import { DDRAGON_BASE_URL, DEFAULT_DDRAGON_VERSION } from "../src/config/riot";
 import { championBuildService } from "../src/modules/champion-build/services/champion-build.service";
@@ -247,7 +248,50 @@ async function seedChampionBuilds() {
   console.log(`Successfully seeded ${champions.length} champions and ${buildCount} dynamic role builds!`);
 }
 
+async function seedProPlayers() {
+  console.log("Seeding Pro Players into PostgreSQL...");
+  for (const player of PRO_PLAYERS_DATA) {
+    try {
+      await (prisma as any).proPlayer.upsert({
+        where: { slug: player.slug },
+        update: {
+          gameId: player.gameId,
+          name: player.name,
+          nickname: player.nickname,
+          description: player.description,
+          avatar: player.avatar,
+          playerImageUrl: player.playerImageUrl,
+          role: player.role,
+          team: player.team,
+          themeColor: player.themeColor,
+          displayOrder: player.displayOrder,
+          lastMatch: player.lastMatch as any,
+        },
+        create: {
+          id: player.id,
+          slug: player.slug,
+          gameId: player.gameId,
+          name: player.name,
+          nickname: player.nickname,
+          description: player.description,
+          avatar: player.avatar,
+          playerImageUrl: player.playerImageUrl,
+          role: player.role,
+          team: player.team,
+          themeColor: player.themeColor,
+          displayOrder: player.displayOrder,
+          lastMatch: player.lastMatch as any,
+        },
+      });
+    } catch (err) {
+      console.warn(`Failed to seed player ${player.name}:`, err);
+    }
+  }
+  console.log("Pro Players seeded successfully!");
+}
+
 async function main() {
+  await seedProPlayers();
   await seedChampionTierStats();
   try {
     await seedChampionBuilds();

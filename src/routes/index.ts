@@ -5,6 +5,7 @@ import cryptoRoutes from "./crypto.routes";
 import championBuildRoutes from "../modules/champion-build/routes/champion-build.routes";
 import playerRoutes from "./player.routes";
 import tierListRoutes from "./tierlist.routes";
+import proPlayerRoutes from "./pro-player.routes";
 import postRoutes from "./post.routes";
 
 const router = Router();
@@ -23,6 +24,7 @@ router.use("/crypto", cryptoRoutes);
 router.use("/champions", championBuildRoutes);
 router.use("/player", playerRoutes);
 router.use("/champions", tierListRoutes);
+router.use("/pro-players", proPlayerRoutes);
 router.use("/posts", postRoutes);
 
 export default router;
