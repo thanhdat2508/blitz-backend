@@ -10,7 +10,7 @@
       "Fighter"
     ],
     "partype": "Blood Well",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Aatrox.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Aatrox.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg",
     "roles": [
       "top"
@@ -28,7 +28,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ahri.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ahri.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
     "roles": [
       "mid"
@@ -45,7 +45,7 @@
       "Assassin"
     ],
     "partype": "Energy",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Akali.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Akali.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg",
     "roles": [
       "mid"
@@ -63,7 +63,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Akshan.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Akshan.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akshan_0.jpg",
     "roles": [
       "adc"
@@ -81,7 +81,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Alistar.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Alistar.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg",
     "roles": [
       "top",
@@ -100,7 +100,7 @@
       "Assassin"
     ],
     "partype": "Energy",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ambessa.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ambessa.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ambessa_0.jpg",
     "roles": [
       "top"
@@ -118,7 +118,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Amumu.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Amumu.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg",
     "roles": [
       "jungle"
@@ -135,7 +135,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Anivia.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Anivia.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg",
     "roles": [
       "mid"
@@ -153,7 +153,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Annie.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Annie.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg",
     "roles": [
       "mid",
@@ -171,7 +171,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Aphelios.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Aphelios.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg",
     "roles": [
       "adc"
@@ -189,7 +189,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ashe.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ashe.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg",
     "roles": [
       "adc"
@@ -206,7 +206,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/AurelionSol.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/AurelionSol.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg",
     "roles": [
       "mid"
@@ -224,7 +224,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Aurora.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Aurora.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aurora_0.jpg",
     "roles": [
       "mid"
@@ -242,7 +242,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Azir.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Azir.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Azir_0.jpg",
     "roles": [
       "mid"
@@ -260,7 +260,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Bard.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Bard.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Bard_0.jpg",
     "roles": [
       "support"
@@ -277,7 +277,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Belveth.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Belveth.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Belveth_0.jpg",
     "roles": [
       "jungle"
@@ -295,7 +295,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Blitzcrank.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Blitzcrank.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg",
     "roles": [
       "top",
@@ -314,7 +314,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Brand.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Brand.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg",
     "roles": [
       "mid",
@@ -333,7 +333,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Braum.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Braum.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg",
     "roles": [
       "top",
@@ -352,7 +352,7 @@
       "Assassin"
     ],
     "partype": "Fury",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Briar.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Briar.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar_0.jpg",
     "roles": [
       "jungle"
@@ -369,7 +369,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Caitlyn.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Caitlyn.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg",
     "roles": [
       "adc"
@@ -387,7 +387,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Camille.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Camille.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg",
     "roles": [
       "top"
@@ -404,7 +404,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Cassiopeia.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Cassiopeia.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg",
     "roles": [
       "mid"
@@ -422,7 +422,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Chogath.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Chogath.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg",
     "roles": [
       "top"
@@ -440,7 +440,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Corki.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Corki.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Corki_0.jpg",
     "roles": [
       "adc"
@@ -458,7 +458,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Darius.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Darius.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg",
     "roles": [
       "top"
@@ -476,7 +476,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Diana.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Diana.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg",
     "roles": [
       "top"
@@ -494,7 +494,7 @@
       "Fighter"
     ],
     "partype": "None",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/DrMundo.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/DrMundo.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_0.jpg",
     "roles": [
       "top"
@@ -511,7 +511,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Draven.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Draven.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg",
     "roles": [
       "adc"
@@ -529,7 +529,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ekko.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ekko.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_0.jpg",
     "roles": [
       "mid"
@@ -547,7 +547,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Elise.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Elise.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Elise_0.jpg",
     "roles": [
       "jungle"
@@ -565,7 +565,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Evelynn.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Evelynn.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg",
     "roles": [
       "jungle"
@@ -583,7 +583,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ezreal.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ezreal.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg",
     "roles": [
       "adc"
@@ -601,7 +601,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Fiddlesticks.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Fiddlesticks.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiddlesticks_0.jpg",
     "roles": [
       "jungle"
@@ -619,7 +619,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Fiora.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Fiora.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg",
     "roles": [
       "top"
@@ -637,7 +637,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Fizz.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Fizz.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fizz_0.jpg",
     "roles": [
       "mid",
@@ -656,7 +656,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Galio.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Galio.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Galio_0.jpg",
     "roles": [
       "top"
@@ -673,7 +673,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gangplank.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Gangplank.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gangplank_0.jpg",
     "roles": [
       "top"
@@ -691,7 +691,7 @@
       "Tank"
     ],
     "partype": "None",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Garen.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Garen.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg",
     "roles": [
       "top"
@@ -709,7 +709,7 @@
       "Tank"
     ],
     "partype": "Rage",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gnar.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Gnar.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gnar_0.jpg",
     "roles": [
       "top"
@@ -727,7 +727,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gragas.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Gragas.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg",
     "roles": [
       "top"
@@ -744,7 +744,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Graves.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Graves.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg",
     "roles": [
       "jungle"
@@ -761,7 +761,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Gwen.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Gwen.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_0.jpg",
     "roles": [
       "top"
@@ -779,7 +779,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Hecarim.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Hecarim.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg",
     "roles": [
       "jungle"
@@ -797,7 +797,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Heimerdinger.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Heimerdinger.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg",
     "roles": [
       "mid",
@@ -816,7 +816,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Hwei.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Hwei.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hwei_0.jpg",
     "roles": [
       "mid",
@@ -835,7 +835,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Illaoi.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Illaoi.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Illaoi_0.jpg",
     "roles": [
       "top"
@@ -853,7 +853,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Irelia.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Irelia.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg",
     "roles": [
       "top"
@@ -871,7 +871,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ivern.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ivern.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg",
     "roles": [
       "jungle"
@@ -889,7 +889,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Janna.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Janna.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg",
     "roles": [
       "support"
@@ -907,7 +907,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/JarvanIV.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/JarvanIV.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg",
     "roles": [
       "jungle"
@@ -924,7 +924,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jax.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Jax.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg",
     "roles": [
       "top"
@@ -936,16 +936,16 @@
     "key": "Jayce",
     "name": "Jayce",
     "title": "the Defender of Tomorrow",
-    "primaryClass": "Marksman",
+    "primaryClass": "Fighter",
     "tags": [
-      "Marksman",
-      "Fighter"
+      "Fighter",
+      "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jayce.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Jayce.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg",
     "roles": [
-      "adc"
+      "top"
     ]
   },
   {
@@ -960,7 +960,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jhin.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Jhin.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg",
     "roles": [
       "adc"
@@ -977,7 +977,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jinx.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Jinx.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg",
     "roles": [
       "adc"
@@ -995,7 +995,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/KSante.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/KSante.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KSante_0.jpg",
     "roles": [
       "top"
@@ -1013,7 +1013,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kaisa.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kaisa.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg",
     "roles": [
       "adc"
@@ -1030,7 +1030,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kalista.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kalista.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg",
     "roles": [
       "adc"
@@ -1048,7 +1048,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Karma.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Karma.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg",
     "roles": [
       "mid",
@@ -1066,7 +1066,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Karthus.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Karthus.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg",
     "roles": [
       "mid"
@@ -1084,7 +1084,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kassadin.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kassadin.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg",
     "roles": [
       "mid"
@@ -1102,7 +1102,7 @@
       "Mage"
     ],
     "partype": "None",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Katarina.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Katarina.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg",
     "roles": [
       "mid"
@@ -1114,16 +1114,16 @@
     "key": "Kayle",
     "name": "Kayle",
     "title": "the Righteous",
-    "primaryClass": "Mage",
+    "primaryClass": "Marksman",
     "tags": [
-      "Mage",
-      "Marksman"
+      "Marksman",
+      "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kayle.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kayle.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg",
     "roles": [
-      "mid"
+      "adc"
     ]
   },
   {
@@ -1138,7 +1138,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kayn.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kayn.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayn_0.jpg",
     "roles": [
       "jungle"
@@ -1155,7 +1155,7 @@
       "Mage"
     ],
     "partype": "Energy",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kennen.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kennen.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg",
     "roles": [
       "mid"
@@ -1172,7 +1172,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Khazix.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Khazix.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg",
     "roles": [
       "jungle"
@@ -1189,7 +1189,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kindred.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kindred.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg",
     "roles": [
       "jungle"
@@ -1206,7 +1206,7 @@
       "Fighter"
     ],
     "partype": "Courage",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kled.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Kled.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg",
     "roles": [
       "top"
@@ -1224,7 +1224,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/KogMaw.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/KogMaw.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg",
     "roles": [
       "adc"
@@ -1242,7 +1242,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Leblanc.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Leblanc.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
     "roles": [
       "mid"
@@ -1260,7 +1260,7 @@
       "Assassin"
     ],
     "partype": "Energy",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/LeeSin.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/LeeSin.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg",
     "roles": [
       "jungle"
@@ -1278,7 +1278,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Leona.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Leona.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg",
     "roles": [
       "top",
@@ -1297,7 +1297,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lillia.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Lillia.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg",
     "roles": [
       "top"
@@ -1314,8 +1314,26 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lissandra.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Lissandra.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg",
+    "roles": [
+      "mid"
+    ]
+  },
+  {
+    "id": "bcb469da-c71a-5919-a1d1-d3aef2609c11",
+    "riotKey": "805",
+    "key": "Locke",
+    "name": "Locke",
+    "title": "the Ashen Exorcist",
+    "primaryClass": "Assassin",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Locke.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Locke_0.jpg",
     "roles": [
       "mid"
     ]
@@ -1332,7 +1350,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lucian.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Lucian.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg",
     "roles": [
       "adc"
@@ -1350,7 +1368,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lulu.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Lulu.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg",
     "roles": [
       "support"
@@ -1368,7 +1386,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lux.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Lux.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
     "roles": [
       "mid",
@@ -1387,7 +1405,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Malphite.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Malphite.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg",
     "roles": [
       "top"
@@ -1404,7 +1422,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Malzahar.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Malzahar.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg",
     "roles": [
       "mid"
@@ -1422,7 +1440,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Maokai.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Maokai.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg",
     "roles": [
       "top",
@@ -1435,16 +1453,35 @@
     "key": "MasterYi",
     "name": "Master Yi",
     "title": "the Wuju Bladesman",
-    "primaryClass": "Assassin",
+    "primaryClass": "Fighter",
     "tags": [
-      "Assassin",
-      "Fighter"
+      "Fighter",
+      "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/MasterYi.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/MasterYi.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg",
     "roles": [
       "jungle"
+    ]
+  },
+  {
+    "id": "3539cf2b-53ac-524f-a384-43b95f6f98a0",
+    "riotKey": "800",
+    "key": "Mel",
+    "name": "Mel",
+    "title": "the Soul's Reflection",
+    "primaryClass": "Mage",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Mel.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mel_0.jpg",
+    "roles": [
+      "mid",
+      "support"
     ]
   },
   {
@@ -1459,7 +1496,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Milio.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Milio.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Milio_0.jpg",
     "roles": [
       "support"
@@ -1477,7 +1514,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/MissFortune.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/MissFortune.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg",
     "roles": [
       "adc"
@@ -1495,7 +1532,7 @@
       "Mage"
     ],
     "partype": "Shield",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Mordekaiser.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Mordekaiser.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg",
     "roles": [
       "top"
@@ -1507,16 +1544,15 @@
     "key": "Morgana",
     "name": "Morgana",
     "title": "the Fallen",
-    "primaryClass": "Mage",
+    "primaryClass": "Support",
     "tags": [
-      "Mage",
-      "Support"
+      "Support",
+      "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Morgana.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Morgana.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Morgana_0.jpg",
     "roles": [
-      "mid",
       "support"
     ]
   },
@@ -1532,7 +1568,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Naafiri.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Naafiri.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Naafiri_0.jpg",
     "roles": [
       "mid",
@@ -1551,7 +1587,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nami.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nami.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg",
     "roles": [
       "support"
@@ -1569,7 +1605,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nasus.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nasus.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg",
     "roles": [
       "top"
@@ -1587,7 +1623,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nautilus.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nautilus.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg",
     "roles": [
       "top",
@@ -1606,7 +1642,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Neeko.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Neeko.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg",
     "roles": [
       "mid",
@@ -1625,7 +1661,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nidalee.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nidalee.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg",
     "roles": [
       "jungle"
@@ -1643,7 +1679,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nilah.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nilah.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nilah_0.jpg",
     "roles": [
       "top"
@@ -1661,7 +1697,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nocturne.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nocturne.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg",
     "roles": [
       "jungle"
@@ -1679,7 +1715,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nunu.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Nunu.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg",
     "roles": [
       "top"
@@ -1697,7 +1733,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Olaf.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Olaf.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg",
     "roles": [
       "top"
@@ -1715,7 +1751,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Orianna.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Orianna.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg",
     "roles": [
       "mid",
@@ -1733,7 +1769,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ornn.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ornn.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg",
     "roles": [
       "top"
@@ -1751,7 +1787,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Pantheon.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Pantheon.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg",
     "roles": [
       "top"
@@ -1769,7 +1805,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Poppy.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Poppy.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg",
     "roles": [
       "top"
@@ -1787,7 +1823,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Pyke.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Pyke.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg",
     "roles": [
       "support"
@@ -1804,7 +1840,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Qiyana.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Qiyana.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg",
     "roles": [
       "mid"
@@ -1822,7 +1858,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Quinn.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Quinn.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg",
     "roles": [
       "adc"
@@ -1839,7 +1875,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rakan.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Rakan.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg",
     "roles": [
       "support"
@@ -1856,7 +1892,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rammus.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Rammus.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg",
     "roles": [
       "jungle"
@@ -1874,7 +1910,7 @@
       "Tank"
     ],
     "partype": "Rage",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/RekSai.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/RekSai.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg",
     "roles": [
       "top"
@@ -1892,7 +1928,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rell.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Rell.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg",
     "roles": [
       "top",
@@ -1911,7 +1947,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Renata.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Renata.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renata_0.jpg",
     "roles": [
       "support"
@@ -1929,7 +1965,7 @@
       "Tank"
     ],
     "partype": "Fury",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Renekton.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Renekton.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg",
     "roles": [
       "top"
@@ -1947,7 +1983,7 @@
       "Fighter"
     ],
     "partype": "Ferocity",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rengar.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Rengar.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg",
     "roles": [
       "jungle"
@@ -1965,7 +2001,7 @@
       "Assassin"
     ],
     "partype": "None",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Riven.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Riven.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg",
     "roles": [
       "top"
@@ -1983,7 +2019,7 @@
       "Mage"
     ],
     "partype": "Heat",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Rumble.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Rumble.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg",
     "roles": [
       "top"
@@ -2000,7 +2036,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ryze.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ryze.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg",
     "roles": [
       "mid"
@@ -2018,7 +2054,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Samira.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Samira.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg",
     "roles": [
       "adc"
@@ -2035,7 +2071,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sejuani.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Sejuani.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg",
     "roles": [
       "jungle"
@@ -2053,7 +2089,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Senna.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Senna.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg",
     "roles": [
       "support"
@@ -2071,7 +2107,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Seraphine.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Seraphine.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg",
     "roles": [
       "support"
@@ -2089,7 +2125,7 @@
       "Tank"
     ],
     "partype": "Grit",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sett.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Sett.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg",
     "roles": [
       "top"
@@ -2106,7 +2142,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Shaco.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Shaco.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg",
     "roles": [
       "jungle"
@@ -2123,7 +2159,7 @@
       "Tank"
     ],
     "partype": "Energy",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Shen.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Shen.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shen_0.jpg",
     "roles": [
       "top"
@@ -2138,10 +2174,10 @@
     "primaryClass": "Fighter",
     "tags": [
       "Fighter",
-      "Mage"
+      "Tank"
     ],
     "partype": "Fury",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Shyvana.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Shyvana.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg",
     "roles": [
       "top"
@@ -2159,7 +2195,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Singed.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Singed.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Singed_0.jpg",
     "roles": [
       "top"
@@ -2177,7 +2213,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sion.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Sion.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg",
     "roles": [
       "top"
@@ -2194,7 +2230,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sivir.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Sivir.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg",
     "roles": [
       "adc"
@@ -2212,7 +2248,7 @@
       "Fighter"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Skarner.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Skarner.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg",
     "roles": [
       "jungle"
@@ -2230,7 +2266,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Smolder.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Smolder.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Smolder_0.jpg",
     "roles": [
       "adc"
@@ -2248,7 +2284,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sona.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Sona.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg",
     "roles": [
       "support"
@@ -2266,7 +2302,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Soraka.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Soraka.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg",
     "roles": [
       "support"
@@ -2284,7 +2320,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Swain.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Swain.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Swain_0.jpg",
     "roles": [
       "mid",
@@ -2303,7 +2339,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Sylas.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Sylas.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg",
     "roles": [
       "mid"
@@ -2320,7 +2356,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Syndra.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Syndra.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg",
     "roles": [
       "mid"
@@ -2338,7 +2374,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/TahmKench.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/TahmKench.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TahmKench_0.jpg",
     "roles": [
       "top",
@@ -2357,7 +2393,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Taliyah.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Taliyah.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg",
     "roles": [
       "mid",
@@ -2375,7 +2411,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Talon.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Talon.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Talon_0.jpg",
     "roles": [
       "mid"
@@ -2393,7 +2429,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Taric.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Taric.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg",
     "roles": [
       "support"
@@ -2411,7 +2447,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Teemo.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Teemo.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg",
     "roles": [
       "adc"
@@ -2429,7 +2465,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Thresh.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Thresh.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg",
     "roles": [
       "support"
@@ -2447,7 +2483,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Tristana.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Tristana.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg",
     "roles": [
       "adc"
@@ -2465,7 +2501,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Trundle.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Trundle.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Trundle_0.jpg",
     "roles": [
       "top"
@@ -2483,7 +2519,7 @@
       "Assassin"
     ],
     "partype": "Fury",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Tryndamere.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Tryndamere.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg",
     "roles": [
       "top"
@@ -2501,7 +2537,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/TwistedFate.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/TwistedFate.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg",
     "roles": [
       "mid"
@@ -2519,7 +2555,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Twitch.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Twitch.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg",
     "roles": [
       "adc"
@@ -2537,7 +2573,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Udyr.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Udyr.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Udyr_0.jpg",
     "roles": [
       "jungle"
@@ -2555,7 +2591,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Urgot.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Urgot.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Urgot_0.jpg",
     "roles": [
       "top"
@@ -2573,7 +2609,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Varus.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Varus.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_0.jpg",
     "roles": [
       "adc"
@@ -2591,7 +2627,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vayne.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Vayne.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg",
     "roles": [
       "adc"
@@ -2608,7 +2644,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Veigar.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Veigar.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg",
     "roles": [
       "mid"
@@ -2626,7 +2662,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Velkoz.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Velkoz.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Velkoz_0.jpg",
     "roles": [
       "mid",
@@ -2644,7 +2680,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vex.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Vex.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vex_0.jpg",
     "roles": [
       "mid"
@@ -2662,7 +2698,7 @@
       "Assassin"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vi.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Vi.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg",
     "roles": [
       "top"
@@ -2680,7 +2716,7 @@
       "Assassin"
     ],
     "partype": "None",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Viego.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Viego.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viego_0.jpg",
     "roles": [
       "jungle"
@@ -2697,7 +2733,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Viktor.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Viktor.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viktor_0.jpg",
     "roles": [
       "mid"
@@ -2715,7 +2751,7 @@
       "Fighter"
     ],
     "partype": "Crimson Rush",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vladimir.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Vladimir.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vladimir_0.jpg",
     "roles": [
       "mid"
@@ -2733,7 +2769,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Volibear.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Volibear.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg",
     "roles": [
       "top"
@@ -2751,7 +2787,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Warwick.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Warwick.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg",
     "roles": [
       "jungle"
@@ -2769,7 +2805,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/MonkeyKing.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/MonkeyKing.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg",
     "roles": [
       "top"
@@ -2786,7 +2822,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Xayah.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Xayah.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg",
     "roles": [
       "adc"
@@ -2804,7 +2840,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Xerath.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Xerath.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg",
     "roles": [
       "mid",
@@ -2823,7 +2859,7 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/XinZhao.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/XinZhao.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg",
     "roles": [
       "jungle"
@@ -2841,7 +2877,7 @@
       "Assassin"
     ],
     "partype": "Flow",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yasuo.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Yasuo.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
     "roles": [
       "top"
@@ -2859,7 +2895,7 @@
       "Assassin"
     ],
     "partype": "Flow",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yone.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Yone.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg",
     "roles": [
       "top"
@@ -2877,10 +2913,27 @@
       "Tank"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yorick.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Yorick.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg",
     "roles": [
       "top"
+    ]
+  },
+  {
+    "id": "26c07769-f117-5e43-a20c-7d0be76fd892",
+    "riotKey": "804",
+    "key": "Yunara",
+    "name": "Yunara",
+    "title": "the Unbroken Faith",
+    "primaryClass": "Marksman",
+    "tags": [
+      "Marksman"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Yunara.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yunara_0.jpg",
+    "roles": [
+      "adc"
     ]
   },
   {
@@ -2895,10 +2948,27 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yuumi.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Yuumi.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg",
     "roles": [
       "support"
+    ]
+  },
+  {
+    "id": "80062f15-babe-5bae-acea-db63b4c147f5",
+    "riotKey": "904",
+    "key": "Zaahen",
+    "name": "Zaahen",
+    "title": "The Unsundered",
+    "primaryClass": "Fighter",
+    "tags": [
+      "Fighter"
+    ],
+    "partype": "Mana",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zaahen.png",
+    "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zaahen_0.jpg",
+    "roles": [
+      "top"
     ]
   },
   {
@@ -2913,7 +2983,7 @@
       "Fighter"
     ],
     "partype": "None",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zac.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zac.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg",
     "roles": [
       "jungle"
@@ -2930,7 +3000,7 @@
       "Assassin"
     ],
     "partype": "Energy",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zed.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zed.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg",
     "roles": [
       "mid"
@@ -2947,7 +3017,7 @@
       "Marksman"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zeri.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zeri.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zeri_0.jpg",
     "roles": [
       "adc"
@@ -2964,7 +3034,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ziggs.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Ziggs.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg",
     "roles": [
       "mid"
@@ -2982,7 +3052,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zilean.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zilean.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg",
     "roles": [
       "support"
@@ -2999,7 +3069,7 @@
       "Mage"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zoe.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zoe.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg",
     "roles": [
       "mid"
@@ -3017,7 +3087,7 @@
       "Support"
     ],
     "partype": "Mana",
-    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zyra.png",
+    "avatarUrl": "https://ddragon.leagueoflegends.com/cdn/16.19.1/img/champion/Zyra.png",
     "splashUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg",
     "roles": [
       "mid",
