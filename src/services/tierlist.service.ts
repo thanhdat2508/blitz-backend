@@ -202,15 +202,26 @@ export class TierListService {
     role: RoleType,
     patchVersion: string
   ): Promise<Omit<ChampionTierItem, "rank">[]> {
-    const cacheKey = `tierlist:v1:${rank}:${role}`;
+    const cacheKey = `tierlist:v2:${patchVersion}:${rank}:${role}`;
 
-    // 1. Check Redis Cache first (Cache-Aside pattern)
+    // 1. Check Redis Cache first (Cache-Aside pattern with completeness validation)
     if (this.redis.isOpen) {
       try {
         const cached = await this.redis.get(cacheKey);
         if (cached) {
           const parsed = JSON.parse(cached) as Omit<ChampionTierItem, "rank">[];
-          return role === "all" ? this.deduplicateToUniqueChampions(parsed) : parsed;
+          const expectedMinCount =
+            role === "all"
+              ? CHAMPION_CATALOG.length
+              : CHAMPION_CATALOG.filter((c) => c.roles.includes(role as ChampionRole)).length;
+
+          // Only accept cached data if it satisfies expected champion catalog coverage
+          if (parsed.length >= expectedMinCount) {
+            return role === "all" ? this.deduplicateToUniqueChampions(parsed) : parsed;
+          }
+
+          // Purge stale or incomplete cache entry
+          await this.redis.del(cacheKey).catch(() => {});
         }
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -248,6 +259,70 @@ export class TierListService {
           avatarUrl: r.avatarUrl,
         }));
         fetchedFromDb = true;
+
+        // Self-Healing Auto-Fill: Verify and automatically supplement any missing champions from catalog
+        const targetCatalog =
+          role === "all"
+            ? CHAMPION_CATALOG
+            : CHAMPION_CATALOG.filter((c) => c.roles.includes(role as ChampionRole));
+
+        const existingChampionIds = new Set(
+          items.map((item) =>
+            role === "all"
+              ? item.championId.toLowerCase()
+              : `${item.championId.toLowerCase()}:${item.role}`
+          )
+        );
+
+        const missingChampsToGenerate: Array<{
+          champ: ChampionCatalogItem;
+          roleToUse: ChampionRole;
+        }> = [];
+
+        for (const champ of targetCatalog) {
+          if (role === "all") {
+            if (!existingChampionIds.has(champ.id.toLowerCase())) {
+              missingChampsToGenerate.push({ champ, roleToUse: champ.roles[0] });
+            }
+          } else {
+            const key = `${champ.id.toLowerCase()}:${role}`;
+            if (!existingChampionIds.has(key)) {
+              missingChampsToGenerate.push({ champ, roleToUse: role as ChampionRole });
+            }
+          }
+        }
+
+        if (missingChampsToGenerate.length > 0) {
+          const generatedMissing = missingChampsToGenerate.map(({ champ, roleToUse }) =>
+            this.generateChampionStats(champ, roleToUse, rank, patchVersion)
+          );
+          items.push(...generatedMissing);
+
+          // Asynchronously persist newly supplemented records to PostgreSQL
+          const toInsertMissing = generatedMissing.map((item) => ({
+            championId: item.championId,
+            name: item.name,
+            roleId: item.role,
+            rank,
+            tier: item.tier,
+            winRate: item.winRate,
+            patchWrChange: item.patchWrChange,
+            banRate: item.banRate,
+            pickRate: item.pickRate,
+            matches: item.matches,
+            avatarUrl: item.avatarUrl,
+            patch: patchVersion,
+          }));
+
+          (this.db as any).championTierStat
+            .createMany({
+              data: toInsertMissing,
+              skipDuplicates: true,
+            })
+            .catch((insertErr: unknown) => {
+              console.warn("[Prisma Self-Healing Auto-Fill Warning]:", insertErr);
+            });
+        }
       } else {
         // Self-Healing Auto-Seed: Ensure master roles exist in Role table first
         const ROLES_DATA = [
