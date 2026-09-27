@@ -13,6 +13,10 @@ import {
   TierListResponse,
 } from "../types/tierlist.types";
 
+const PRIMARY_ROLE_BY_CHAMPION = new Map<string, ChampionRole>(
+  CHAMPION_CATALOG.map((c) => [c.id.toLowerCase(), c.roles[0]])
+);
+
 export class TierListService {
   constructor(
     private readonly db = prisma,
@@ -156,6 +160,42 @@ export class TierListService {
     return items;
   }
 
+  /**
+   * Deduplicates records for the 'all' role view so each champion is represented
+   * exactly once by their primary competitive role (Unique Champion Model - 173 champions).
+   */
+  private deduplicateToUniqueChampions(
+    items: Omit<ChampionTierItem, "rank">[]
+  ): Omit<ChampionTierItem, "rank">[] {
+    const championMap = new Map<string, Omit<ChampionTierItem, "rank">>();
+
+    for (const item of items) {
+      const key = item.championId.toLowerCase();
+      const existing = championMap.get(key);
+      const catalogPrimaryRole = PRIMARY_ROLE_BY_CHAMPION.get(key);
+
+      if (!existing) {
+        championMap.set(key, item);
+        continue;
+      }
+
+      // Priority 1: Pick the record matching the catalog primary role
+      if (item.role === catalogPrimaryRole && existing.role !== catalogPrimaryRole) {
+        championMap.set(key, item);
+      } else if (
+        (item.role === catalogPrimaryRole && existing.role === catalogPrimaryRole) ||
+        (item.role !== catalogPrimaryRole && existing.role !== catalogPrimaryRole)
+      ) {
+        // Priority 2: Pick the role variant with higher match count / pick rate
+        if (item.matches > existing.matches) {
+          championMap.set(key, item);
+        }
+      }
+    }
+
+    return Array.from(championMap.values());
+  }
+
   // Retrieves dataset from Redis Cache, PostgreSQL Database, with self-healing auto-seed
   private async getBaseDataset(
     rank: RankTier,
@@ -169,7 +209,8 @@ export class TierListService {
       try {
         const cached = await this.redis.get(cacheKey);
         if (cached) {
-          return JSON.parse(cached);
+          const parsed = JSON.parse(cached) as Omit<ChampionTierItem, "rank">[];
+          return role === "all" ? this.deduplicateToUniqueChampions(parsed) : parsed;
         }
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -260,6 +301,11 @@ export class TierListService {
         }. Falling back to in-memory engine.`
       );
       items = this.generateCatalogDataset(rank, role, patchVersion);
+    }
+
+    // Deduplicate when role is 'all' to guarantee exact 173 unique champions
+    if (role === "all") {
+      items = this.deduplicateToUniqueChampions(items);
     }
 
     // 3. Cache the resolved dataset in Redis (TTL 1 hour)
