@@ -55,10 +55,30 @@ export interface DamageBreakdown {
   trueDamage: number;
 }
 
+export type StatShardRowType = "offense" | "flex" | "defense";
+
+export interface StatShardOption {
+  id: number;
+  code: string;
+  name: string;
+  description: string;
+  iconUrl: string;
+  isSelected: boolean;
+}
+
+export interface StatShardRow {
+  row: number;
+  type: StatShardRowType;
+  selectedId: number;
+  options: StatShardOption[];
+}
+
 export interface StatShards {
   offense: number;
   flex: number;
   defense: number;
+  slots: [number, number, number];
+  rows: StatShardRow[];
 }
 
 export interface RuneSetup {

@@ -96,6 +96,31 @@ async function runTests() {
   }
   console.log(`✅ PASSED: Insights: ${quinn.insights.strengths.length} strengths, ${quinn.insights.weaknesses.length} weaknesses`);
 
+  // 2.8 Stat Shards (3x3 Matrix & Archetype Verification)
+  const { statShards } = quinn.runes.mostPopular;
+  if (statShards.offense !== 5005 || statShards.flex !== 5008 || statShards.defense !== 5001) {
+    throw new Error(`Expected Quinn Marksman shards [5005, 5008, 5001], got [${statShards.offense}, ${statShards.flex}, ${statShards.defense}]`);
+  }
+  if (!statShards.slots || statShards.slots[0] !== 5005 || statShards.slots[1] !== 5008 || statShards.slots[2] !== 5001) {
+    throw new Error(`Expected slots [5005, 5008, 5001], got ${JSON.stringify(statShards.slots)}`);
+  }
+  if (!statShards.rows || statShards.rows.length !== 3) {
+    throw new Error(`Expected 3 rows in statShards.rows, got ${statShards.rows?.length}`);
+  }
+  for (const row of statShards.rows) {
+    if (row.options.length !== 3) {
+      throw new Error(`Row ${row.row} must have exactly 3 options, got ${row.options.length}`);
+    }
+    const selectedOptions = row.options.filter((o) => o.isSelected);
+    if (selectedOptions.length !== 1) {
+      throw new Error(`Row ${row.row} must have exactly 1 selected option, got ${selectedOptions.length}`);
+    }
+    if (selectedOptions[0].id !== row.selectedId) {
+      throw new Error(`Row ${row.row} selectedId ${row.selectedId} doesn't match selected option ${selectedOptions[0].id}`);
+    }
+  }
+  console.log(`✅ PASSED: Stat Shards 3x3 Matrix verified for Marksman: Row 1=Attack Speed (5005), Row 2=Adaptive Force (5008), Row 3=Scaling Health (5001)`);
+
   // Test 3: Ahri Mid (Mage Verification with AP damage breakdown and 6 AP items)
   console.log("\n[TEST 3] Ahri Mid (Mage Damage & AP Completed Items)");
   const ahri = await service.getChampionBuild("Ahri", "mid", "EMERALD+", "WORLD", "14.24");
@@ -111,7 +136,11 @@ async function runTests() {
   if (!ahri.items.completed[0].itemIds.includes(3089)) {
     throw new Error("Expected Ahri completed items to include Rabadon's Deathcap (3089)");
   }
+  if (ahri.runes.mostPopular.statShards.defense !== 5011) {
+    throw new Error(`Expected Ahri Mage defense shard 5011 (Flat Health), got ${ahri.runes.mostPopular.statShards.defense}`);
+  }
   console.log(`✅ PASSED: Ahri Magic Damage: ${ahri.damageBreakdown.magic}% AP, Class: ${ahri.overview.primaryClass}, Completed AP items verified`);
+  console.log(`✅ PASSED: Ahri Stat Shards: Mage defense shard is Flat Health (5011)`);
 
   // Test 4: Decimal Precision Check across all numbers
   console.log("\n[TEST 4] Precision Audit (strictly <= 2 decimals)");
@@ -202,6 +231,35 @@ async function runTests() {
     throw new Error("Concurrent requests failed");
   }
   console.log("✅ PASSED: Concurrent multi-champion requests resolved safely with 0 race conditions");
+
+  // Test 7: Full 3x3 Stat Shards Matrix & Season 14 Validation
+  console.log("\n[TEST 7] Season 14 Stat Shards 3x3 Matrix & Icon Integrity Verification");
+  const malphite = await service.getChampionBuild("Malphite", "top", "EMERALD+", "WORLD");
+  const tankShards = malphite.runes.mostPopular.statShards;
+  if (tankShards.offense !== 5007 || tankShards.flex !== 5001 || tankShards.defense !== 5001) {
+    throw new Error(`Expected Malphite Tank shards [5007, 5001, 5001], got [${tankShards.offense}, ${tankShards.flex}, ${tankShards.defense}]`);
+  }
+
+  // Ensure obsolete shard 5002 (deprecated Armor) is NEVER present in any option
+  const allShardsAcrossRoles = [quinn.runes.mostPopular.statShards, ahri.runes.mostPopular.statShards, tankShards];
+  for (const shards of allShardsAcrossRoles) {
+    for (const row of shards.rows) {
+      for (const opt of row.options) {
+        if (opt.id === 5002) {
+          throw new Error("Found deprecated Season 13 Armor shard (5002) in Stat Shards matrix!");
+        }
+        if (!opt.iconUrl.startsWith("https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/")) {
+          throw new Error(`Invalid icon URL for shard ${opt.name}: ${opt.iconUrl}`);
+        }
+        if (!opt.name || !opt.description || !opt.code) {
+          throw new Error(`Incomplete metadata for shard ${opt.id}`);
+        }
+      }
+    }
+  }
+  console.log("✅ PASSED: Obsolete Season 13 Armor shard (5002) 100% eliminated");
+  console.log("✅ PASSED: All 9 Stat Shard options have valid Riot CDN icon URLs, codes, and descriptions");
+  console.log("✅ PASSED: Tank archetype correctly receives Ability Haste + Scaling Health shards");
 
   console.log("\n🎉 ALL TESTS PASSED! API payload is now 100% equivalent to Blitz.gg!");
 }
