@@ -56,6 +56,16 @@ export const createApp = (): Application => {
           getProfile: "GET /api/player?gameName=:gameName&tagLine=:tagLine&region=:region",
           refreshProfile: "POST /api/player/refresh",
         },
+        posts: {
+          create: "POST /api/posts (or /api/posts/create)",
+          list: "GET /api/posts?page=1&limit=10&status=PUBLISHED&tag=...&search=...",
+          me: "GET /api/posts/me",
+          detail: "GET /api/posts/:slug",
+          related: "GET /api/posts/:slug/related?limit=3",
+          update: "PATCH /api/posts/:id",
+          archive: "DELETE /api/posts/:id",
+          restore: "POST /api/posts/:id/restore",
+        },
       },
     });
   });

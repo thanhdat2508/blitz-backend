@@ -32,6 +32,7 @@ model User {
   updatedAt       DateTime     @updatedAt @map("updated_at")
 
   sessions        Session[]
+  posts           Post[]
 
   @@map("users")
 }
@@ -154,3 +155,51 @@ model ChampionTierStat {
   @@index([winRate(sort: Desc)])
   @@map("champion_tier_stats")
 }
+
+enum POST_STATUS {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Post {
+  id                 String       @id @default(uuid())
+  title              String
+  slug               String       @unique
+  content            String       @db.Text
+  status             POST_STATUS  @default(DRAFT)
+  isEdited           Boolean      @default(false) @map("is_edited")
+  isArchived         Boolean      @default(false) @map("is_archived")
+  archivedAt         DateTime?    @map("archived_at")
+  cancelArchiveToken String?      @map("cancel_archive_token")
+  coverImageUrl      String?      @map("cover_image_url")
+  blurHash           String?      @map("blur_hash")
+
+  authorId           String       @map("author_id")
+  author             User         @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  tags               PostTag[]
+
+  createdAt          DateTime     @default(now()) @map("created_at")
+  updatedAt          DateTime     @updatedAt @map("updated_at")
+
+  @@index([authorId, status])
+  @@map("posts")
+}
+
+model PostTag {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  postsCount  Int       @default(0) @map("posts_count")
+
+  posts       Post[]
+
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@index([postsCount])
+  @@map("post_tags")
+}
+
