@@ -310,9 +310,9 @@ export const CLASS_PRESETS: Record<ChampionClass, ClassArchetypePreset> = {
   },
 
   Marksman: {
-    coreItems: [3031, 3094, 3036], // Infinity Edge, Rapid Firecannon, LDR
-    completedItems: [6698, 3009, 3814, 6676, 6697, 3036], // Hydra/Crit hybrid on Quinn
-    buildOrder: [3077, 2020, 6698, 1001, 3009, 3134, 3814],
+    coreItems: [6672, 3031, 3046], // Kraken Slayer, Infinity Edge, Phantom Dancer
+    completedItems: [6672, 3006, 3031, 3046, 3036, 3072], // Kraken, Berserker's Greaves, Infinity Edge, Phantom Dancer, LDR, Bloodthirster
+    buildOrder: [1036, 1037, 6670, 6672, 1001, 3006, 1038, 3031],
     startingItemsLaner: [1055, 2003],
     boots: [3006, 3009],
     damageBreakdown: { physical: 89.4, magic: 2.1, trueDamage: 8.5 },
