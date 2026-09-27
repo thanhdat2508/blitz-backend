@@ -5,6 +5,7 @@ import { hashPassword, comparePassword } from "../utils/hash";
 import OtpService from "../services/otp.service";
 import SessionService from "../services/session.service";
 import OAuthService from "../services/oauth.service";
+import MailService from "../services/mail.service";
 import authenticateJwt from "../middlewares/auth.middleware";
 
 const router = Router();
@@ -42,7 +43,9 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
 
     if (existingUser) {
       if (existingUser.isEmailVerified) {
-        res.status(409).json({ error: "An account with this email already exists" });
+        res
+          .status(409)
+          .json({ error: "An account with this email already exists" });
         return;
       }
 
@@ -56,20 +59,25 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
         },
       });
 
-      const otpResult = await OtpService.sendRegisterOtp(normalizedEmail, recoveryCode);
+      const otpResult = await OtpService.sendRegisterOtp(
+        normalizedEmail,
+        recoveryCode,
+      );
       setRecoveryCookie(res, recoveryCode);
 
       res.status(200).json({
-        message: "Account exists but is unverified. A new verification OTP has been sent.",
+        message:
+          "Account exists but is unverified. A new verification OTP has been sent.",
         email: normalizedEmail,
         recoveryCode,
-        devOtp: otpResult.code,
       });
       return;
     }
 
     const hashedPassword = await hashPassword(password);
-    const baseUsername = normalizedEmail.split("@")[0].replace(/[^a-z0-9_]/g, "");
+    const baseUsername = normalizedEmail
+      .split("@")[0]
+      .replace(/[^a-z0-9_]/g, "");
     const username = `${baseUsername}_${Math.floor(1000 + Math.random() * 9000)}`;
 
     const newUser = await prisma.user.create({
@@ -83,19 +91,24 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
       },
     });
 
-    const otpResult = await OtpService.sendRegisterOtp(newUser.email!, recoveryCode);
+    const otpResult = await OtpService.sendRegisterOtp(
+      newUser.email!,
+      recoveryCode,
+    );
     setRecoveryCookie(res, recoveryCode);
 
     res.status(201).json({
-      message: "Registration successful. Please verify the OTP sent to your email.",
+      message:
+        "Registration successful. Please verify the OTP sent to your email.",
       userId: newUser.id,
       email: newUser.email,
       recoveryCode,
-      devOtp: otpResult.code,
     });
   } catch (error: any) {
     console.error("Register error:", error);
-    res.status(500).json({ error: "Registration failed", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Registration failed", details: error.message });
   }
 });
 
@@ -114,11 +127,13 @@ router.post("/verify", async (req: Request, res: Response): Promise<void> => {
     const verifyResult = await OtpService.verifyRegisterOtp(
       normalizedEmail,
       String(otpCode).trim(),
-      recoveryCode
+      recoveryCode,
     );
 
     if (!verifyResult.valid) {
-      res.status(400).json({ error: verifyResult.message || "Invalid OTP code" });
+      res
+        .status(400)
+        .json({ error: verifyResult.message || "Invalid OTP code" });
       return;
     }
 
@@ -128,13 +143,24 @@ router.post("/verify", async (req: Request, res: Response): Promise<void> => {
     });
 
     // Auto-login upon successful verification
-    await SessionService.createSession(user, req, res);
+    const sessionData = await SessionService.createSession(user, req, res);
 
     // Clear recovery cookie
     res.clearCookie("_rc", { path: "/" });
 
+    // Send welcome email via Resend
+    if (user.email) {
+      MailService.sendWelcomeEmail({
+        email: user.email,
+        name: user.name || user.username || undefined,
+      }).catch((e) => console.warn("[MAIL] Welcome email error:", e.message));
+    }
+
     res.status(200).json({
       message: "Email verified successfully. You are now logged in.",
+      accessToken: sessionData.accessToken,
+      refreshToken: sessionData.refreshToken,
+      sessionId: sessionData.sessionId,
       user: {
         id: user.id,
         email: user.email,
@@ -145,12 +171,17 @@ router.post("/verify", async (req: Request, res: Response): Promise<void> => {
     });
   } catch (error: any) {
     console.error("Verify error:", error);
-    res.status(500).json({ error: "Verification failed", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Verification failed", details: error.message });
   }
 });
 
 // Resend OTP for registration (supports both /resend-otp and /resend/otp-register)
-const handleResendRegisterOtp = async (req: Request, res: Response): Promise<void> => {
+const handleResendRegisterOtp = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
   try {
     const { email } = req.body;
     if (!email) {
@@ -159,7 +190,9 @@ const handleResendRegisterOtp = async (req: Request, res: Response): Promise<voi
     }
 
     const normalizedEmail = String(email).toLowerCase().trim();
-    const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
+    const user = await prisma.user.findUnique({
+      where: { email: normalizedEmail },
+    });
 
     if (!user) {
       res.status(404).json({ error: "User not found" });
@@ -172,16 +205,20 @@ const handleResendRegisterOtp = async (req: Request, res: Response): Promise<voi
     }
 
     const recoveryCode = uuidv4();
-    const otpResult = await OtpService.sendRegisterOtp(user.email!, recoveryCode);
+    const otpResult = await OtpService.sendRegisterOtp(
+      user.email!,
+      recoveryCode,
+    );
     setRecoveryCookie(res, recoveryCode);
 
     res.status(200).json({
       message: "OTP code resent successfully",
       recoveryCode,
-      devOtp: otpResult.code,
     });
   } catch (error: any) {
-    res.status(500).json({ error: "Failed to resend OTP", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Failed to resend OTP", details: error.message });
   }
 };
 
@@ -202,7 +239,9 @@ router.post("/login", async (req: Request, res: Response): Promise<void> => {
     }
 
     const normalizedEmail = String(email).toLowerCase().trim();
-    const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
+    const user = await prisma.user.findUnique({
+      where: { email: normalizedEmail },
+    });
 
     if (!user || !user.password) {
       res.status(401).json({ error: "Invalid email or password" });
@@ -217,16 +256,20 @@ router.post("/login", async (req: Request, res: Response): Promise<void> => {
 
     if (!user.isEmailVerified) {
       res.status(403).json({
-        error: "Your email has not been verified. Please verify your OTP before logging in.",
+        error:
+          "Your email has not been verified. Please verify your OTP before logging in.",
         isEmailVerified: false,
       });
       return;
     }
 
-    await SessionService.createSession(user, req, res);
+    const sessionData = await SessionService.createSession(user, req, res);
 
     res.status(200).json({
       message: "Logged in successfully",
+      accessToken: sessionData.accessToken,
+      refreshToken: sessionData.refreshToken,
+      sessionId: sessionData.sessionId,
       user: {
         id: user.id,
         email: user.email,
@@ -251,26 +294,36 @@ router.get("/google", (_req: Request, res: Response): void => {
   res.redirect(authUrl);
 });
 
-router.get("/google/callback", async (req: Request, res: Response): Promise<void> => {
-  try {
-    const code = req.query.code as string;
-    if (!code) {
-      res.status(400).json({ error: "Missing authorization code from Google" });
-      return;
+router.get(
+  "/google/callback",
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const code = req.query.code as string;
+      if (!code) {
+        res
+          .status(400)
+          .json({ error: "Missing authorization code from Google" });
+        return;
+      }
+
+      const profile = await OAuthService.exchangeGoogleCode(code);
+      const user = await OAuthService.handleGoogleLogin(profile);
+
+      await SessionService.createSession(user, req, res);
+
+      const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+      res.redirect(`${frontendUrl}/auth/callback?provider=google`);
+    } catch (error: any) {
+      console.error("Google OAuth error:", error);
+      res
+        .status(500)
+        .json({
+          error: "Google authentication failed",
+          details: error.message,
+        });
     }
-
-    const profile = await OAuthService.exchangeGoogleCode(code);
-    const user = await OAuthService.handleGoogleLogin(profile);
-
-    await SessionService.createSession(user, req, res);
-
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
-    res.redirect(`${frontendUrl}/auth/callback?provider=google`);
-  } catch (error: any) {
-    console.error("Google OAuth error:", error);
-    res.status(500).json({ error: "Google authentication failed", details: error.message });
-  }
-});
+  },
+);
 
 // ==========================================
 // 4. RIOT GAMES OAUTH2 (RSO)
@@ -281,26 +334,33 @@ router.get("/riot", (_req: Request, res: Response): void => {
   res.redirect(authUrl);
 });
 
-router.get("/riot/callback", async (req: Request, res: Response): Promise<void> => {
-  try {
-    const code = req.query.code as string;
-    if (!code) {
-      res.status(400).json({ error: "Missing authorization code from Riot Games" });
-      return;
+router.get(
+  "/riot/callback",
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const code = req.query.code as string;
+      if (!code) {
+        res
+          .status(400)
+          .json({ error: "Missing authorization code from Riot Games" });
+        return;
+      }
+
+      const profile = await OAuthService.exchangeRiotCode(code);
+      const user = await OAuthService.handleRiotLogin(profile);
+
+      await SessionService.createSession(user, req, res);
+
+      const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+      res.redirect(`${frontendUrl}/auth/callback?provider=riot`);
+    } catch (error: any) {
+      console.error("Riot OAuth error:", error);
+      res
+        .status(500)
+        .json({ error: "Riot authentication failed", details: error.message });
     }
-
-    const profile = await OAuthService.exchangeRiotCode(code);
-    const user = await OAuthService.handleRiotLogin(profile);
-
-    await SessionService.createSession(user, req, res);
-
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
-    res.redirect(`${frontendUrl}/auth/callback?provider=riot`);
-  } catch (error: any) {
-    console.error("Riot OAuth error:", error);
-    res.status(500).json({ error: "Riot authentication failed", details: error.message });
-  }
-});
+  },
+);
 
 // ==========================================
 // 5. SESSION MANAGEMENT & LOGOUT
@@ -311,7 +371,8 @@ router.post("/validate", async (req: Request, res: Response): Promise<void> => {
   try {
     const token =
       req.cookies?._at ||
-      req.headers.authorization?.replace(/^Bearer\s+/i, "");
+      req.headers.authorization?.replace(/^Bearer\s+/i, "") ||
+      req.body?.accessToken;
 
     if (!token) {
       res.status(401).json({ error: "Access token is missing" });
@@ -324,15 +385,39 @@ router.post("/validate", async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    res.status(200).json({ message: "Access token is valid", user: payload });
+    const session = await prisma.session.findUnique({
+      where: { id: payload.sessionId },
+      include: { user: true },
+    });
+
+    if (!session || session.isRevoked || !session.user) {
+      SessionService.clearCookies(res);
+      res.status(401).json({ error: "Session has been revoked or expired" });
+      return;
+    }
+
+    res.status(200).json({
+      message: "Access token is valid",
+      accessToken: token,
+      sessionId: payload.sessionId,
+      user: {
+        id: session.user.id,
+        email: session.user.email,
+        name: session.user.name,
+        username: session.user.username,
+        avatarUrl: session.user.avatarUrl,
+      },
+    });
   } catch (error: any) {
-    res.status(500).json({ error: "Token validation failed", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Token validation failed", details: error.message });
   }
 });
 
 router.post("/refresh", async (req: Request, res: Response): Promise<void> => {
   try {
-    const refreshToken = req.cookies?._rt;
+    const refreshToken = req.cookies?._rt || req.body?.refreshToken;
     if (!refreshToken) {
       res.status(401).json({ error: "Refresh token is missing" });
       return;
@@ -356,11 +441,25 @@ router.post("/refresh", async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    await SessionService.createSession(session.user, req, res);
+    const sessionData = await SessionService.createSession(session.user, req, res);
 
-    res.status(200).json({ message: "Session refreshed successfully" });
+    res.status(200).json({
+      message: "Session refreshed successfully",
+      accessToken: sessionData.accessToken,
+      refreshToken: sessionData.refreshToken,
+      sessionId: sessionData.sessionId,
+      user: {
+        id: session.user.id,
+        email: session.user.email,
+        name: session.user.name,
+        username: session.user.username,
+        avatarUrl: session.user.avatarUrl,
+      },
+    });
   } catch (error: any) {
-    res.status(500).json({ error: "Token refresh failed", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Token refresh failed", details: error.message });
   }
 });
 
@@ -369,7 +468,8 @@ router.post("/logout", async (req: Request, res: Response): Promise<void> => {
   try {
     const { isLogoutAll, sessionId: targetSessionId } = req.body || {};
     const cookieSessionId = req.cookies?._sid;
-    const at = req.cookies?._at || req.headers.authorization?.replace(/^Bearer\s+/i, "");
+    const at =
+      req.cookies?._at || req.headers.authorization?.replace(/^Bearer\s+/i, "");
     let userId = "";
 
     if (at) {
@@ -414,87 +514,169 @@ router.post("/logout", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
+// Active sessions management (mirrors requin project-auth sessions)
+router.get("/sessions", authenticateJwt, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const userId = req.user!.id;
+    const currentSessionId = req.user!.sessionId;
+
+    const sessions = await prisma.session.findMany({
+      where: { userId, isRevoked: false },
+      orderBy: { lastUsedAt: "desc" },
+      select: {
+        id: true,
+        deviceId: true,
+        userAgent: true,
+        ipAddress: true,
+        country: true,
+        city: true,
+        deviceType: true,
+        os: true,
+        browserName: true,
+        lastUsedAt: true,
+        createdAt: true,
+      },
+    });
+
+    res.status(200).json({
+      currentSessionId,
+      sessions: sessions.map((s) => ({
+        ...s,
+        isCurrent: s.id === currentSessionId,
+      })),
+    });
+  } catch (error: any) {
+    res.status(500).json({ error: "Failed to fetch active sessions", details: error.message });
+  }
+});
+
+router.delete("/sessions/:id", authenticateJwt, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const userId = req.user!.id;
+    const targetSessionId = String(req.params.id);
+    const currentSessionId = req.user!.sessionId;
+
+    await SessionService.revokeSession(targetSessionId, userId);
+
+    if (targetSessionId === currentSessionId) {
+      SessionService.clearCookies(res);
+    }
+
+    res.status(200).json({ message: "Session revoked successfully" });
+  } catch (error: any) {
+    res.status(500).json({ error: "Failed to revoke session", details: error.message });
+  }
+});
+
 // ==========================================
 // 6. FORGOT & RESET PASSWORD FLOW
 // ==========================================
 
 // Step 6.1: Request password reset (sends OTP, returns recoveryCode and sets _rc cookie)
-router.post("/reset-password", async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { email } = req.body;
-    if (!email) {
-      res.status(400).json({ error: "Email is required" });
-      return;
-    }
+router.post(
+  "/reset-password",
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { email } = req.body;
+      if (!email) {
+        res.status(400).json({ error: "Email is required" });
+        return;
+      }
 
-    const normalizedEmail = String(email).toLowerCase().trim();
-    const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
-
-    const recoveryCode = uuidv4();
-
-    if (!user) {
-      // Safe response matching requin-backend
-      res.status(200).json({
-        message: "You'll receive an email if an account associated with the email address exists",
+      const normalizedEmail = String(email).toLowerCase().trim();
+      const user = await prisma.user.findUnique({
+        where: { email: normalizedEmail },
       });
-      return;
+
+      const recoveryCode = uuidv4();
+
+      if (!user) {
+        // Safe response matching requin-backend
+        res.status(200).json({
+          message:
+            "You'll receive an email if an account associated with the email address exists",
+        });
+        return;
+      }
+
+      const otpResult = await OtpService.sendForgotPasswordOtp(
+        normalizedEmail,
+        recoveryCode,
+      );
+      setRecoveryCookie(res, recoveryCode);
+
+      res.status(200).json({
+        message: "Password reset email sent successfully",
+        recoveryCode,
+      });
+    } catch (error: any) {
+      console.error("Reset password request error:", error);
+      res
+        .status(500)
+        .json({
+          error: "Failed to request password reset",
+          details: error.message,
+        });
     }
-
-    const otpResult = await OtpService.sendForgotPasswordOtp(normalizedEmail, recoveryCode);
-    setRecoveryCookie(res, recoveryCode);
-
-    res.status(200).json({
-      message: "Password reset email sent successfully",
-      recoveryCode,
-      devOtp: otpResult.code,
-    });
-  } catch (error: any) {
-    console.error("Reset password request error:", error);
-    res.status(500).json({ error: "Failed to request password reset", details: error.message });
-  }
-});
+  },
+);
 
 // Step 6.2: Verify OTP for reset password
-router.post("/reset-password/verify", async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { email, otpCode, recoveryCode: bodyRecoveryCode } = req.body;
-    const recoveryCode = bodyRecoveryCode || req.cookies?._rc;
+router.post(
+  "/reset-password/verify",
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { email, otpCode, recoveryCode: bodyRecoveryCode } = req.body;
+      const recoveryCode = bodyRecoveryCode || req.cookies?._rc;
 
-    if (!email || !otpCode) {
-      res.status(400).json({ error: "Email and OTP code are required" });
-      return;
+      if (!email || !otpCode) {
+        res.status(400).json({ error: "Email and OTP code are required" });
+        return;
+      }
+
+      if (!recoveryCode) {
+        res
+          .status(403)
+          .json({
+            error: "NO_RECOVERY_CODE",
+            message: "Recovery code is required",
+          });
+        return;
+      }
+
+      const normalizedEmail = String(email).toLowerCase().trim();
+      const verifyResult = await OtpService.verifyForgotPasswordOtp(
+        normalizedEmail,
+        String(otpCode).trim(),
+        recoveryCode,
+      );
+
+      if (!verifyResult.valid) {
+        res
+          .status(400)
+          .json({ error: verifyResult.message || "Invalid OTP code" });
+        return;
+      }
+
+      res.status(200).json({
+        message: "OTP code validated successfully",
+        recoveryCode,
+        verified: true,
+      });
+    } catch (error: any) {
+      console.error("Reset password verify error:", error);
+      res
+        .status(500)
+        .json({ error: "Failed to verify OTP code", details: error.message });
     }
-
-    if (!recoveryCode) {
-      res.status(403).json({ error: "NO_RECOVERY_CODE", message: "Recovery code is required" });
-      return;
-    }
-
-    const normalizedEmail = String(email).toLowerCase().trim();
-    const verifyResult = await OtpService.verifyForgotPasswordOtp(
-      normalizedEmail,
-      String(otpCode).trim(),
-      recoveryCode
-    );
-
-    if (!verifyResult.valid) {
-      res.status(400).json({ error: verifyResult.message || "Invalid OTP code" });
-      return;
-    }
-
-    res.status(200).json({
-      message: "OTP code validated successfully",
-      recoveryCode,
-      verified: true,
-    });
-  } catch (error: any) {
-    console.error("Reset password verify error:", error);
-    res.status(500).json({ error: "Failed to verify OTP code", details: error.message });
-  }
-});
+  },
+);
 
 // Step 6.3: Resend OTP for reset password (supports both paths)
-const handleResendForgotPasswordOtp = async (req: Request, res: Response): Promise<void> => {
+const handleResendForgotPasswordOtp = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
   try {
     const { email } = req.body;
     if (!email) {
@@ -503,7 +685,9 @@ const handleResendForgotPasswordOtp = async (req: Request, res: Response): Promi
     }
 
     const normalizedEmail = String(email).toLowerCase().trim();
-    const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
+    const user = await prisma.user.findUnique({
+      where: { email: normalizedEmail },
+    });
 
     if (!user) {
       res.status(400).json({ error: "User not found with this email" });
@@ -511,16 +695,20 @@ const handleResendForgotPasswordOtp = async (req: Request, res: Response): Promi
     }
 
     const recoveryCode = uuidv4();
-    const otpResult = await OtpService.sendForgotPasswordOtp(normalizedEmail, recoveryCode);
+    const otpResult = await OtpService.sendForgotPasswordOtp(
+      normalizedEmail,
+      recoveryCode,
+    );
     setRecoveryCookie(res, recoveryCode);
 
     res.status(200).json({
       message: "OTP code resent successfully",
       recoveryCode,
-      devOtp: otpResult.code,
     });
   } catch (error: any) {
-    res.status(500).json({ error: "Failed to resend OTP", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Failed to resend OTP", details: error.message });
   }
 };
 
@@ -528,55 +716,67 @@ router.post("/resend/otp-reset-password", handleResendForgotPasswordOtp);
 router.post("/resend-otp-reset-password", handleResendForgotPasswordOtp);
 
 // Step 6.4: Update password using verified recoveryCode
-router.post("/update-password", async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { email, newPassword, recoveryCode: bodyRecoveryCode } = req.body;
-    const recoveryCode = bodyRecoveryCode || req.cookies?._rc;
+router.post(
+  "/update-password",
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { email, newPassword, recoveryCode: bodyRecoveryCode } = req.body;
+      const recoveryCode = bodyRecoveryCode || req.cookies?._rc;
 
-    if (!email || !newPassword) {
-      res.status(400).json({ error: "Email and new password are required" });
-      return;
-    }
+      if (!email || !newPassword) {
+        res.status(400).json({ error: "Email and new password are required" });
+        return;
+      }
 
-    if (!recoveryCode) {
-      res.status(403).json({
-        error: "NO_RECOVERY_CODE",
-        message: "No recovery code provided or recovery session expired",
+      if (!recoveryCode) {
+        res.status(403).json({
+          error: "NO_RECOVERY_CODE",
+          message: "No recovery code provided or recovery session expired",
+        });
+        return;
+      }
+
+      const normalizedEmail = String(email).toLowerCase().trim();
+
+      // Verify that the OTP was validated in step 6.2
+      const isVerified = await OtpService.isForgotPasswordVerified(
+        normalizedEmail,
+        recoveryCode,
+      );
+      if (!isVerified) {
+        res.status(403).json({
+          error: "NO_UPDATE_REQUEST",
+          message: "OTP verification required before password update",
+        });
+        return;
+      }
+
+      const hashedPassword = await hashPassword(newPassword);
+
+      await prisma.user.update({
+        where: { email: normalizedEmail },
+        data: { password: hashedPassword },
       });
-      return;
-    }
 
-    const normalizedEmail = String(email).toLowerCase().trim();
+      // Cleanup OTP session and cookie
+      await OtpService.deleteOtp(
+        normalizedEmail,
+        "FORGOT_PASSWORD",
+        recoveryCode,
+      );
+      res.clearCookie("_rc", { path: "/" });
 
-    // Verify that the OTP was validated in step 6.2
-    const isVerified = await OtpService.isForgotPasswordVerified(normalizedEmail, recoveryCode);
-    if (!isVerified) {
-      res.status(403).json({
-        error: "NO_UPDATE_REQUEST",
-        message: "OTP verification required before password update",
+      res.status(200).json({
+        message: "Password updated successfully",
       });
-      return;
+    } catch (error: any) {
+      console.error("Update password error:", error);
+      res
+        .status(500)
+        .json({ error: "Failed to update password", details: error.message });
     }
-
-    const hashedPassword = await hashPassword(newPassword);
-
-    await prisma.user.update({
-      where: { email: normalizedEmail },
-      data: { password: hashedPassword },
-    });
-
-    // Cleanup OTP session and cookie
-    await OtpService.deleteOtp(normalizedEmail, "FORGOT_PASSWORD", recoveryCode);
-    res.clearCookie("_rc", { path: "/" });
-
-    res.status(200).json({
-      message: "Password updated successfully",
-    });
-  } catch (error: any) {
-    console.error("Update password error:", error);
-    res.status(500).json({ error: "Failed to update password", details: error.message });
-  }
-});
+  },
+);
 
 // ==========================================
 // 7. CURRENT USER PROFILE

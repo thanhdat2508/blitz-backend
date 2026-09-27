@@ -6,6 +6,7 @@ import { UAParser } from "ua-parser-js";
 import geoip from "geoip-lite";
 import prisma from "../config/database";
 import redisClient from "../config/redis";
+import { MailService } from "./mail.service";
 
 export interface TokenPayload {
   id: string;
@@ -102,6 +103,16 @@ export class SessionService {
           `Current: ${clientIp} (${city}, ${country}) vs Previous: ${latestActiveSession.ipAddress} ` +
           `(${latestActiveSession.city}, ${latestActiveSession.country})`
         );
+
+        if (user.email) {
+          MailService.sendLoginWarningEmail({
+            email: user.email,
+            ip: clientIp,
+            os,
+            country,
+            city,
+          }).catch((err) => console.warn("Failed to send login warning:", err.message));
+        }
       }
     }
 
