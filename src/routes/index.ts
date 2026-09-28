@@ -7,6 +7,7 @@ import playerRoutes from "./player.routes";
 import tierListRoutes from "./tierlist.routes";
 import proPlayerRoutes from "./pro-player.routes";
 import postRoutes from "./post.routes";
+import searchRoutes from "./search.routes";
 
 const router = Router();
 
@@ -26,6 +27,7 @@ router.use("/player", playerRoutes);
 router.use("/champions", tierListRoutes);
 router.use("/pro-players", proPlayerRoutes);
 router.use("/posts", postRoutes);
+router.use("/search", searchRoutes);
 
 export default router;
 
