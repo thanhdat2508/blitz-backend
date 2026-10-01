@@ -84,6 +84,11 @@ Sau khi Docker PostgreSQL đã sẵn sàng, chạy migration để tạo các b�
 npm run prisma:migrate
 ```
 
+Khởi tạo dữ liệu mẫu (Tự động seed Bài viết News, Tướng, Tierlist, Pro Players):
+```bash
+npm run prisma:seed
+```
+
 Nếu muốn mở giao diện trực quan Prisma Studio để xem dữ liệu:
 ```bash
 npm run prisma:studio
