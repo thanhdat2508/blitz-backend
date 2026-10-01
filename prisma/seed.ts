@@ -9,6 +9,7 @@ import { championBuildService } from "../src/modules/champion-build/services/cha
 import { riotStaticDataService } from "../src/modules/champion-build/services/riot-static-data.service";
 import { Role } from "../src/modules/champion-build/interfaces/champion-build.interface";
 import { PrebakedChampion } from "../scripts/sync-champions";
+import PostService from "../src/services/post.service";
 
 const ALL_RANKS: RankTier[] = [
   "all",
@@ -290,7 +291,83 @@ async function seedProPlayers() {
   console.log("Pro Players seeded successfully!");
 }
 
+async function seedPosts() {
+  console.log("Seeding sample Posts & Tags into PostgreSQL...");
+
+  // 1. Create or get admin author
+  const author = await prisma.user.upsert({
+    where: { email: "admin@blitz.gg" },
+    update: {},
+    create: {
+      email: "admin@blitz.gg",
+      username: "BlitzStaff",
+      name: "Blitz Editorial Team",
+      avatarUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop",
+      isEmailVerified: true,
+    },
+  });
+
+  const samplePosts = [
+    {
+      title: "Patch 26.19 Notes: Champions Balance and Mid Scope Updates",
+      content:
+        "Welcome to Patch 26.19! In this update, our primary focus is addressing power outliers in Solo Queue following the mid-season systemic updates, while adjusting cross-map objective pressure in professional play.\n\nHIGHLIGHTS & SYSTEMIC UPDATES\n• Teleport: Channel cooldown reduced from 360s to 330s when targeting allied towers before the 14-minute mark. This adjustment provides top laners greater agency to contest cross-map skirmishes without sacrificing their entire wave state.\n• Lost Chapter Items: Total combine cost reduced by 100 gold, smoothing out power spikes for traditional control mages in the mid lane.\n\nCHAMPION BUFFS\n• Ahri:\n  - Q (Orb of Deception): AP scaling increased from 45% to 50% on both the outward and return passes.\n  - Base Armor: Increased from 21 to 23 to enhance durability against AD burst assassins.\n• Janna:\n  - W (Zephyr): Passive bonus movement speed increased from 6/7/8/9/10% to 7/8/9/10/11%.\n  - E (Eye of the Storm): Shield amount increased by 15 across all ranks.\n\nCHAMPION NERFS\n• Sylas:\n  - W (Kingslayer): Base minimum heal reduced from 65-145 to 50-130. Cooldown increased from 12/10.5/9/7.5/6s to 13/11.5/10/8.5/7s.\n  - Developer Note: Sylas has enjoyed excessive sustain during extended trades, making him oppressive when ahead.\n• Ambessa:\n  - Passive (Drakehound's Step): Bonus physical damage on basic attacks slightly adjusted in the early game (ratio down by 3%).\n\nCheck out your match history and champion tier analytics on Blitz to adjust your runes and builds for 26.19!",
+      tags: ["patch-notes"],
+      coverImageUrl:
+        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/janna/skins/skin67/images/janna_splash_centered_67.skins_janna_skin67.jpg",
+      status: "PUBLISHED" as const,
+    },
+    {
+      title: "Worlds 2026 Meta Report: LCK and LPL Strategies",
+      content:
+        "As international contenders finalize their bootcamps for the World Championship, distinct strategic philosophies have emerged between Eastern powerhouses. Here is our data-backed breakdown of how the tournament meta is shaping up.\n\nDRAFT PRIORITIES & CONVERGENCE\n• Mid Lane Hierarchy: Control mages (Orianna, Azir, Mel) remain premier blind picks with a combined 82% pick/ban presence. Teams that secure mid-lane push consistently win the vision war around neutral objectives.\n• Support Meta: Engage supports like Nautilus, Rell, and Leona continue to outshine enchanters in competitive scrims due to their reliable flanking tools and ability to initiate around Drake river choke points.\n\nEARLY GAME TEMPO & VOIDGRUBS\n• Fast 3-camp into lane dive: LPL rosters continue their trademark aggression, prioritizing level 3 top-lane dives to completely shut down opposing scaling picks.\n• Objective Trades: LCK squads favor cross-mapping Voidgrubs in exchange for early Dragon control, stacking neutral buffs methodically into 20-minute Baron setups.\n\nKEY PLAYERS & PICKS TO WATCH\nTop laners who command carry champions with cross-map teleport presence are dictating game pacing. Expect aggressive carry matchups like Jax, Camille, and Renekton to take center stage in the bracket stage.",
+      tags: ["esports"],
+      coverImageUrl:
+        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/mel/skins/skin12/images/mel_splash_centered_12.skins_mel_skin12.jpg",
+      status: "PUBLISHED" as const,
+    },
+    {
+      title: "Mastering Jungle Pathing: How to Counter-Jungle in Season 2026",
+      content:
+        "Clearing jungle camps efficiently is only half the battle. In modern League of Legends, pathing with intent and anticipating enemy jungle routes separates Diamond players from Master+ tier junglers.\n\n1. THE FIRST THREE MINUTES: ROUTE WITH INTENT\n• The 3-Camp Spike: Champions with high dueling potential (Xin Zhao, Lee Sin, Elise) should clear Buff -> Buff -> Gromp to reach Level 3 with full health before 2:35, looking for an early lane gank or invade.\n• The Full Clear: Power-farming junglers (Karthus, Shyvana, Hecarim) should sequence camps towards their desired lane to contest the 3:30 Scuttle Crab with lane priority.\n\n2. TRACKING THE ENEMY JUNGLER\n• Watch enemy laner arrival: Determine which side the opposing jungler started by checking who was late to lane to leash.\n• CS Counting: Each jungle camp grants 4 CS. When the enemy jungler appears on vision with 16 CS, you know exactly which quadrants remain up for invades.\n\n3. BALANCING VOIDGRUBS VS. INFERNAL/OCEAN DRAKE\n• If enemy jungler commits to early Dragon, do not hesitate to cross-map for all 3 Voidgrubs. Securing turret damage amplification will accelerate your team's tower plate gold significantly before the 14-minute plate fall.",
+      tags: ["gameplay"],
+      coverImageUrl:
+        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/anivia/skins/skin56/images/anivia_splash_centered_56.skins_anivia_skin56.jpg",
+      status: "PUBLISHED" as const,
+    },
+    {
+      title: "Community Spotlight: Top Community Builds and Creative Strategies",
+      content:
+        "Every patch, dedicated one-tricks and creative theorycrafters discover unconventional builds that defy the standard meta. Here are three high-winrate innovations currently making waves in Master and Grandmaster tiers.\n\n1. ARTILLERY AP KOG'MAW MID (53.8% WIN RATE)\n• Core Items: Tear -> Malignance -> Archangel's Staff -> Horizon Focus.\n• Playstyle: Maximize R (Living Artillery) poke from unprecedented range. Malignance creates an MR-shredding pool on impact, allowing Kog'Maw to single-handedly stall neutral objective dances.\n\n2. COLOSSAL SWAIN SUPPORT (52.6% WIN RATE)\n• Core Items: Heartsteel -> Rylai's Crystal Scepter -> Unending Despair.\n• Playstyle: Stacking infinite maximum health alongside his Demonic Ascension (R) turns Swain into an unkillable front-line disruptor for bot-lane 2v2 skirmishes.\n\n3. LETHALITY CAITLYN TOP (OFF-META PICK)\n• Core Items: Opportunity -> Collector -> Lord Dominik's Regards.\n• Playstyle: Utilizing long-range headshots and First Strike to punish melee top laners without gap closers. Extremely high risk, but devastating when paired with roaming junglers.\n\nHave a unique off-meta build climbing the ranks? Share your stats and match breakdowns on the Blitz community forums!",
+      tags: ["community"],
+      coverImageUrl:
+        "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+      status: "PUBLISHED" as const,
+    },
+  ];
+
+  for (const postInput of samplePosts) {
+    const existing = await prisma.post.findFirst({
+      where: { title: postInput.title },
+    });
+    if (!existing) {
+      await PostService.createPost(author.id, postInput);
+      console.log(`Created post: "${postInput.title}"`);
+    } else {
+      await PostService.updatePost(author.id, existing.id, {
+        content: postInput.content,
+        coverImageUrl: postInput.coverImageUrl,
+        tags: postInput.tags,
+      });
+      console.log(`Updated post: "${postInput.title}"`);
+    }
+  }
+
+  console.log("Sample Posts seeded successfully!");
+}
+
 async function main() {
+  await seedPosts();
   await seedProPlayers();
   await seedChampionTierStats();
   try {
