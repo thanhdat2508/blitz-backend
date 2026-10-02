@@ -15,14 +15,14 @@ export class ProPlayerService {
         return players.map((p: any) => ({
           id: p.id,
           slug: p.slug,
-          gameId: p.gameId || `${p.riotGameName || ''}#${p.riotTagLine || ''}`,
+          gameId: p.gameId || `${p.riotGameName || ""}#${p.riotTagLine || ""}`,
           name: p.name,
           nickname: p.nickname,
           description: p.description,
           avatar: p.avatar || p.playerImageUrl,
           playerImageUrl: p.playerImageUrl || p.avatar,
-          riotGameName: p.riotGameName || p.gameId?.split('#')[0] || '',
-          riotTagLine: p.riotTagLine || p.gameId?.split('#')[1] || '',
+          riotGameName: p.riotGameName || p.gameId?.split("#")[0] || "",
+          riotTagLine: p.riotTagLine || p.gameId?.split("#")[1] || "",
           role: p.role,
           team: p.team,
           themeColor: p.themeColor,
@@ -31,7 +31,10 @@ export class ProPlayerService {
         }));
       }
     } catch (error) {
-      console.warn("[ProPlayerService] Database query failed, using dataset fallback:", error);
+      console.warn(
+        "[ProPlayerService] Database query failed, using dataset fallback:",
+        error,
+      );
     }
 
     return PRO_PLAYERS_DATA;
@@ -50,14 +53,17 @@ export class ProPlayerService {
         return {
           id: player.id,
           slug: player.slug,
-          gameId: player.gameId || `${player.riotGameName || ''}#${player.riotTagLine || ''}`,
+          gameId:
+            player.gameId ||
+            `${player.riotGameName || ""}#${player.riotTagLine || ""}`,
           name: player.name,
           nickname: player.nickname,
           description: player.description,
           avatar: player.avatar || player.playerImageUrl,
           playerImageUrl: player.playerImageUrl || player.avatar,
-          riotGameName: player.riotGameName || player.gameId?.split('#')[0] || '',
-          riotTagLine: player.riotTagLine || player.gameId?.split('#')[1] || '',
+          riotGameName:
+            player.riotGameName || player.gameId?.split("#")[0] || "",
+          riotTagLine: player.riotTagLine || player.gameId?.split("#")[1] || "",
           role: player.role,
           team: player.team,
           themeColor: player.themeColor,
@@ -66,7 +72,10 @@ export class ProPlayerService {
         };
       }
     } catch (error) {
-      console.warn(`[ProPlayerService] Query for '${slug}' failed, using dataset fallback:`, error);
+      console.warn(
+        `[ProPlayerService] Query for '${slug}' failed, using dataset fallback:`,
+        error,
+      );
     }
 
     return PRO_PLAYERS_DATA.find((p) => p.slug === slug) || null;
@@ -74,4 +83,3 @@ export class ProPlayerService {
 }
 
 export const proPlayerService = new ProPlayerService();
-

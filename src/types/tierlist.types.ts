@@ -30,9 +30,12 @@ export type SortOrder = "asc" | "desc";
 export interface TierListQueryParams {
   rank?: RankTier;
   role?: RoleType;
+  tier?: TierGrade | "all";
   search?: string;
   sortBy?: TierListSortBy;
   order?: SortOrder;
+  page?: number;
+  limit?: number;
 }
 
 export interface ChampionTierItem {
@@ -54,6 +57,11 @@ export interface TierListResponse {
   patch: string;
   rank: RankTier;
   role: RoleType;
+  tier?: string;
   total: number;
+  page?: number;
+  limit?: number;
+  totalPages?: number;
+  tierCounts?: Record<string, number>;
   data: ChampionTierItem[];
 }

@@ -4,6 +4,7 @@ import {
   RankTier,
   RoleType,
   SortOrder,
+  TierGrade,
   TierListQueryParams,
   TierListSortBy,
 } from "../types/tierlist.types";
@@ -31,6 +32,8 @@ const VALID_SORT_BY = new Set<TierListSortBy>([
   "patchWrChange",
 ]);
 
+const VALID_TIERS = new Set<string>(["s", "a", "b", "c", "d"]);
+
 export class TierListController {
   constructor(private readonly service: TierListService = tierListService) {}
 
@@ -45,6 +48,9 @@ export class TierListController {
       const rawSortBy = req.query.sortBy as string;
       const rawOrder = (req.query.order as string)?.toLowerCase();
       const rawSearch = req.query.search as string | undefined;
+      const rawTier = (req.query.tier as string)?.toLowerCase();
+      const rawPage = req.query.page ? parseInt(req.query.page as string, 10) : undefined;
+      const rawLimit = req.query.limit ? parseInt(req.query.limit as string, 10) : undefined;
 
       // 1. Boundary Validation: Fallback to safe defaults if inputs are outside whitelist
       const role: RoleType = VALID_ROLES.has(rawRole as RoleType)
@@ -61,6 +67,21 @@ export class TierListController {
 
       const order: SortOrder = rawOrder === "asc" ? "asc" : "desc";
 
+      const tier: TierGrade | undefined =
+        rawTier && VALID_TIERS.has(rawTier)
+          ? (rawTier.toUpperCase() as TierGrade)
+          : undefined;
+
+      const page: number | undefined =
+        typeof rawPage === "number" && !isNaN(rawPage) && rawPage > 0
+          ? rawPage
+          : undefined;
+
+      const limit: number | undefined =
+        typeof rawLimit === "number" && !isNaN(rawLimit) && rawLimit > 0
+          ? Math.min(rawLimit, 200)
+          : undefined;
+
       // 2. Sanitize search term (truncate to max 50 chars, strip illegal characters to prevent ReDoS)
       let search: string | undefined = undefined;
       if (rawSearch && typeof rawSearch === "string") {
@@ -73,9 +94,12 @@ export class TierListController {
       const params: TierListQueryParams = {
         role,
         rank,
+        tier,
         sortBy,
         order,
         search,
+        page,
+        limit,
       };
 
       // 3. Delegate to service layer

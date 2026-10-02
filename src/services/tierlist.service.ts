@@ -403,6 +403,9 @@ export class TierListService {
     const sortBy = params.sortBy || "winRate";
     const order = params.order || "desc";
     const search = params.search?.trim().toLowerCase() || "";
+    const tier = params.tier && params.tier !== "all" ? params.tier : undefined;
+    const page = params.page && params.page > 0 ? params.page : undefined;
+    const limit = params.limit && params.limit > 0 ? params.limit : undefined;
 
     // Obtain current patch version with graceful fallback
     const patchVersion = await this.riotClient
@@ -421,8 +424,20 @@ export class TierListService {
         )
       : rawItems;
 
+    // Calculate full tier distribution counts across search/role-filtered dataset
+    const tierCounts: Record<string, number> = { S: 0, A: 0, B: 0, C: 0, D: 0 };
+    for (const item of filtered) {
+      const t = item.tier?.toUpperCase();
+      if (tierCounts[t] !== undefined) tierCounts[t]++;
+    }
+
+    // Filter by tier grade if specified (S, A, B, C, D)
+    const tierFiltered = tier
+      ? filtered.filter((item) => item.tier.toUpperCase() === tier.toUpperCase())
+      : filtered;
+
     // Sort items by chosen metric
-    const sorted = [...filtered].sort((a, b) => {
+    const sorted = [...tierFiltered].sort((a, b) => {
       let diff = 0;
       switch (sortBy) {
         case "winRate":
@@ -453,13 +468,32 @@ export class TierListService {
       ...item,
     }));
 
+    const total = rankedData.length;
+
+    // Apply pagination if page or limit is specified
+    let pagedData = rankedData;
+    let totalPages: number | undefined = undefined;
+
+    if (page !== undefined || limit !== undefined) {
+      const activeLimit = limit || 20;
+      const activePage = page || 1;
+      totalPages = Math.max(1, Math.ceil(total / activeLimit));
+      const startIndex = (activePage - 1) * activeLimit;
+      pagedData = rankedData.slice(startIndex, startIndex + activeLimit);
+    }
+
     return {
       success: true,
       patch: patchVersion,
       rank,
       role,
-      total: rankedData.length,
-      data: rankedData,
+      tier: params.tier,
+      total,
+      page,
+      limit,
+      totalPages,
+      tierCounts,
+      data: pagedData,
     };
   }
 }
